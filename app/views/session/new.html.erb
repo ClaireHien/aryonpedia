@@ -1,2 +1,21 @@
-<h1>Session#new</h1>
-<p>Find me in app/views/session/new.html.erb</p>
+<h1>Connexion</h1>
+
+<%if @user %>
+	<div class="alert alert-danger" role="alert">
+        <p>Nous n'avons pas réussi à vous connecter : 
+        <ul><li>Pseudo ou mot de passe incorrect</ul></p>
+	</div><br />
+<% end %>
+
+<form action= <%= session_index_path %> method="POST" id="new_user">
+  <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
+
+  Pseudo : <input class="form-control" type="text" name="u_pseudo"><br />
+
+  Mot de passe : <input class="form-control" type="text" name="u_password"><br /><br />
+
+    <input type="submit" value="Se connecter" class="btn btn-info">
+  </form>
+  <br /><br />
+  Pas encore inscrit ? <a href="<%=new_user_path%>">INSCRIPTION</a>
+

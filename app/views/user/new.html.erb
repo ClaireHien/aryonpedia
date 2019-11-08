@@ -1,0 +1,17 @@
+<h1>Inscription</h1> 
+
+<%if @user %>
+<div class="alert alert-danger" role="alert">
+  <p>Nous n'avons pas réussi a valider votre inscription</p>
+  <ul> <li> <%= @user.wrong_user %> </ul>
+</div><br />
+<% end %>
+
+<form action= <%= user_index_path %> method="POST">
+  <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
+    Pseudo : <input class="form-control" type="text" name="u_pseudo"><br />
+    Nom(s) de votre/vos personnage(s) : <input class="form-control" type="text" name="u_character"><br />
+    Mot de passe : <input class="form-control" type="text" name="u_password"><br />
+    Code Aryon : <input class="form-control" type="text" name="code_aryon"><br /><br />
+  <input type="submit" value="Envoyer" class="btn btn-info">
+</form>

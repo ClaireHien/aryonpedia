@@ -1,0 +1,54 @@
+<h1>Ajouter une plante à l'herbier</h1>
+
+
+<%if @herbarium %>
+<div class="alert alert-danger" role="alert">
+  <p>Tu as mal rempli le formulaire</p>
+</div><br />
+<% end %>
+
+<form action= <%= herbarium_index_path %> method="POST" id="new_herbarium">
+  <input type="hidden" name="authenticity_token" value=<%=form_authenticity_token%> >
+
+        <br /><br />
+    Nom de la plante : <input class="form-control" type="text" name="h_name"><br />
+
+    Catégorie : <select name="h_category" form="new_herbarium">
+    <% all_cat = Category.all %>
+    <% all_cat.each do |cat| %>
+      <option value="<%=cat.id%>"><%=cat.name%></option>
+    <%end%>
+    </select><br /><br />
+
+    Rareté : <select name="h_rarity" form="new_herbarium">
+    <% all_rarity = RarityHerbarium.all %>
+    <% all_rarity.each do |r| %>
+      <option value="<%=r.id%>"><%=r.name%></option>
+    <%end%>
+    </select><br /><br />
+
+    Habitat : <select name="h_habitat" form="new_herbarium">
+    <% all_habitat = HabitatHerbarium.all %>
+    <% all_habitat.each do |hh| %>
+      <option value="<%=hh.id%>"><%=hh.name%></option>
+    <%end%>
+    </select><br /><br />
+
+    Saison : <select name="h_season" form="new_herbarium">
+    <% all_season = Season.all %>
+    <% all_season.each do |s| %>
+      <option value="<%=s.id%>"><%=s.name%></option>
+    <%end%>
+    </select><br /><br />
+
+    Lieu : <input class="form-control" type="text" name="h_location"><br />
+
+    Taille : <input class="form-control" type="text" name="h_height"><br />
+
+    Description : <input class="form-control" type="text" name="h_description"><br />
+
+    Url de l'image : <input class="form-control" type="text" name="h_image"><br /><br />
+
+  <input type="submit" value="Envoyer" class="btn btn-info">
+</form>
+

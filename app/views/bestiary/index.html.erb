@@ -1,0 +1,19 @@
+<h1>Bestiary index</h1>
+
+<%= link_to "ajouter une créature au bestiaire", new_bestiary_path %>
+
+<br /><br />
+<% all_bestiary = Bestiary.all %>
+<% all_bestiary.each do |b| %>
+
+    Nom : <%= b.name %> | <%= b.level.name %> <br />
+    Habitat : <%= b.habitat_bestiary.name %> - <%= b.location %><br />
+    Taille : <%= b.height %> | Rareté : <%= b.rarity_bestiary.name %> <br />
+    Description : <%= b.description %> <br /><br />
+    <img src="<%= b.image %>" class="img_index"><br /><br />
+    Proposé par : <%= b.user.pseudo %>
+    <br /><br />
+
+    --------
+
+<% end %>

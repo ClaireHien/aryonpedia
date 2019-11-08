@@ -1,0 +1,19 @@
+<h1>Herbarium index</h1>
+
+<%= link_to "ajouter une plante a l'herbier", new_herbarium_path %>
+
+<br /><br />
+
+<% all_herbarium = Herbarium.all %>
+<% all_herbarium.each do |h| %>
+
+    Nom : <%= h.name %> | Catégorie : <%= h.category.name %> <br />
+    Habitat : <%= h.habitat_herbarium.name %> - <%= h.localisation %><br />
+    Saison : <%= h.season.name %> | Rareté : <%= h.rarity_herbarium.name %>
+    <br /><br />
+    <img src="<%= h.image %>" class="img_index">
+<br /><br />
+Proposé par : <%= h.user.pseudo %>
+    -----
+
+<% end %>

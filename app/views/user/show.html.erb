@@ -1,0 +1,17 @@
+<% id = params[:id] %>
+<% user = User.find(id) %>
+
+<h1>Profil de <%=user.pseudo %></h1>
+
+Personnages : <%= user.character %>
+<br /><br />
+Description : <%= user.description %>
+<br /><br />
+<img src="<%=user.img_profile%>" class="img_profile">
+
+
+<br /><br />
+-------------------
+
+
+<br /><br />	

@@ -1,0 +1,47 @@
+<h1>Ajouter une créature au bestiaire</h1>
+
+
+<%if @bestiary %>
+<div class="alert alert-danger" role="alert">
+  <p>Tu as mal rempli le formulaire</p>
+</div><br />
+<% end %>
+
+<form action= <%= bestiary_index_path %> method="POST" id="new_bestiary">
+  <input type="hidden" name="authenticity_token" value=<%=form_authenticity_token%> >
+
+        <br /><br />
+    Nom de la créature : <input class="form-control" type="text" name="b_name"><br />
+
+    Dangerosité : <select name="b_level" form="new_bestiary">
+    <% all_level = Level.all %>
+    <% all_level.each do |lv| %>
+      <option value="<%=lv.id%>"><%=lv.name%></option>
+    <%end%>
+    </select><br /><br />
+
+    Rareté : <select name="b_rarity" form="new_bestiary">
+    <% all_rarity = RarityBestiary.all %>
+    <% all_rarity.each do |r| %>
+      <option value="<%=r.id%>"><%=r.name%></option>
+    <%end%>
+    </select><br /><br />
+
+    Habitat : <select name="b_habitat" form="new_bestiary">
+    <% all_habitat = HabitatBestiary.all %>
+    <% all_habitat.each do |h| %>
+      <option value="<%=h.id%>"><%=h.name%></option>
+    <%end%>
+    </select><br /><br />
+
+    Lieu : <input class="form-control" type="text" name="b_location"><br />
+
+    Taille : <input class="form-control" type="text" name="b_height"><br />
+
+    Description : <input class="form-control" type="text" name="b_description"><br />
+
+    Url de l'image : <input class="form-control" type="text" name="b_image"><br /><br />
+
+  <input type="submit" value="Envoyer" class="btn btn-info">
+</form>
+
