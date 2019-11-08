@@ -10,7 +10,8 @@ class UserController < ApplicationController
       @user = User.new(pseudo: params["u_pseudo"],
                       code: params["code_aryon"],
                       character: params["u_character"],
-                      password: params["u_password"])
+                      password: params["u_password"],
+                      rank: "Membre")
   
       puts @user.code
       
