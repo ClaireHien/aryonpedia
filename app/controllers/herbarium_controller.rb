@@ -1,4 +1,5 @@
 class HerbariumController < ApplicationController
+  before_action :authenticate_user, only: [:new]
 
     def index
       puts "index"
@@ -48,4 +49,15 @@ class HerbariumController < ApplicationController
       puts "destroy"
     end
   
+
+  private
+
+  def authenticate_user
+    unless current_user
+      flash[:danger] = "Please log in."
+      redirect_to new_session_path
+    end
+  end
+
+
   end
