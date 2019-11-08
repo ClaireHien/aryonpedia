@@ -3,6 +3,10 @@
 
 <h1>Profil de <%=user.pseudo %></h1>
 
+<% if current_user.id == user.id %>
+<a href="<%=edit_user_path%>">Editer le profil</a><br /><br />
+<%end%>
+
 Personnages : <%= user.character %>
 <br /><br />
 Description : <%= user.description %>

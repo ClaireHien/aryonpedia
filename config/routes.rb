@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :bestiary
 
   get '/home', to: 'static#home'
+  get '/check', to: 'static#check'
 
 end
