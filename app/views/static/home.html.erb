@@ -9,13 +9,13 @@
 <% end %>
 
 <% unless current_user %>
-Bienvenue invité ! 
+Bienvenue invité ! <br /><br />
 <% else %>
 
 Bienvenue <%= current_user.pseudo %> !<br /><br />
 
+<%end%>
 Petite page d'intro<br />
 Lien vers le fow<br />
 Aperçu des derniers bestiary & herbarium ajoutés<br />
 Quelques liens utiles... 
-<%end%>
