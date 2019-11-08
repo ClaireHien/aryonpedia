@@ -9,7 +9,7 @@ class HerbariumController < ApplicationController
   
       @herbarium = Herbarium.new(name: params["h_name"],
                       season_id: params["h_season"],
-                      localisation: params["h_location"],
+                      location: params["h_location"],
                       height: params["h_height"],
                       description: params["h_description"],
                       image: params["h_image"],
