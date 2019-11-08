@@ -1,0 +1,2 @@
+module BestiaryHelper
+end
