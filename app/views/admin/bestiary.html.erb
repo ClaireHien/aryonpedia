@@ -1,2 +1,50 @@
-<h1>Admin#bestiary</h1>
-<p>Find me in app/views/admin/bestiary.html.erb</p>
+<h1>Toutes les créatures du bestiaire</h1>
+
+<br /><br />
+<% bestiary = Bestiary.all %>
+<% x = 1 %>
+
+<% bestiary.each do |b| %>
+
+  <% if x == 1 %>
+    <div class="ind1">
+    <% x = x + 1 %>  
+
+<table width="100%"><tr>  
+  <td width="50"><img src="<%= b.image %>" class="min_ico"></td>
+  <td width="250">
+  <%= b.id %> - <strong><%= b.name %></strong> <br />
+  <small><%= b.level.name %> - <%= b.rarity_bestiary.name %> </small>
+  </td>
+  <td>
+  <small>
+  <strong><%= b.habitat_bestiary.name %></strong> : <%= b.location %><br /></small>
+  </td>
+  <td width="60">
+  <div class="tab"><a href="/bestiary/<%= b.id %>/edit">EDITER</a></div>
+</td>  </tr> </table>
+
+</div>
+<%else %>
+
+<div class="ind2">
+<% x = 1 %>
+
+<table width="100%"><tr>  
+  <td width="50"><img src="<%= b.image %>" class="min_ico"></td>
+  <td width="250">
+  <%= b.id %> - <strong><%= b.name %></strong> <br />
+  <small><%= b.level.name %> - <%= b.rarity_bestiary.name %> </small>
+  </td>
+  <td>
+  <small>
+  <strong><%= b.habitat_bestiary.name %></strong> : <%= b.location %><br /></small>
+  </td>
+  <td width="60">
+  <div class="tab"><a href="/bestiary/<%= b.id %>/edit">EDITER</a></div>
+</td>  </tr> </table>
+
+</div>
+<%end%>
+
+<%end%>

@@ -45,3 +45,23 @@
 .separation {
   border-bottom: 1px dotted #000000;
 }
+
+.min_ico {
+  width:50px;
+  object-fit: cover;
+  height:50px;
+}
+
+.tab {
+  padding: 2px;
+  margin: 2px;
+  background-color: #dadada;
+}
+
+.ind1 {
+  background-color: #b3b3b3;
+}
+
+.ind2 {
+  background-color: #e2e2e;
+}

@@ -1,2 +1,58 @@
-<h1>Admin#herbarium</h1>
-<p>Find me in app/views/admin/herbarium.html.erb</p>
+<h1>Toutes les plantes de l'herbier</h1>
+
+<br /><br />
+<% herbarium = Herbarium.all %>
+<% x = 1 %>
+
+<% herbarium.each do |h| %>
+
+  <% if x == 1 %>
+    <div class="ind1">
+    <% x = x + 1 %>  
+
+<table width="100%">
+    <tr>
+    <td width="50"><img src="<%= h.image %>" class="min_ico"></td>
+    <td width="250">
+    <%= h.id %> - <strong><%= h.name %></strong> <br />
+    <small><%= h.category.name %> - <%= h.rarity_herbarium.name %> </small>
+    </td>
+    <td>
+    <small>
+    <strong><%= h.habitat_herbarium.name %></strong> : <%= h.location %><br />
+    <%= h.season.name %></small>
+    </td>
+    <td width="60">
+    <div class="tab"><a href="/herbarium/<%= h.id %>/edit">EDITER</a></div>
+  </td>
+  </tr></table>
+  
+  </div>
+    
+  <% else %>
+    <div class="ind2">
+    <% x = 1 %>
+  
+<table width="100%">
+<tr>
+<td width="50"><img src="<%= h.image %>" class="min_ico"></td>
+<td width="250">
+<%= h.id %> - <strong><%= h.name %></strong> <br />
+<small><%= h.category.name %> - <%= h.rarity_herbarium.name %> </small>
+</td>
+<td>
+<small>
+<strong><%= h.habitat_herbarium.name %></strong> : <%= h.location %><br />
+<%= h.season.name %></small>
+</td>
+<td width="60">
+<div class="tab"><a href="/herbarium/<%= h.id %>/edit">EDITER</a></div>
+</td>
+</tr></table>
+  
+  </div>
+    
+  <%end%>
+
+
+<%end%>

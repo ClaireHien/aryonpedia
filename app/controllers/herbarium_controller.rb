@@ -1,6 +1,6 @@
 class HerbariumController < ApplicationController
   before_action :authenticate_user, only: [:new]
-  before_action :check_user, only: [:edit]
+  before_action :check_user, only: [:edit, :update, :destroy]
 
     def index
       puts "index"
@@ -59,6 +59,11 @@ class HerbariumController < ApplicationController
   
     def destroy
       puts "destroy"
+
+      @herbarium = Herbarium.find(params[:id])
+      @herbarium.destroy
+      redirect_to "/herbarium"
+
     end
   
 

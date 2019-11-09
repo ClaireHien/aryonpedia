@@ -1,6 +1,6 @@
 class BestiaryController < ApplicationController
   before_action :authenticate_user, only: [:new]
-  before_action :check_user, only: [:edit]
+  before_action :check_user, only: [:edit, :update, :destroy]
 
     def index
       puts "index"
@@ -57,6 +57,11 @@ class BestiaryController < ApplicationController
   
     def destroy
       puts "destroy"
+
+        @bestiary = Bestiary.find(params[:id])
+        @bestiary.destroy
+        redirect_to "/bestiary"
+
     end
 
   private

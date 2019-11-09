@@ -1,2 +1,67 @@
-<h1>Admin#user</h1>
-<p>Find me in app/views/admin/user.html.erb</p>
+<h1>Tous les membres</h1>
+
+<br /><br />
+<% user = User.all %>
+<% x = 1 %>
+
+<% user.each do |u| %>
+
+  <% if x == 1 %>
+    <div class="ind1">
+    <% x = x + 1 %>  
+
+<table width="100%"><tr>  
+  <td width="50"><img src="<%= u.img_profile %>" class="min_ico"></td>
+  <td width="200">
+  <%= u.id %> - <strong><%= u.pseudo %></strong> <br />
+  <small><%= u.rank %></small>
+  </td>
+  <td>
+  <small>
+  <%= u.character %><br /></small>
+  </td><td width="250"> <small>
+  <% user_bestiary = Bestiary.where(user_id: u.id) %>
+  <%= user_bestiary.length %> créatures proposées
+  <br />
+  <% user_herbarium = Herbarium.where(user_id: u.id) %>
+  <%= user_herbarium.length %> plantes proposées
+  </small>
+  </td>
+<td width="60">
+<div class="tab"><a href="/user/<%= u.id %>">PROFIL</a></div>
+</td>
+</tr> </table>
+
+</div>
+<%else %>
+
+<div class="ind2">
+<% x = 1 %>
+
+<table width="100%"><tr>  
+  <td width="50"><img src="<%= u.img_profile %>" class="min_ico"></td>
+  <td width="200">
+  <%= u.id %> - <strong><%= u.pseudo %></strong> <br />
+  <small><%= u.rank %></small>
+  </td>
+  <td>
+  <small>
+  <%= u.character %><br /></small>
+  </td><td width="250"> <small>
+  <% user_bestiary = Bestiary.where(user_id: u.id) %>
+  <%= user_bestiary.length %> créatures proposées
+  <br />
+  <% user_herbarium = Herbarium.where(user_id: u.id) %>
+  <%= user_herbarium.length %> plantes proposées
+  </small>
+  </td>
+<td width="60">
+<div class="tab"><a href="/user/<%= u.id %>">PROFIL</a></div>
+</td>
+</tr> </table>
+
+
+</div>
+<%end%>
+
+<%end%>
