@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   get '/bestiary/habitat/:id', to: 'bestiary#habitat'
   get '/bestiary/rarity/:id', to: 'bestiary#rarity'
 
+  get '/herbarium/season/:id', to: 'herbarium#season'
+  get '/herbarium/category/:id', to: 'herbarium#category'
+  get '/herbarium/habitat/:id', to: 'herbarium#habitat'
+  get '/herbarium/rarity/:id', to: 'herbarium#rarity'
+
   get 'admin/bestiary', to: 'admin#bestiary'
   get 'admin/user', to: 'admin#user'
   get 'admin/herbarium', to: 'admin#herbarium'

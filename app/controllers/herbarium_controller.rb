@@ -65,6 +65,18 @@ class HerbariumController < ApplicationController
       redirect_to "/herbarium"
 
     end
+
+    def rarity
+    end
+
+    def category
+    end
+
+    def habitat
+    end
+
+    def season
+    end
   
 
   private
