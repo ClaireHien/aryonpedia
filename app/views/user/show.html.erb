@@ -7,6 +7,13 @@
 <a href="<%=edit_user_path%>">Editer le profil</a><br /><br />
 <%end%>
 
+Rang : 
+<%if current_user.rank != "A.dmin0018" %>
+<%= current_user.rank %>
+<%else%>
+Administrateur
+<%end%>
+<br /><br />
 Personnages : <%= user.character %>
 <br /><br />
 Description : <%= user.description %>

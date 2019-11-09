@@ -63,10 +63,20 @@
 <div class="profile">
 
 <img src="<%=current_user.img_profile%>"><br />
-<%= current_user.pseudo %>
-<br /><br />
+<%= current_user.pseudo %><br />
+<%if current_user.rank != "A.dmin0018" %>
+<%= current_user.rank %>
+<%else%>
+Administrateur
+<%end%><br />
 <a href="/user/<%= current_user.id%>">Profil</a>
 
+<br />
+<% if current_user.rank == "A.dmin0018"%>
+<div class="separation"></div>
+<br />
+<a href="">Panneau d'administration</a>
+<%end%>
 </div>
 
 <%end%>

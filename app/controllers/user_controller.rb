@@ -35,7 +35,7 @@ class UserController < ApplicationController
     
   def update
     @user = User.find(params[:id])
-    user_params = params.require(:user).permit(:description, :password, :img_profile, :character)
+    user_params = params.require(:user).permit(:description, :rank, :password, :img_profile, :character)
 
     puts user_params 
     if @user.update(user_params)
