@@ -56,7 +56,14 @@
 
   <div class="separation"></div>
   <br />
+  <strong>Contribution</strong><br />
+  <% b = Bestiary.where(user_id: current_user.id) %>
+  Créatures : <%= b.length %><br />
+  <% h = Herbarium.where(user_id: current_user.id) %>
+  Plantes : <%= h.length %><br /><br />
   <% if current_user.rank == "A.dmin0018"%>
+  <div class="separation"></div>
+  <br />
     <a href="<%=admin_path%>">Panneau d'administration</a><br />
   <%end%>
 </div>
@@ -77,10 +84,6 @@
 </div>
 <div class="box">
     <%= yield %>
-</div>
-<div class="right_box">
-texte
-
 </div>
 </div>
 
