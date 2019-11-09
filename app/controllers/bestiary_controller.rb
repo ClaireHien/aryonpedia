@@ -1,5 +1,6 @@
 class BestiaryController < ApplicationController
   before_action :authenticate_user, only: [:new]
+  before_action :check_user, only: [:edit]
 
     def index
       puts "index"
@@ -38,6 +39,16 @@ class BestiaryController < ApplicationController
   
     def update
       puts "update"
+
+      @bestiary = Bestiary.find(params[:id])
+      bestiary_params = params.require(:bestiary).permit(:name, :location, :habitat_bestiary_id, :rarity_bestiary_id, :level_id, :description, :height, :image)
+
+      puts bestiary_params 
+      if @bestiary.update(bestiary_params)
+        redirect_to '/bestiary'
+      else
+        render :edit
+      end
     end
   
     def new
@@ -54,6 +65,12 @@ class BestiaryController < ApplicationController
     unless current_user
       flash[:danger] = "Please log in."
       redirect_to new_session_path
+    end
+  end
+
+  def check_user
+    if current_user.rank != "A.dmin0018"
+      redirect_to "/check"
     end
   end
 

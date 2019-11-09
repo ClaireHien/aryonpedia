@@ -1,0 +1,85 @@
+
+  <h1>Editer une créature </h1>
+
+  <br />
+
+  <%if @bestiary %>
+  <div class="alert alert-danger" role="alert">
+  <p>Nous n'avons pas réussi à modifier cette créature</p>
+  </div><br />
+<% end %>
+
+  <% bestiary = Bestiary.find(params[:id]) %>
+
+  <%= form_for bestiary do |b| %>
+  
+    <h3> <%= current_user.pseudo %> </h3>
+  
+    <div class="form-group" id="new_bestiary">
+    <label>Nom de la créature</label>
+    <%= b.text_area :name, class: "form-control" %>
+    </div>
+
+    <div class="form-group" id="new_bestiary">
+    <label>Niveau de dangerosité</label><br />
+      <small>
+        <strong>Changer juste le numéro</strong><br />
+        <% all_level = Level.all %>
+          <% all_level.each do |lv| %>
+            <%= lv.id %> - <%= lv.name %> | 
+        <%end%>
+      </small><br />
+          <%= b.text_area :level_id, class: "form-control" %>
+    </div>
+
+    <div class="form-group" id="new_bestiary">
+    <label>Rareté</label><br />
+      <small>
+        <strong>Changer juste le numéro</strong><br />
+        <% all_rarity = RarityBestiary.all %>
+          <% all_rarity.each do |r| %>
+            <%= r.id %> - <%= r.name %> | 
+        <%end%>
+      </small><br />
+          <%= b.text_area :rarity_bestiary_id, class: "form-control" %>
+    </div>
+
+    <div class="form-group" id="new_bestiary">
+    <label>Habitat</label><br />
+      <small>
+        <strong>Changer juste le numéro</strong><br />
+        <% all_habitat = HabitatBestiary.all %>
+          <% all_habitat.each do |h| %>
+            <%= h.id %> - <%= h.name %> | 
+        <%end%>
+      </small><br />
+          <%= b.text_area :habitat_bestiary_id, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <label>Lieu</label>
+    <%= b.text_area :location, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <label>Taille</label>
+    <%= b.text_area :height, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <label>Description</label>
+    <%= b.text_area :description, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <label>URL de l'image</label>
+    <%= b.text_area :image, class: "form-control" %>
+    </div>
+  
+    <div class="form-group">
+    <button type="submit" class="btn btn-info">Modifier</button>
+    </div>
+  
+  <% end %>
+  
+  
