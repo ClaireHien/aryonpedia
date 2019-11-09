@@ -29,9 +29,37 @@ Nombre de créatures : <%= b.length %>
 
 <div class="card">
   <img src="<%= bestiary.image%>" class="card-img-top" alt="image">
+  <div class="card-header"><%= bestiary.name %></div>
+
+  <ul class="list-group list-group-flush">
+  <li class="list-group-item">
+  Dangerosité :      <strong>      <%= bestiary.level.name %>      </strong></li>
+  <li class="list-group-item">
+  Rareté :      <strong>      <%= bestiary.rarity_bestiary.name %>      </strong></li>
+<li class="list-group-item">
+Habitat : <strong><%= bestiary.habitat_bestiary.name %></strong><br />
+  <small><%= bestiary.location %></small>
+  </ul>
+
   <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  
+    <p class="card-text">    
+    <%= bestiary.description %><br /><br />
+    Taille : <strong><%= bestiary.height %></strong>
+    </p>
   </div>
+
+  <ul class="list-group list-group-flush">
+  <li class="list-group-item">
+    <small class="text-muted">
+    
+    <%if current_user.rank == "A.dmin0018" %>
+    <a href="/bestiary/<%=bestiary.id%>/edit">EDITER</a> | 
+    <%end%>
+    
+    Proposé par <a href="/user/<%=bestiary.user.id%>"><%=bestiary.user.pseudo%></a></small>
+    </ul>
+
 </div>
 
 </td><td width="2%"></td><td width="49%">
