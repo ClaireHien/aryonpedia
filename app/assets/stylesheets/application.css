@@ -3,21 +3,40 @@
     background-color: #aaaaaa;
     font-family: 'Nanum Gothic';
   }
-  
-  .box {
-    background-color: #ffffff;
-    width:800px;
-    margin:auto;
-  }
-  
-  .img_index {
-    width: 70px;
-    height: 50px;
-    object-fit: cover;
-  }
-  
-  .img_profile {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-  }
+
+.navnav {
+  position: fixed;
+}
+
+.box {
+  background-color: #ffffff;
+  width:800px;
+  margin:auto;
+}
+
+.img_index {
+  width: 70px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.img_profile {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.profile {
+  width:200px;
+  background-color: #bbffff;
+
+  position: fixed;
+  right:30px; 
+  top: 80px;
+}
+
+.profile img{
+  width:200px;
+  object-fit: cover;
+  height:70px;
+}
