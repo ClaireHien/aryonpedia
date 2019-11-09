@@ -64,6 +64,15 @@ class BestiaryController < ApplicationController
 
     end
 
+    def level
+    end
+
+    def rarity
+    end
+
+    def habitat
+    end
+
   private
 
   def authenticate_user

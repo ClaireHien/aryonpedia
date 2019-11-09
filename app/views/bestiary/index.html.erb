@@ -3,6 +3,30 @@
 <%= link_to "ajouter une créature au bestiaire", new_bestiary_path %>
 
 <br /><br />
+<strong>Afficher les créatures par dangerosité : </strong><br />
+<% all_level = Level.all%>
+<% all_level.each do |lv| %>
+    <a href="bestiary/level/<%= lv.name%>"><%= lv.name %></a> - 
+<%end%>
+
+<br /><br />
+<strong>Afficher les créatures par rareté : </strong><br />
+<% all_rarity = RarityBestiary.all%>
+  <% all_rarity.each do |r| %>
+    <a href="bestiary/rarity/<%= r.name%>"><%= r.name %></a> - 
+  <%end%>
+
+<br /><br />
+<strong>Afficher les créatures par habitat : </strong><br />
+
+<% all_habitat = HabitatBestiary.all%>
+  <% all_habitat.each do |h| %>
+    <a href="bestiary/habitat/<%= h.name%>"><%= h.name %></a> - 
+  <%end%>
+
+<br /><br />
+<h2>Toutes les créatures du bestiaire</h2>
+<br />  
 <% all_bestiary = Bestiary.all %>
 <% all_bestiary.each do |b| %>
 
