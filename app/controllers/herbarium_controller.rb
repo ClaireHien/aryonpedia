@@ -1,5 +1,6 @@
 class HerbariumController < ApplicationController
   before_action :authenticate_user, only: [:new]
+  before_action :check_user, only: [:edit]
 
     def index
       puts "index"
@@ -39,6 +40,17 @@ class HerbariumController < ApplicationController
   
     def update
       puts "update"
+
+      @herbarium = Herbarium.find(params[:id])
+      herbarium_params = params.require(:herbarium).permit(:name, :location, :habitat_herbarium_id, :rarity_herbarium_id, :season_id, :category_id, :description, :height, :image)
+
+      puts herbarium_params 
+      if @herbarium.update(herbarium_params)
+        redirect_to '/herbarium'
+      else
+        render :edit
+      end
+
     end
   
     def new
@@ -59,5 +71,10 @@ class HerbariumController < ApplicationController
     end
   end
 
+  def check_user
+    if current_user.rank != "A.dmin0018"
+      redirect_to "/check"
+    end
+  end
 
   end

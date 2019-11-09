@@ -12,9 +12,7 @@
   <% bestiary = Bestiary.find(params[:id]) %>
 
   <%= form_for bestiary do |b| %>
-  
-    <h3> <%= current_user.pseudo %> </h3>
-  
+    
     <div class="form-group" id="new_bestiary">
     <label>Nom de la créature</label>
     <%= b.text_area :name, class: "form-control" %>

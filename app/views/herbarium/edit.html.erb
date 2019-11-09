@@ -1,0 +1,96 @@
+
+  <h1>Editer une plante </h1>
+
+  <br />
+
+  <%if @herbarium %>
+  <div class="alert alert-danger" role="alert">
+  <p>Nous n'avons pas réussi à modifier cette plante</p>
+  </div><br />
+<% end %>
+
+  <% herbarium = Herbarium.find(params[:id]) %>
+
+  <%= form_for herbarium do |h| %>
+  
+  
+    <div class="form-group">
+    <label>Nom de la plante</label>
+    <%= h.text_area :name, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <label>Catégorie</label><br />
+      <small>
+        <strong>Changer juste le numéro</strong><br />
+        <% all_cat = Category.all %>
+          <% all_cat.each do |c| %>
+            <%= c.id %> - <%= c.name %> | 
+        <%end%>
+      </small><br />
+          <%= h.text_area :category_id, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <label>Saison</label><br />
+      <small>
+        <strong>Changer juste le numéro</strong><br />
+        <% all_season = Season.all %>
+          <% all_season.each do |s| %>
+            <%= s.id %> - <%= s.name %> | 
+        <%end%>
+      </small><br />
+          <%= h.text_area :season_id, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <label>Rareté</label><br />
+      <small>
+        <strong>Changer juste le numéro</strong><br />
+        <% all_rarity = RarityHerbarium.all %>
+          <% all_rarity.each do |r| %>
+            <%= r.id %> - <%= r.name %> | 
+        <%end%>
+      </small><br />
+          <%= h.text_area :rarity_herbarium_id, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <label>Habitat</label><br />
+      <small>
+        <strong>Changer juste le numéro</strong><br />
+        <% all_habitat = HabitatHerbarium.all %>
+          <% all_habitat.each do |b| %>
+            <%= b.id %> - <%= b.name %> | 
+        <%end%>
+      </small><br />
+          <%= h.text_area :habitat_herbarium_id, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <label>Lieu</label>
+    <%= h.text_area :location, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <label>Taille</label>
+    <%= h.text_area :height, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <label>Description</label>
+    <%= h.text_area :description, class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+    <label>URL de l'image</label>
+    <%= h.text_area :image, class: "form-control" %>
+    </div>
+  
+    <div class="form-group">
+    <button type="submit" class="btn btn-info">Modifier</button>
+    </div>
+  
+  <% end %>
+  
+  

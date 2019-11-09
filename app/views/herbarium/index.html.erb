@@ -14,6 +14,12 @@
     <img src="<%= h.image %>" class="img_index">
 <br /><br />
 Proposé par : <%= h.user.pseudo %>
+
+<br /><br />
+<%if current_user.rank == "A.dmin0018" %>
+<a href="/herbarium/<%=h.id%>/edit">Editer</a>
+<%end%><br /><br />
+
     -----
 
 <% end %>
