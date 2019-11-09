@@ -2,27 +2,67 @@
 /* GÉNÉRAL */
 
 .body {
-    background-color: #aaaaaa;
-    font-family: 'Nanum Gothic';
-  }
+  background-color: #aaaaaa;
+  font-family: 'Nanum Gothic';
+}
 
 .box {
-  padding-top:70px;
-  background-color: #ffffff;
   width:800px;
-  margin:auto;
+  padding: 70px 20px;
+  background-color: #ffffff;
+}
+
+.left_box{
+  text-align:center;
+  width:300px;
+  text-transform: uppercase;
+  padding: 70px 20px;
+  background-color: #bebe99;
+}
+
+.navleft{
+  display:block;
+  background-color: #ffffff;
+  padding:2px;
+  margin-bottom:3px;
+}
+
+.aryon{
+  display:block;
+  background-color: #aaaaaa;
+  padding:2px;
+  font-size:10px;
 }
 
 .separation {
   border-bottom: 1px dotted #000000;
 }
 
+a {
+  color: #101010 !important;
+  text-decoration: none !important;
+}
+a:hover {
+  color: #303030 !important;
+  text-decoration: none !important;
+}
 
 /* HEADER */
 
-
-.navnav {
+.navbarre {
   position: fixed;
+  width: 100%;
+  text-align:center;
+  text-transform: uppercase;
+  font-size:20px;
+}
+.b_nav {
+  background-color:#aaaaaa;
+  width:50%;
+}
+.h_nav {
+  background-color: #bbffff;
+  width:50%;
 }
 
 .profile {
@@ -30,14 +70,6 @@
   background-color: #bbffff;
   position: fixed;
   right:30px; 
-  top: 80px;
-}
-
-.aryon {
-  width:200px;
-  background-color: #bbffff;
-  position: fixed;
-  left:30px; 
   top: 80px;
 }
 
@@ -56,7 +88,11 @@
 
 
 
-/* INDEX DES CREATURES/PLANTES */
+/* PAGE DES CREATURES/PLANTES */
+
+.left {
+  background-color: #bebebe;
+}
 
 .img_index {
   width: 70px;

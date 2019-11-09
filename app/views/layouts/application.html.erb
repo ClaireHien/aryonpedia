@@ -4,8 +4,7 @@
     <title>Aryonpedia</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Staatliches&display=swap" rel="stylesheet">  <!-- polices -->
-
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Oswald:700&display=swap" rel="stylesheet"> 
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -14,80 +13,71 @@
 
   <body><div class="body">
 
-  <nav style="position: fixed; width:100%;" class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/">Aryonpédia</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
+  <div class="d-flex flex-nowrap navbarre">
+    <div class="b_nav">
       <a class="nav-link" href="<%= bestiary_index_path %>">Bestiaire</a>
-    </li>
-    <li class="nav-item">
+    </div>
+    <div class="h_nav">
       <a class="nav-link" href="<%= herbarium_index_path %>">Herbier</a>
-    </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-
-      <ul class="navbar-nav mr-auto">
-
-      <% unless current_user %>
-
-        <li class="nav-item active">
-          <a class="nav-link" href="<%=new_user_path%>">Inscription<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="<%=new_session_path%>">Connexion</a>
-        </li>
-
-      <% else %>
-        <li class="nav-item">
-          <font class="nav-link">
-            <%= link_to "Se déconnecter", session_path(session.id), method: :delete%>
-          </font>
-        </li>
-
-        <% end %>
-      </ul>
-
-    </form>
+    </div>
   </div>
-</nav>
+  
+
 
  
 <% unless current_user %>
+
+  <div class="profile">
+      <a class="nav-link" href="<%= root_path %>">Accueil</a><br />
+      <a href="http://aryon.forumactif.com/" target="_blank">Le forum</a>
+      <br /><br />
+    <div class="separation"><br />
+      <a href="<%=new_user_path%>">Inscription</a>
+      <br />
+      <a href="<%=new_session_path%>">Connexion</a>
+  </div>
+
 <% else %>
 
 <div class="profile">
 
-<img src="<%=current_user.img_profile%>"><br />
-<%= current_user.pseudo %><br />
-<%if current_user.rank != "A.dmin0018" %>
-<%= current_user.rank %>
-<%else%>
-Administrateur
-<%end%><br />
-<a href="/user/<%= current_user.id%>">Profil</a>
+  <img src="<%=current_user.img_profile%>"><br />
+  <%= current_user.pseudo %><br />
+  <%if current_user.rank != "A.dmin0018" %>
+    <%= current_user.rank %>
+  <%else%>
+    Administrateur
+  <%end%><br />
 
-<br />
-<% if current_user.rank == "A.dmin0018"%>
-<div class="separation"></div>
-<br />
-<a href="<%=admin_path%>">Panneau d'administration</a>
-<%end%>
+  <a href="/user/<%= current_user.id%>">Profil</a><br />
+  <%= link_to "Se déconnecter", session_path(session.id), method: :delete%>
+  <br /><br />
+
+  <div class="separation"></div>
+  <br />
+  <% if current_user.rank == "A.dmin0018"%>
+    <a href="<%=admin_path%>">Panneau d'administration</a><br />
+  <%end%>
 </div>
 
 <%end%>
 
-<div class="aryon">
-<a href="http://aryon.forumactif.com/">Le forum<br />
-Le royaume d'Aryon</a>
-</div>
+<div class="d-flex flex-nowrap">
+<div class="left_box">
 
+<div style="position: fixed; width:260px;">
+  <a href="<%= root_path %>" class="navleft" >Accueil</a>
+  <a href="http://aryon.forumactif.com/" class="navleft" target="_blank">Le forum</a>
+  <a href="http://aryon.forumactif.com/" class="aryon" target="_blank">
+    http://aryon.forumactif.com/
+  </a>
+  </div>
+
+</div>
 <div class="box">
     <%= yield %>
+</div>
 </div>
 
 </div>
