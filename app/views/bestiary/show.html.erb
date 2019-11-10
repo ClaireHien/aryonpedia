@@ -35,19 +35,41 @@
 
 
 
+<% bestiary = Bestiary.find(params[:id]) %>
 
+<div class="card" style="max-width: 760px;">
 
-<h1>Page Show bestiaire </h1>
+  <div class="art_title_show"><%= bestiary.name %></div>
 
+  <div class="row no-gutters">
+    <div>
+      <img src="<%= bestiary.image %>" class="img_profile" alt="image de la créature">
+    </div>
+    
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text">
+
+        Dangerosité : <font style="color:<%= bestiary.level.color %>;"><%= bestiary.level.name %></font><br />
+        Rareté : <font style="color:<%= bestiary.rarity_bestiary.color %>;"><%= bestiary.rarity_bestiary.name %></font><br />
+        Habitat : <font style="color:<%= bestiary.habitat_bestiary.color %>;"><%= bestiary.habitat_bestiary.name %></font><br />
+        <small><%= bestiary.location %></small><br />
+        Taille : <%= bestiary.height %><br />        
+        
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="art_descrip">
+    <%= bestiary.description %>
+  </div>
+
+</div>
 <br /><br />
-<a href="/bestiary">Retour au bestiaire</a>
 
-<% n = params[:id] %>
-<% bestiary = Bestiary.find(n) %>
-
-<br /><br />
-<img src="<%= bestiary.image %>"><br /><br />
-<%= bestiary.name %>
-
-<br /><br />
-Toutes les infos
+<input type="checkbox"  id="spoiler" /> 
+<label for="spoiler">Voir l'image en plus grand</label>
+<div class="spoiler">
+<img class="big_image" src="<%= bestiary.image %>">
+</div>

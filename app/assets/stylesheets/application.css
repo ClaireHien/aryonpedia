@@ -122,6 +122,52 @@ a:hover {
   background-color: #cecece;
 }
 
+.art_descrip {
+  padding:10px;
+  background-color: #ededed;
+  font-size:13px; 
+}
+
+.big_image {
+  max-width: 760px;
+}
+
+input[id^="spoiler"]{display: none;}
+ input[id^="spoiler"] + label {
+   display: block;
+   width: 200px;
+   margin: 0 auto;
+   padding: 5px 20px;
+   background: #e1a;
+   color: #fff;
+   text-align: center;
+   font-size: 24px;
+   border-radius: 8px;
+   cursor: pointer;
+   transition: all .6s;
+ }
+ input[id^="spoiler"]:checked + label {
+   color: #333;
+   background: #ccc;
+ }
+
+ input[id^="spoiler"] ~ .spoiler {
+   width: 100%;
+   height: 0;
+   overflow: hidden;
+   opacity: 0;
+   background: #eee;
+   border: 1px solid #ccc;
+   border-radius: 8px;
+   transition: all .6s;
+ }
+ input[id^="spoiler"]:checked + label + .spoiler{
+   height: auto;
+   opacity: 1;
+ }
+ 
+
+
 /* PAGE DES CREATURES/PLANTES */
 
 .title_box{
