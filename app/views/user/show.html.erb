@@ -1,28 +1,124 @@
 <% id = params[:id] %>
 <% user = User.find(id) %>
 
-<h1>Profil de <%=user.pseudo %></h1>
+<% unless current_user %><%else%>
 
-<% if current_user.id == user.id %>
-<a href="<%=edit_user_path%>">Editer le profil</a><br /><br />
+  <%if current_user.id == user.id %>
+
+    <div class="left">
+    <div class="titleleft">Profil</div>
+    <a href="<%=edit_user_path%>" class="navleft">Modifier votre profil</a>
+    </div>
+
+  <%end%>
 <%end%>
 
-Rang : 
-<%if current_user.rank != "A.dmin0018" %>
-<%= current_user.rank %>
-<%else%>
-Administrateur
-<%end%>
-<br /><br />
-Personnages : <%= user.character %>
-<br /><br />
-Description : <%= user.description %>
-<br /><br />
-<img src="<%=user.img_profile%>" class="img_profile">
 
 
+<br />
+
+<% all_bestiary = Bestiary.where(user_id: user.id) %>
+<% all_herbarium = Herbarium.where(user_id: user.id) %>
+
+<div class="card" style="max-width: 760px;">
+  <div class="art_title_show"><%=user.pseudo %></div>
+  <div class="row no-gutters">
+    <div>
+      <img src="<%=user.img_profile%>" class="img_profile" alt="image de profil">
+    </div>
+    
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5>
+
+        <%if user.rank != "A.dmin0018" %>
+        <%= user.rank %>
+        <%else%>
+        Administrateur
+        <%end%></h5>
+
+        <p class="card-text"><strong>Personnages : </strong> <%= user.character %><br />
+        <small class="text-muted"><%= user.description %></small></p>
+      </div>
+    </div>
+  </div>
+  <div class="art_foot">Contribution : <a href="#bestiary"><%= all_bestiary.length%> créatures</a> | <a href="#herbarium"><%= all_herbarium.length%> plantes</a> </div>
+</div>
 <br /><br />
--------------------
+
+<h2 id="bestiary"><%= all_bestiary.length%> créatures proposés :</h2><br />
+
+<div class="d-flex justify-content-around flex-wrap">
+
+<% all_bestiary.each do |bestiary| %>
+
+  <div class="article card d-flex flex-column justify-content-between">
+    <div><a href="/bestiary/<%= bestiary.id%>">
+    <img src="<%= bestiary.image%>" alt="image de la créature"></a><br />
+  
+    <div class="art_title"><%= bestiary.name %></div>
+    </div>
+  
+    <div class="art_content">
+    <span style="background-color: <%= bestiary.level.color %>;" class="badge">
+    <a href="/bestiary/level/<%= bestiary.level.name %>"><%= bestiary.level.name %></a></span>
+    <span style="background-color: <%= bestiary.rarity_bestiary.color %>;" class="badge">
+    <a href="/bestiary/rarity/<%= bestiary.rarity_bestiary.name %>"><%= bestiary.rarity_bestiary.name %></a></span>
+    <span style="background-color: <%= bestiary.habitat_bestiary.color %>;" class="badge">
+    <a href="/bestiary/habitat/<%= bestiary.habitat_bestiary.name %>"><%= bestiary.habitat_bestiary.name %></a></span>
+    </div>
+  
+    <a href="/bestiary/<%= bestiary.id %>"><div class="art_foot">
+      En savoir plus
+    </div></a>
+  
+  </div>
+
+<% end %>
+</div>
 
 
 <br /><br />	
+
+<h2 id="herbarium"><%= all_herbarium.length%> plantes proposés :</h2><br />
+
+
+<div class="d-flex justify-content-around flex-wrap">
+
+<% all_herbarium.each do |herbarium| %>
+
+    <div class="article card d-flex flex-column justify-content-between">
+
+    <div><a href="/herbarium/<%= herbarium.id%>">
+    <img src="<%= herbarium.image%>" alt="image de la plante"></a><br />
+
+    <div class="art_title"><%= herbarium.name %></div>
+    </div>
+
+    <div class="art_content">
+
+    <span style="background-color: <%= herbarium.category.color %>;" class="badge">
+    <a href="/herbarium/category/<%= herbarium.category.name %>"><%= herbarium.category.name %></a>
+    </span>
+
+    <span style="background-color: <%= herbarium.rarity_herbarium.color %>;" class="badge">
+    <a href="/herbarium/rarity/<%= herbarium.rarity_herbarium.name %>"><%= herbarium.rarity_herbarium.name %></a>
+    </span>
+
+    <span style="background-color: <%= herbarium.season.color %>;" class="badge">
+    <a href="/herbarium/season/<%= herbarium.season.name %>"><%= herbarium.season.name %></a>
+    </span>
+    
+    <span style="background-color: <%= herbarium.habitat_herbarium.color %>;" class="badge">
+    <a href="/herbarium/habitat/<%= herbarium.habitat_herbarium.name %>"><%= herbarium.habitat_herbarium.name %></a>
+    </span>
+    </div>
+
+    <a href="/herbarium/<%= herbarium.id %>"><div class="art_foot">
+      En savoir plus
+    </div></a>
+
+    </div>
+
+<% end %>
+</div>
