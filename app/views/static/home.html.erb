@@ -19,6 +19,34 @@ Il a pour but de recenser toutes les créatures du bestiaire et les plantes de l
 
 <br /><br />
 
+<div class="d-flex justify-content-around">
+
+
+<div class="article">
+Info !
+</div>
+
+<div class="article">
+<strong>Dernière créature ajoutée :</strong>
+<% bestiary = Bestiary.last %>
+
+  <a href="/bestiary/<%= bestiary.id %>">
+    <img src="<%= bestiary.image%>" alt="image de la créature"></a>
+
+</div>
+
+<div class="article">
+<strong>Dernière plante ajoutée :</strong>
+<% herbarium = Herbarium.last %>
+
+  <img src="<%= herbarium.image%>" alt="image de la plante">
+
+</div>
+
+</div>
+
+<br /><br /><br />
+----------------------------------------------------------------------------------
 <table width="100%"><tr><td width="32%">
 
 222
@@ -32,6 +60,7 @@ Nombre de créatures : <%= b.length %>
 
 <% bestiary = Bestiary.last %>
 
+</div>
 <div class="card">
   <img src="<%= bestiary.image%>" class="card-img-top" alt="image">
   <div class="card-header"><%= bestiary.name %></div>
@@ -85,7 +114,7 @@ Nombre de plantes : <%= h.length %>
 
 
 </td></tr></table>
-
+-----------------------------------------------------------------------------------------
 
 <br /><br />
 <strong>Comment contribuer ?</strong>
