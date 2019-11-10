@@ -2,3 +2,13 @@
 
 <br /><br />
 <a href="/bestiary">Retour au bestiaire</a>
+
+<% n = params[:id] %>
+<% bestiary = Bestiary.find(n) %>
+
+<br /><br />
+<img src="<%= bestiary.image %>"><br /><br />
+<%= bestiary.name %>
+
+<br /><br />
+Toutes les infos
