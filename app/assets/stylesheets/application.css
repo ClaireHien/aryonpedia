@@ -14,9 +14,7 @@
 }
 
 .left_box{
-  text-align:center;
   width:300px;
-  text-transform: uppercase;
   padding: 70px 20px;
   background-color: #bebe99;
 }
@@ -71,7 +69,23 @@ a:hover {
   height:200px;
 }
 
+.left {
+  width:260px;
+  position: fixed;
+  top: 170px;
+  left: 20px;
+}
+
+.titleleft {
+  font-size:20px;
+  text-align:center;
+  text-transform: uppercase;
+  margin-bottom:10px;
+}
+
 .navleft{
+  text-transform: uppercase;
+  text-align:center;
   display:block;
   background-color: #ffffff;
   padding:2px;
@@ -79,6 +93,8 @@ a:hover {
 }
 
 .aryon{
+  text-transform: uppercase;
+  text-align:center;
   display:block;
   background-color: #aaaaaa;
   padding:2px;
@@ -97,9 +113,6 @@ a:hover {
 
 /* PAGE DES CREATURES/PLANTES */
 
-.left {
-  background-color: #bebebe;
-}
 
 .article {
   width:250px;
