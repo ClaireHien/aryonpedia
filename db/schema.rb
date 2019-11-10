@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_08_174830) do
+ActiveRecord::Schema.define(version: 2019_11_10_181622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,18 +37,21 @@ ActiveRecord::Schema.define(version: 2019_11_08_174830) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "color"
   end
 
   create_table "habitat_bestiaries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "color"
   end
 
   create_table "habitat_herbaria", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "color"
   end
 
   create_table "herbaria", force: :cascade do |t|
@@ -75,24 +78,28 @@ ActiveRecord::Schema.define(version: 2019_11_08_174830) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "color"
   end
 
   create_table "rarity_bestiaries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "color"
   end
 
   create_table "rarity_herbaria", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "color"
   end
 
   create_table "seasons", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "color"
   end
 
   create_table "users", force: :cascade do |t|

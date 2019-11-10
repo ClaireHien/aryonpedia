@@ -104,7 +104,6 @@ a:hover {
 .index_list {
   background-color: #ffffff;
   padding:10px;
-  font-size:12px;
 }
 
 /* PAGE PROFIL */ 
@@ -154,14 +153,6 @@ a:hover {
   font-size:10px; 
   text-transform: uppercase;
 }
-
-/* index provisoire */
-.img_index {
-  width:150px;
-  height:50px;
-  object-fit: cover;
-}
-
 
 /* PANNEAU D'ADMINISTRATION */
 
