@@ -9,6 +9,7 @@
 .box {
   text-align:justify;
   width:800px;
+  min-height: 800px;
   padding: 70px 20px;
   background-color: #ffffff;
 }
@@ -128,6 +129,13 @@ a:hover {
   font-size:13px; 
 }
 
+.art_bot{
+  font-size:12px; 
+  padding:2px;
+  text-align:right;
+  text-transform: uppercase;
+}
+
 .big_image {
   max-width: 760px;
 }
@@ -135,15 +143,15 @@ a:hover {
 input[id^="spoiler"]{display: none;}
  input[id^="spoiler"] + label {
    display: block;
-   width: 200px;
-   margin: 0 auto;
+   width: 100%;
+   margin-top: 20px;
    padding: 5px 20px;
-   background: #e1a;
-   color: #fff;
+   background: #dedede;
    text-align: center;
-   font-size: 24px;
-   border-radius: 8px;
+   font-size: 15px;
+   border-radius: 5px;
    cursor: pointer;
+   text-transform:uppercase;
    transition: all .6s;
  }
  input[id^="spoiler"]:checked + label {
