@@ -122,6 +122,8 @@ a:hover {
 
 .article {
   text-align:center;
+  margin-bottom:10px;
+  width:230px;
   border:3px solid #dedede;
 }
 .article img {
