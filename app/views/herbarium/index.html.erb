@@ -44,7 +44,7 @@
 
 <% all_herbarium = Herbarium.all %>
 
-<div class="d-flex justify-content-around">
+<div class="d-flex justify-content-around flex-wrap">
 
 <% all_herbarium.each do |herbarium| %>
 
@@ -63,7 +63,7 @@
     </div>
 
     <a href="/herbarium/<%= herbarium.id %>"><div class="art_foot">
-      En savoir plys
+      En savoir plus
     </div></a>
 
     </div>
