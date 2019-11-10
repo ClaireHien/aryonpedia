@@ -145,6 +145,30 @@ a:hover {
   object-fit: cover;
 }
 
+.sur_art{
+  height:244px; 
+  width:244px;
+  background-color: #ffffff;
+  overflow:auto;
+  z-index:2;
+}
+
+.opacity {
+  width:250px;
+  border:3px solid #dedede;
+}
+
+.opacity img{
+  width: 244px;
+  height: 250px; 
+  object-fit: cover;
+  margin-top:-250px;
+}
+
+.opacity img:hover{
+  opacity:0.1;
+}
+
 /* PANNEAU D'ADMINISTRATION */
 
 .min_ico {
