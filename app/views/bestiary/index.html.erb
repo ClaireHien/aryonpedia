@@ -38,9 +38,10 @@
     Proposé par : <%= b.user.pseudo %>
     <br /><br />
 
+    <%unless current_user%><%else %>
     <%if current_user.rank == "A.dmin0018" %>
     <a href="/bestiary/<%=b.id%>/edit">Editer</a>
-    <%end%><br /><br />
+    <%end%><%end%><br /><br />
     --------
 
 <% end %>
