@@ -10,7 +10,7 @@
     <% all_level = Level.all%>
     <% all_level.each do |lv| %>
       <span style="background-color: <%= lv.color %>;" class="badge">
-        <a href="bestiary/level/<%= lv.name%>"><%= lv.name %></a></span>
+        <a href="/bestiary/level/<%= lv.name%>"><%= lv.name %></a></span>
     <%end%>
 
     <br /><br />
@@ -18,7 +18,7 @@
     <% all_rarity = RarityBestiary.all%>
       <% all_rarity.each do |r| %>
         <span style="background-color: <%= r.color %>;" class="badge">
-        <a href="bestiary/rarity/<%= r.name%>"><%= r.name %></a></span>
+        <a href="/bestiary/rarity/<%= r.name%>"><%= r.name %></a></span>
       <%end%>
 
     <br /><br />
@@ -27,7 +27,7 @@
     <% all_habitat = HabitatBestiary.all%>
       <% all_habitat.each do |h| %>
         <span style="background-color: <%= h.color %>;" class="badge">
-        <a href="bestiary/habitat/<%= h.name%>"><%= h.name %></a></span> 
+        <a href="/bestiary/habitat/<%= h.name%>"><%= h.name %></a></span> 
       <%end%>
 
   </div>
