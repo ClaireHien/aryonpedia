@@ -39,11 +39,11 @@
 <br />  
 <% all_bestiary = Bestiary.all %>
 
-<div class="d-flex justify-content-around flex-wrap">
+<div class="d-flex justify-content-around flex-wrap card-deck">
 
 <% all_bestiary.each do |bestiary| %>
 
-  <div class="article">
+  <div class="article card">
   
   <a href="/bestiary/<%= bestiary.id%>">
     <img src="<%= bestiary.image%>" alt="image de la créature"></a><br />

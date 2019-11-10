@@ -44,11 +44,11 @@
 
 <% all_herbarium = Herbarium.all %>
 
-<div class="d-flex justify-content-around flex-wrap">
+<div class="d-flex justify-content-around flex-wrap card-deck">
 
 <% all_herbarium.each do |herbarium| %>
 
-    <div class="article">
+    <div class="article card">
 
     <a href="/herbarium/<%= herbarium.id%>">
     <img src="<%= herbarium.image%>" alt="image de la plante"></a><br />
