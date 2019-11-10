@@ -33,6 +33,9 @@
     <strong><%= h.habitat_herbarium.name %></strong> : <%= h.location %><br />
     <%= h.season.name %></small>
     </td>
+    <td width="50">
+    <div class="tab"><a href="/herbarium/<%= h.id %>">VOIR</a></div>
+    </td> 
     <td width="60">
     <div class="tab"><a href="/herbarium/<%= h.id %>/edit">EDITER</a></div>
   </td>
@@ -56,6 +59,9 @@
 <strong><%= h.habitat_herbarium.name %></strong> : <%= h.location %><br />
 <%= h.season.name %></small>
 </td>
+<td width="50">
+<div class="tab"><a href="/herbarium/<%= h.id %>">VOIR</a></div>
+</td> 
 <td width="60">
 <div class="tab"><a href="/herbarium/<%= h.id %>/edit">EDITER</a></div>
 </td>

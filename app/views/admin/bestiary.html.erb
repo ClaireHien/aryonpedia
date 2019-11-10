@@ -31,9 +31,13 @@
   <small>
   <strong><%= b.habitat_bestiary.name %></strong> : <%= b.location %><br /></small>
   </td>
+  <td width="50">
+  <div class="tab"><a href="/bestiary/<%= b.id %>">VOIR</a></div>
+  </td> 
   <td width="60">
   <div class="tab"><a href="/bestiary/<%= b.id %>/edit">EDITER</a></div>
-</td>  </tr> </table>
+  </td>
+</tr> </table>
 
 </div>
 <%else %>
@@ -51,6 +55,9 @@
   <small>
   <strong><%= b.habitat_bestiary.name %></strong> : <%= b.location %><br /></small>
   </td>
+  <td width="50">
+  <div class="tab"><a href="/bestiary/<%= b.id %>">VOIR</a></div>
+  </td> 
   <td width="60">
   <div class="tab"><a href="/bestiary/<%= b.id %>/edit">EDITER</a></div>
 </td>  </tr> </table>
