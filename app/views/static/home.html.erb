@@ -22,24 +22,81 @@ Il a pour but de recenser toutes les créatures du bestiaire et les plantes de l
 <div class="d-flex justify-content-around">
 
 
-<div class="article">
+<div style="width: 250px;">
 Info !
 </div>
 
-<div class="article">
+<div style="width: 250px;">
 <strong>Dernière créature ajoutée :</strong>
+</div>
+
+<div style="width: 250px;">
+<strong>Dernière plante ajoutée :</strong>
+</div>
+
+</div>
+
+<div class="d-flex justify-content-around">
+
+<div style="width: 250px;">
+Texte texte texte
+</div>
+
+<div class="article">
 <% bestiary = Bestiary.last %>
 
-  <a href="/bestiary/<%= bestiary.id %>">
-    <img src="<%= bestiary.image%>" alt="image de la créature"></a>
+  <img src="<%= bestiary.image%>" alt="image de la créature"><br />
+
+  <div class="art_title"><%= bestiary.name %></div>
+
+  <div class="art_info">Dangerosité : <%= bestiary.level.name %></div>
+
+  <div class="art_info">Rareté : <%= bestiary.rarity_bestiary.name %></div>
+
+  <div class="art_info">Habitat : <%= bestiary.habitat_bestiary.name %><br />
+  <small><%= bestiary.location %></small></div>
+
+  <div class="art_content" style="height:178px;"><%= bestiary.description %><br />
+  <br /><strong>Taille :</strong> <%= bestiary.height %></div>
+
+  <div class="art_foot">
+    <%unless current_user%><%else %>
+      <%if current_user.rank == "A.dmin0018" %>
+        <a href="/bestiary/<%=bestiary.id%>/edit">EDITER</a> | 
+      <%end%>
+    <%end%>
+    Proposé par <a href="/user/<%=bestiary.user.id%>"><%=bestiary.user.pseudo%></a></small>
+  </div>
 
 </div>
 
 <div class="article">
-<strong>Dernière plante ajoutée :</strong>
 <% herbarium = Herbarium.last %>
 
-  <img src="<%= herbarium.image%>" alt="image de la plante">
+  <img src="<%= herbarium.image%>" alt="image de la plante"><br />
+
+  <div class="art_title"><%= herbarium.name %></div>
+
+  <div class="art_info">Catégorie : <%= herbarium.category.name %></div>
+
+  <div class="art_info">Rareté : <%= herbarium.rarity_herbarium.name %></div>
+
+  <div class="art_info">Habitat : <%= herbarium.habitat_herbarium.name %><br />
+  <small><%= herbarium.location %></small></div>
+
+  <div class="art_info">Saison : <%= herbarium.season.name %></div>
+
+  <div class="art_content"><%= herbarium.description %><br />
+  <br /><strong>Taille :</strong> <%= herbarium.height %></div>
+
+  <div class="art_foot">
+    <%unless current_user%><%else %>
+      <%if current_user.rank == "A.dmin0018" %>
+        <a href="/herbarium/<%=herbarium.id%>/edit">EDITER</a> | 
+      <%end%>
+    <%end%>
+    Proposé par <a href="/user/<%=herbarium.user.id%>"><%=herbarium.user.pseudo%></a></small>
+  </div>
 
 </div>
 
