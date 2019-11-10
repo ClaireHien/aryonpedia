@@ -48,12 +48,13 @@
 
 <% all_herbarium.each do |herbarium| %>
 
-    <div class="article card">
+    <div class="article card d-flex flex-column justify-content-between">
 
-    <a href="/herbarium/<%= herbarium.id%>">
+    <div><a href="/herbarium/<%= herbarium.id%>">
     <img src="<%= herbarium.image%>" alt="image de la plante"></a><br />
 
     <div class="art_title"><%= herbarium.name %></div>
+    </div>
 
     <div class="art_content">
     <span class="badge badge-secondary"><%= herbarium.category.name %></span>
