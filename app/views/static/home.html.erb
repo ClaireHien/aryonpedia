@@ -250,77 +250,7 @@ Texte texte texte
 
 
 <br /><br /><br />
-----------------------------------------------------------------------------------
-<table width="100%"><tr><td width="32%">
 
-222
-
-</td><td width="2%"></td><td width="32%">
-<h3>Aperçu du bestiaire</h3>
-<% b = Bestiary.all %>
-Nombre de créatures : <%= b.length %>
-<br /><br />
-<strong>Dernière créature ajoutée :</strong>
-
-<% bestiary = Bestiary.last %>
-
-</div>
-<div class="card">
-  <img src="<%= bestiary.image%>" class="card-img-top" alt="image">
-  <div class="card-header"><%= bestiary.name %></div>
-
-  <ul class="list-group list-group-flush">
-  <li class="list-group-item">
-  Dangerosité :      <strong>      <%= bestiary.level.name %>      </strong></li>
-  <li class="list-group-item">
-  Rareté :      <strong>      <%= bestiary.rarity_bestiary.name %>      </strong></li>
-<li class="list-group-item">
-Habitat : <strong><%= bestiary.habitat_bestiary.name %></strong><br />
-  <small><%= bestiary.location %></small>
-  </ul>
-
-  <div class="card-body">
-  
-    <p class="card-text">    
-    <%= bestiary.description %><br /><br />
-    Taille : <strong><%= bestiary.height %></strong>
-    </p>
-  </div>
-
-  <ul class="list-group list-group-flush">
-  <li class="list-group-item">
-    <small class="text-muted">
-    
-    <%unless current_user%><%else %>
-    <%if current_user.rank == "A.dmin0018" %>
-    <a href="/bestiary/<%=bestiary.id%>/edit">EDITER</a> | 
-    <%end%><%end%>
-    
-    Proposé par <a href="/user/<%=bestiary.user.id%>"><%=bestiary.user.pseudo%></a></small>
-    </ul>
-
-</div>
-
-</td><td width="2%"></td><td width="32%">
-<h3>Aperçu de l'herbier</h3>
-<% h = Herbarium.all %>
-Nombre de plantes : <%= h.length %>
-<br /><br />
-<strong>Dernière plante ajoutée :</strong>
-
-<% herbarium = Herbarium.last %>
-<div class="card">
-  <img src="<%= herbarium.image%>" class="card-img-top" alt="image">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-
-
-</td></tr></table>
------------------------------------------------------------------------------------------
-
-<br /><br />
 <strong>Comment contribuer ?</strong>
 
 <br /><br />
