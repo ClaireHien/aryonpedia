@@ -18,7 +18,12 @@ C'est un site annexe du forum RPG : <a href="http://aryon.forumactif.com/" targe
 Il a pour but de recenser toutes les créatures du bestiaire et les plantes de l'herbier de l'univers d'Aryon pour permettre à ses membres de rechercher plus simplement et plus rapidement une créature ou une plante en particulier. 
 
 <br /><br />
-<table width="100%"><tr><td width="49%">
+
+<table width="100%"><tr><td width="32%">
+
+222
+
+</td><td width="2%"></td><td width="32%">
 <h3>Aperçu du bestiaire</h3>
 <% b = Bestiary.all %>
 Nombre de créatures : <%= b.length %>
@@ -53,16 +58,17 @@ Habitat : <strong><%= bestiary.habitat_bestiary.name %></strong><br />
   <li class="list-group-item">
     <small class="text-muted">
     
+    <%unless current_user%><%else %>
     <%if current_user.rank == "A.dmin0018" %>
     <a href="/bestiary/<%=bestiary.id%>/edit">EDITER</a> | 
-    <%end%>
+    <%end%><%end%>
     
     Proposé par <a href="/user/<%=bestiary.user.id%>"><%=bestiary.user.pseudo%></a></small>
     </ul>
 
 </div>
 
-</td><td width="2%"></td><td width="49%">
+</td><td width="2%"></td><td width="32%">
 <h3>Aperçu de l'herbier</h3>
 <% h = Herbarium.all %>
 Nombre de plantes : <%= h.length %>
@@ -79,6 +85,7 @@ Nombre de plantes : <%= h.length %>
 
 
 </td></tr></table>
+
 
 <br /><br />
 <strong>Comment contribuer ?</strong>
