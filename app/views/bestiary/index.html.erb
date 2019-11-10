@@ -6,25 +6,28 @@
 
 <div class="index_list">
 
-    <strong>Afficher les créatures par dangerosité : </strong><br />
+    <strong>Dangerosité : </strong><br />
     <% all_level = Level.all%>
     <% all_level.each do |lv| %>
-        <a href="bestiary/level/<%= lv.name%>"><%= lv.name %></a> - 
+      <span style="background-color: <%= lv.color %>;" class="badge">
+        <a href="bestiary/level/<%= lv.name%>"><%= lv.name %></a></span>
     <%end%>
 
     <br /><br />
-    <strong>Afficher les créatures par rareté : </strong><br />
+    <strong>Rareté : </strong><br />
     <% all_rarity = RarityBestiary.all%>
       <% all_rarity.each do |r| %>
-        <a href="bestiary/rarity/<%= r.name%>"><%= r.name %></a> - 
+        <span style="background-color: <%= r.color %>;" class="badge">
+        <a href="bestiary/rarity/<%= r.name%>"><%= r.name %></a></span>
       <%end%>
 
     <br /><br />
-    <strong>Afficher les créatures par habitat : </strong><br />
+    <strong>Habitat : </strong><br />
 
     <% all_habitat = HabitatBestiary.all%>
       <% all_habitat.each do |h| %>
-        <a href="bestiary/habitat/<%= h.name%>"><%= h.name %></a> - 
+        <span style="background-color: <%= h.color %>;" class="badge">
+        <a href="bestiary/habitat/<%= h.name%>"><%= h.name %></a></span> 
       <%end%>
 
   </div>
@@ -51,9 +54,12 @@
     </div>
   
     <div class="art_content">
-    <span class="badge badge-secondary"><%= bestiary.level.name %></span>
-    <span class="badge badge-info"><%= bestiary.rarity_bestiary.name %></span>
-    <span class="badge badge-light"><%= bestiary.habitat_bestiary.name %></span>
+    <span class="badge badge-secondary">
+    <a href="/bestiary/level/<%= bestiary.level.id %>"><%= bestiary.level.name %></a></span>
+    <span class="badge badge-info">
+    <a href="/bestiary/rarity/<%= bestiary.rarity_bestiary.id %>"><%= bestiary.rarity_bestiary.name %></a></span>
+    <span class="badge badge-light">
+    <a href="/bestiary/habitat/<%= bestiary.habitat_bestiary.id %>"><%= bestiary.habitat_bestiary.name %></a></span>
     </div>
   
     <a href="/bestiary/<%= bestiary.id %>"><div class="art_foot">
