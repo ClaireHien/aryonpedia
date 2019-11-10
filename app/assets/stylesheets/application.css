@@ -110,6 +110,12 @@ a:hover {
   object-fit: cover;
 }
 
+.img_index {
+  width:150px;
+  height:50px;
+  object-fit: cover;
+}
+
 /* PANNEAU D'ADMINISTRATION */
 
 .min_ico {
