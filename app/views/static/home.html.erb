@@ -52,9 +52,12 @@ Texte texte texte
   <div class="art_title"><%= bestiary.name %></div>
 
   <div class="art_content">
-  <span class="badge badge-secondary"><%= bestiary.level.name %></span>
-  <span class="badge badge-info"><%= bestiary.rarity_bestiary.name %></span>
-  <span class="badge badge-light"><%= bestiary.habitat_bestiary.name %></span>
+  <span class="badge" style="background-color: <%= bestiary.level.color %>;">
+  <a href="/bestiary/level/<%= bestiary.level.id %>"><%= bestiary.level.name %></a></span> 
+  <span class="badge" style="background-color: <%= bestiary.rarity_bestiary.color %>;">
+  <a href="/bestiary/rarity/<%= bestiary.rarity_bestiary.id %>"><%= bestiary.rarity_bestiary.name %></a></span>
+  <span class="badge" style="background-color: <%= bestiary.habitat_bestiary.color %>;">
+  <a href="/bestiary/habitat/<%= bestiary.habitat_bestiary.id %>"><%= bestiary.habitat_bestiary.name %></a></span>
   </div>
 
   <a href="/bestiary/<%= bestiary.id %>"><div class="art_foot">
@@ -72,10 +75,14 @@ Texte texte texte
   <div class="art_title"><%= herbarium.name %></div>
 
   <div class="art_content">
-  <span class="badge badge-secondary"><%= herbarium.category.name %></span>
-  <span class="badge badge-info"> <%= herbarium.rarity_herbarium.name %></span>
-  <span class="badge badge-light"> <%= herbarium.season.name %> </span>
-  <span class="badge badge-info"><%= herbarium.habitat_herbarium.name %> </span>
+  <span class="badge" style="background-color: <%= herbarium.category.color %>;" >
+  <a href="/herbarium/category/<%= herbarium.category.id %>"><%= herbarium.category.name %></a></span>
+  <span class="badge" style="background-color: <%= herbarium.rarity_herbarium.color %>;" >
+  <a href="/herbarium/rarity/<%= herbarium.rarity_herbarium.id %>"><%= herbarium.rarity_herbarium.name %></a></span>
+  <span class="badge" style="background-color: <%= herbarium.season.color %>;">
+  <a href="/herbarium/season/<%= herbarium.season.id %>"><%= herbarium.season.name %></a></span>
+  <span class="badge" style="background-color: <%= herbarium.habitat_herbarium.color %>;" >
+  <a href="/herbarium/habitat/<%= herbarium.habitat_herbarium.id %>"><%= herbarium.habitat_herbarium.name %></a></span>
   </div>
 
   <a href="/herbarium/<%= herbarium.id %>"><div class="art_foot">

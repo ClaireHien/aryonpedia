@@ -10,28 +10,28 @@
   <% all_cat = Category.all%>
   <% all_cat.each do |c| %>
 
-      <span style="background-color: <%= c.color %>;" class="badge"><a href="herbarium/category/<%= c.name%>"><%= c.name %></a></span>
+      <span style="background-color: <%= c.color %>;" class="badge"><a href="/herbarium/category/<%= c.name%>"><%= c.name %></a></span>
   <%end%>
 
   <br /><br />
   <strong>Saisons : </strong><br />
   <% all_season = Season.all%>
   <% all_season.each do |s| %>
-      <span style="background-color: <%= s.color %>;" class="badge"><a href="herbarium/season/<%= s.name%>"><%= s.name %></a></span> 
+      <span style="background-color: <%= s.color %>;" class="badge"><a href="/herbarium/season/<%= s.name%>"><%= s.name %></a></span> 
   <%end%>
 
   <br /><br />
   <strong>Rareté : </strong><br />
   <% all_rarity = RarityHerbarium.all%>
     <% all_rarity.each do |r| %>
-      <span style="background-color: <%= r.color %>;" class="badge"><a href="herbarium/rarity/<%= r.name%>"><%= r.name %></a></span>
+      <span style="background-color: <%= r.color %>;" class="badge"><a href="/herbarium/rarity/<%= r.name%>"><%= r.name %></a></span>
     <%end%>
 
   <br /><br />
   <strong>Habitat : </strong><br />
   <% all_habitat = HabitatHerbarium.all%>
   <% all_habitat.each do |hh| %>
-      <span style="background-color: <%= hh.color %>;" class="badge"><a href="herbarium/habitat/<%= hh.name%>"><%= hh.name %></a></span>
+      <span style="background-color: <%= hh.color %>;" class="badge"><a href="/herbarium/habitat/<%= hh.name%>"><%= hh.name %></a></span>
   <%end%>
 
 
@@ -61,19 +61,19 @@
     <div class="art_content">
 
     <span style="background-color: <%= herbarium.category.color %>;" class="badge">
-    <a href="herbarium/category/<%= herbarium.category.id %>"><%= herbarium.category.name %></a>
+    <a href="/herbarium/category/<%= herbarium.category.id %>"><%= herbarium.category.name %></a>
     </span>
 
     <span style="background-color: <%= herbarium.rarity_herbarium.color %>;" class="badge">
-    <a href="herbarium/category/<%= herbarium.rarity_herbarium.id %>"><%= herbarium.rarity_herbarium.name %></a>
+    <a href="/herbarium/rarity/<%= herbarium.rarity_herbarium.id %>"><%= herbarium.rarity_herbarium.name %></a>
     </span>
 
     <span style="background-color: <%= herbarium.season.color %>;" class="badge">
-    <a href="herbarium/category/<%= herbarium.season.id %>"><%= herbarium.season.name %></a>
+    <a href="/herbarium/season/<%= herbarium.season.id %>"><%= herbarium.season.name %></a>
     </span>
     
     <span style="background-color: <%= herbarium.habitat_herbarium.color %>;" class="badge">
-    <a href="herbarium/category/<%= herbarium.habitat_herbarium.id %>"><%= herbarium.habitat_herbarium.name %></a>
+    <a href="/herbarium/habitat/<%= herbarium.habitat_herbarium.id %>"><%= herbarium.habitat_herbarium.name %></a>
     </span>
     </div>
 
