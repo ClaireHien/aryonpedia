@@ -122,32 +122,30 @@ a:hover {
 
 .article {
   width:250px;
+  text-align:center;
   border:3px solid #dedede;
 }
 .article img {
-  width: 244px;
-  height: 150px; 
+  width: 100%;
+  opacity:0.8;
+  height: 150px;
+  transition-duration: 0.5s;
   object-fit: cover;
+}
+
+.article:hover img{
+  opacity:1.0;
+  transition-duration: 0.5s;
 }
 
 .art_title {
   font-size:20px;
   background-color: #cecece;
-  text-align:center;
 }
 
-.art_info {
-  background-color: #efefef;
-  margin:2px 0px;
-  padding:1px 5px;
-}
 
 .art_content {
   padding:5px;
-  height: 150px; 
-  overflow:auto;
-  font-size:13px;
-  line-height:16px;
 }
 
 .art_foot {
@@ -155,38 +153,15 @@ a:hover {
   background-color: #cecece;
   font-size:10px; 
   text-transform: uppercase;
-  text-align:right;
 }
 
+/* index provisoire */
 .img_index {
   width:150px;
   height:50px;
   object-fit: cover;
 }
 
-.sur_art{
-  height:244px; 
-  width:244px;
-  background-color: #ffffff;
-  overflow:auto;
-  z-index:2;
-}
-
-.opacity {
-  width:250px;
-  border:3px solid #dedede;
-}
-
-.opacity img{
-  width: 244px;
-  height: 250px; 
-  object-fit: cover;
-  margin-top:-250px;
-}
-
-.opacity img:hover{
-  opacity:0.1;
-}
 
 /* PANNEAU D'ADMINISTRATION */
 
