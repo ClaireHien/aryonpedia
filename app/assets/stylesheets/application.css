@@ -101,6 +101,12 @@ a:hover {
   font-size:10px;
 }
 
+.index_list {
+  background-color: #ffffff;
+  padding:10px;
+  font-size:12px;
+}
+
 /* PAGE PROFIL */ 
 
 .img_profile {
