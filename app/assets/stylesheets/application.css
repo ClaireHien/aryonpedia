@@ -2,7 +2,8 @@
 /* GÉNÉRAL */
 
 .body {
-  background-color: #aaaaaa;
+  background-image: url('https://i.imgur.com/Y5yfnMa.jpg');
+  background-repeat:repeat;
   font-family: 'Nanum Gothic';
 }
 
