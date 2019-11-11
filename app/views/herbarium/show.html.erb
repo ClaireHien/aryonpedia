@@ -1,4 +1,8 @@
 
+<% herbarium = Herbarium.find(params[:id]) %>
+<% n = herbarium.category %>
+<div class="under_left" style="background-color:<%= n.color %>;">
+
 <div class="left">
 <div class="titleleft">Herbier</div>
 <a href="<%= new_herbarium_path%>" class="navleft">Ajouter une plante</a>
@@ -40,12 +44,11 @@
 </div>
 
 
+</div>
 
 
 
 
-
-<% herbarium = Herbarium.find(params[:id]) %>
 
 <div class="card" style="max-width: 760px;">
 

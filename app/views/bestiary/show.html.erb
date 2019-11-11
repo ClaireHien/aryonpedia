@@ -1,4 +1,11 @@
 
+
+<% bestiary = Bestiary.find(params[:id]) %>
+
+<% n = bestiary.level %>
+<div class="under_left" style="background-color:<%= n.color %>;">
+
+
 <div class="left">
 <div class="titleleft">Bestiaire</div>
 <a href="<%= new_bestiary_path%>" class="navleft">Ajouter une créature</a>
@@ -33,9 +40,7 @@
   </div>
 </div>
 
-
-
-<% bestiary = Bestiary.find(params[:id]) %>
+</div>
 
 <div class="card" style="max-width: 760px;">
 
