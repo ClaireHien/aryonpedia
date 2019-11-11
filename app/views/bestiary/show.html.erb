@@ -53,14 +53,6 @@
     
     <div class="col-md-8">
 
-      <div class="art_bot text-muted">
-        <% unless current_user %><%else%>
-        <% if current_user.rank == "A.dmin0018"%>
-          <a href="<%=edit_bestiary_path%>">editer</a> | 
-        <%end%><%end%>
-        Proposé par <a href="/user/<%= bestiary.user.id %>"><%= bestiary.user.pseudo %></a>
-      </div>
-
       <div class="card-body">
         <p class="card-text">
 
@@ -84,4 +76,14 @@
 <label for="spoiler">Voir l'image en plus grand</label>
 <div class="spoiler">
 <img class="big_image" src="<%= bestiary.image %>">
+</div>
+
+
+
+<div class="art_bot text-muted">
+<% unless current_user %><%else%>
+<% if current_user.rank == "A.dmin0018"%>
+  <a href="<%=edit_bestiary_path%>">editer</a> | 
+<%end%><%end%>
+Proposé par <a href="/user/<%= bestiary.user.id %>"><%= bestiary.user.pseudo %></a>
 </div>
