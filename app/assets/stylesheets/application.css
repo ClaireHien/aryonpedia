@@ -46,11 +46,11 @@ a:hover {
   font-size:20px;
 }
 .b_nav {
-  background-color:#aaaaaa;
+  background-color:#adadad;
   width:50%;
 }
 .h_nav {
-  background-color: #bbffff;
+  background-color: #bebebe;
   width:50%;
 }
 
@@ -58,7 +58,7 @@ a:hover {
   width:200px;
   height: 1000px;
   padding: 70px 20px;
-  background-color: #99be99;
+  background-color: #dedede;
   position: fixed;
   right:0px; 
   top: 0px;
