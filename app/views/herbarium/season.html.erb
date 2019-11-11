@@ -1,4 +1,7 @@
 
+<% n = Season.find_by(name: params[:id]) %>
+<div class="under_left" style="background-color:<%= n.color %>;">
+
 <div class="left">
 <div class="titleleft">Herbier</div>
 <a href="<%= new_herbarium_path%>" class="navleft">Ajouter une plante</a>
@@ -39,9 +42,11 @@
 
 </div>
 
+</div>
 
 
-<h1>Herbarium season</h1>
+<h2>Saison</h2>
+<h1 style="color:<%=n.color%>;"><%= n.name %></h1>
 
 <% season = Season.find_by(name: params[:id]) %>
 <% all_herbarium = Herbarium.where(season_id: season.id) %>

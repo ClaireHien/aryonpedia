@@ -1,4 +1,7 @@
 
+<% n = RarityHerbarium.find_by(name: params[:id]) %>
+<div class="under_left" style="background-color:<%= n.color %>;">
+
 <div class="left">
 <div class="titleleft">Herbier</div>
 <a href="<%= new_herbarium_path%>" class="navleft">Ajouter une plante</a>
@@ -39,10 +42,10 @@
 
 </div>
 
+</div>
 
-
-
-<h1>Herbarium rarity</h1>
+<h2>Rareté</h2>
+<h1 style="color:<%=n.color%>;"><%= n.name %></h1>
 
 
 <% rarity = RarityHerbarium.find_by(name: params[:id]) %>

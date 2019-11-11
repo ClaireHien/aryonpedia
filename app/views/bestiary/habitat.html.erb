@@ -1,9 +1,11 @@
 
+<% n = HabitatBestiary.find_by(name: params[:id]) %>
+<div class="under_left" style="background-color:<%= n.color %>;">
+
 <div class="left">
 <div class="titleleft">Bestiaire</div>
 <a href="<%= new_bestiary_path%>" class="navleft">Ajouter une créature</a>
 <a href="/bestiary" class="navleft">Voir toutes les créatures</a>
-
 <div class="index_list">
 
     <strong>Dangerosité : </strong><br />
@@ -32,10 +34,11 @@
 
   </div>
 </div>
+</div>
 
 
-
-<h1>Bestiary habitat</h1>
+<h2>Habitat</h2>
+<h1 style="color:<%=n.color%>;"><%= n.name %></h1>
 
 <% habitat = HabitatBestiary.find_by(name: params[:id]) %>
 <% all_bestiary = Bestiary.where(habitat_bestiary_id: habitat.id) %>
