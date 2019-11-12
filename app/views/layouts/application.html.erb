@@ -29,18 +29,16 @@
 
  
 <% unless current_user %>
-
-  <div class="profile">
-      <a href="<%=new_user_path%>">Inscription</a>
-      <br />
-      <a href="<%=new_session_path%>">Connexion</a>
-  </div>
+<div class="profile_pos">
+      <a class="navleft" href="<%=new_user_path%>">Inscription</a>
+      <a class="navleft" href="<%=new_session_path%>">Connexion</a>
+</div>
 
 <% else %>
+<div class="profile_pos">
+  <img src="<%=current_user.img_profile%>">
 
-<div class="profile">
-
-  <img src="<%=current_user.img_profile%>"><br />
+  <div class="profile">
   <%= current_user.pseudo %><br />
   <%if current_user.rank != "A.dmin0018" %>
     <%= current_user.rank %>
@@ -58,12 +56,17 @@
   <% b = Bestiary.where(user_id: current_user.id) %>
   Créatures : <%= b.length %><br />
   <% h = Herbarium.where(user_id: current_user.id) %>
-  Plantes : <%= h.length %><br /><br />
+  Plantes : <%= h.length %>
+
+  </div>
+
   <% if current_user.rank == "A.dmin0018"%>
-  <div class="separation"></div>
-  <br />
-    <a href="<%=admin_path%>">Panneau d'administration</a><br />
+    <a href="<%=admin_path%>" class="aryon">Panneau d'administration</a>
   <%end%>
+
+
+  <a class="navleft" href="<%=new_user_path%>">Inscription</a>
+  <a class="navleft" href="<%=new_session_path%>">Connexion</a>
 </div>
 
 <%end%>

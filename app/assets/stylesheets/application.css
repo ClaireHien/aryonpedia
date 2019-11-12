@@ -2,47 +2,27 @@
 /* GÉNÉRAL */
 
 .body {
-  background-image: url('https://i.imgur.com/UoSkyD9.jpg');
-  background-repeat:repeat;
-  background-position:right;
-  font-family: 'Nanum Gothic';
-}
+  background-image: url('https://i.imgur.com/UoSkyD9.jpg');background-repeat:repeat;background-position:right;
+  font-family: 'Nanum Gothic';}
 
-.box {
-  text-align:justify;
-  width:800px;
-  min-height: 800px;
-  padding: 80px 20px;
-  background-color: #ffffff;
-}
-
-.left_box{
-  width:300px;
-  padding: 80px 20px;
-  background-color: #dedede;
-}
-
+.left_box{width:300px;padding: 80px 20px;
+  background-color: #dedede;}
+.box {text-align:justify;width:800px;min-height: 800px;padding: 80px 20px;
+  background-color: #ffffff;}
 
 .separation {
   border-bottom: 1px dotted #000000;
 }
 
-a {
-  color: #101010 !important;
-  text-decoration: none !important;
-}
-a:hover {
-  color: #303030 !important;
-  text-decoration: none !important;
-}
+a {color: #101010 !important;text-decoration: none !important;}
+a:hover {color: #303030 !important;text-decoration: none !important;}
 
 /* HEADER */
 
 .navbarre {
   z-index: 100;width: 100%;position: fixed;
   text-transform: uppercase;font-size:20px;letter-spacing: 5px;
-  background-color:#ffffff;padding-bottom:10px;border-bottom:1px solid #dedede;
-}
+  background-color:#ffffff;padding-bottom:10px;border-bottom:1px solid #dedede;}
 
 .b_nav{width:50%;text-align:right; padding-right:20px;
 background-color: #3fadac;
@@ -55,27 +35,6 @@ transition: background-color 1s;}
   background-image: linear-gradient(-70deg, rgba(255,255,255,0), #d7ece5);
   transition: background-color 1s;}
 .h_nav:hover{background-color: #12556c;}
-
-  
-.profile {
-  width:200px;
-  height: 1000px;
-  padding: 70px 20px;
-  background-color: #dedede;
-  position: fixed;
-  right:0px; 
-  top: 0px;
-}
-
-.profile img{
-  width:200px;
-  margin:-25px -20px 10px -20px;
-  object-fit: cover;
-  height:200px;
-}
-
-.left {width:260px;position: fixed;top: 180px;left: 20px;}
-.under_left{position: fixed;left:0px;top:0px;width:300px;z-index:0;min-height: 800px;}
 
 .titleleft {
   font-size:20px;
@@ -106,6 +65,15 @@ transition: background-color 1s;}
   background-color: #ffffff;
   padding:10px;
 }
+  
+.profile_pos {
+  width:200px;position: fixed;right:10px;top: 80px;}
+.profile {
+  padding:20px;background-color: #dedede;}
+.profile_pos img{width:200px;object-fit: cover;height:200px;}
+
+.left {width:260px;position: fixed;top: 180px;left: 20px;}
+.under_left{position: fixed;left:0px;top:0px;width:300px;z-index:0;min-height: 800px;}
 
 /* PAGE PROFIL */ 
 
