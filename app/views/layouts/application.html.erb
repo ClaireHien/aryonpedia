@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Nanum+Gothic|Shadows+Into+Light&display=swap" rel="stylesheet">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -63,10 +63,6 @@
   <% if current_user.rank == "A.dmin0018"%>
     <a href="<%=admin_path%>" class="aryon">Panneau d'administration</a>
   <%end%>
-
-
-  <a class="navleft" href="<%=new_user_path%>">Inscription</a>
-  <a class="navleft" href="<%=new_session_path%>">Connexion</a>
 </div>
 
 <%end%>

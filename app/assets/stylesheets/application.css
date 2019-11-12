@@ -14,11 +14,29 @@
   border-bottom: 1px dotted #000000;
 }
 
+*{transition-duration: 1s;} *:hover {transition-duration: 1s;}
+
 a {color: #101010 !important;text-decoration: none !important;}
-a:hover {color: #303030 !important;text-decoration: none !important;}
+a:hover {color: #3fadac !important;text-decoration: none !important;}
 
+h1 {text-transform: uppercase; letter-spacing: 4px; padding:10px 100px; display:block; border:1px solid #ededed;}
+.underh1 {text-align:right; font-size: 12px; text-transform: uppercase; margin-bottom:50px;
+  background-color:#ededed; padding: 1px 10px;font-family: 'Nunito Sans', sans-serif;
+  background-image: linear-gradient(70deg, rgba(255,255,255,0), #c8f0e3);
+}
+.alert-aryon {background-color: #ededed;}
+
+h5 {text-transform:uppercase;}
+.mini {font-size:12px; color:#adadad;}
+
+.btn-aryon{width:100%; text-transform:uppercase; letter-spacing: 4px;
+  background-color: #afdddc !important;
+  background-image: linear-gradient(70deg, rgba(255,255,255,0), #d7ece5, rgba(255,255,255,0));
+  transition: background-color 1s;}
+  .btn-aryon:hover{background-color: #3fadac !important;}
+  
 /* HEADER */
-
+ 
 .navbarre {
   z-index: 100;width: 100%;position: fixed;
   text-transform: uppercase;font-size:20px;letter-spacing: 5px;
@@ -66,10 +84,12 @@ transition: background-color 1s;}
   padding:10px;
 }
   
-.profile_pos {
+.profile_pos {border:1px solid #dedede; padding: 5px 5px 2px 5px;
   width:200px;position: fixed;right:10px;top: 80px;}
-.profile {
-  padding:20px;background-color: #dedede;}
+  .profile_pos a {letter-spacing: 2px; font-size:12px;}
+  .profile_pos a:hover {background-color: #fafafa;}
+
+.profile {padding:20px;background-color: #dedede;}
 .profile_pos img{width:200px;object-fit: cover;height:200px;}
 
 .left {width:260px;position: fixed;top: 180px;left: 20px;}

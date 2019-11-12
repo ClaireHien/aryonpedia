@@ -1,4 +1,6 @@
 <h1>Connexion</h1>
+<div class="underh1">Pas encore inscrit ? <%= link_to "Inscris-toi !", new_user_path %></div>
+
 
 <%if @user %>
 	<div class="alert alert-danger" role="alert">
@@ -9,13 +11,8 @@
 
 <form action= <%= session_index_path %> method="POST" id="new_user">
   <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
+  <h5>Pseudo</h5> <input class="form-control" type="text" name="u_pseudo"><br />
+  <h5>Mot de passe</h5> <input class="form-control" type="text" name="u_password"><br /><br />
 
-  Pseudo : <input class="form-control" type="text" name="u_pseudo"><br />
-
-  Mot de passe : <input class="form-control" type="text" name="u_password"><br /><br />
-
-    <input type="submit" value="Se connecter" class="btn btn-info">
+    <input type="submit" value="Se connecter" class="btn btn-aryon">
   </form>
-  <br /><br />
-  Pas encore inscrit ? <a href="<%=new_user_path%>">INSCRIPTION</a>
-
