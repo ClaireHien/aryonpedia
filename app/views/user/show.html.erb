@@ -1,18 +1,20 @@
 <% id = params[:id] %>
 <% user = User.find(id) %>
 
+<div class="under_left" style="border: 1px solid #dedede;">
+
 <% unless current_user %><%else%>
 
   <%if current_user.id == user.id %>
 
     <div class="left">
-    <div class="titleleft">Profil</div>
-    <a href="<%=edit_user_path%>" class="navleft">Modifier votre profil</a>
+    <a href="<%=edit_user_path%>" class="navright">Modifier votre profil</a>
     </div>
 
   <%end%>
 <%end%>
 
+</div>
 
 
 <br />
@@ -46,7 +48,7 @@
 </div>
 <br /><br />
 
-<h2 id="bestiary"><%= all_bestiary.length%> créatures proposés :</h2><br />
+<h2 style="border-bottom: 3px solid #dedede;" id="bestiary"><span class="mini2">creatures proposees </span><%= all_bestiary.length%> </h2><br />
 
 <div class="d-flex justify-content-around flex-wrap">
 
@@ -80,8 +82,7 @@
 
 <br /><br />	
 
-<h2 id="herbarium"><%= all_herbarium.length%> plantes proposés :</h2><br />
-
+<h2 style="border-bottom: 3px solid #dedede;" id="herbarium"><span class="mini2">plantes proposees </span><%= all_herbarium.length%> </h2><br />
 
 <div class="d-flex justify-content-around flex-wrap">
 
