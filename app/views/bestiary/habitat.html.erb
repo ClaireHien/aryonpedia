@@ -2,38 +2,7 @@
 <% n = HabitatBestiary.find_by(name: params[:id]) %>
 <div class="under_left" style="background-color:<%= n.color %>;">
 
-<div class="left">
-<div class="titleleft">Bestiaire</div>
-<a href="<%= new_bestiary_path%>" class="navleft">Ajouter une créature</a>
-<a href="/bestiary" class="navleft">Voir toutes les créatures</a>
-<div class="index_list">
-
-    <strong>Dangerosité : </strong><br />
-    <% all_level = Level.all%>
-    <% all_level.each do |lv| %>
-      <span style="background-color: <%= lv.color %>;" class="badge">
-        <a href="/bestiary/level/<%= lv.name%>"><%= lv.name %></a></span>
-    <%end%>
-
-    <br /><br />
-    <strong>Rareté : </strong><br />
-    <% all_rarity = RarityBestiary.all%>
-      <% all_rarity.each do |r| %>
-        <span style="background-color: <%= r.color %>;" class="badge">
-        <a href="/bestiary/rarity/<%= r.name%>"><%= r.name %></a></span>
-      <%end%>
-
-    <br /><br />
-    <strong>Habitat : </strong><br />
-
-    <% all_habitat = HabitatBestiary.all%>
-      <% all_habitat.each do |h| %>
-        <span style="background-color: <%= h.color %>;" class="badge">
-        <a href="/bestiary/habitat/<%= h.name%>"><%= h.name %></a></span> 
-      <%end%>
-
-  </div>
-</div>
+<%= render 'indexbestiary' %>
 </div>
 
 
