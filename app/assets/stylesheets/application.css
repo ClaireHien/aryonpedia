@@ -68,7 +68,7 @@ transition: background-color 1s;}
 .aryon{display:block;padding:2px;font-size:10px;
   background-image: linear-gradient(20deg, #3fadac, #d7ece5);}
 
-.index_list {background-color: #ffffff;padding:10px; text-align:right;}
+.index_list {background-color: #ffffff;padding:10px;}
   
 .profile_pos {text-transform:uppercase;border:1px solid #dedede; padding: 5px 5px 2px 5px;
   width:200px;position: fixed;right:10px;top: 80px;}
@@ -158,7 +158,7 @@ input[id^="spoiler"]{display: none;}
 
 /* PAGE DES CREATURES/PLANTES */
 
-.badge-a {padding:1px; margin:2px; text-transform:uppercase; font-size:12px; letter-spacing:1px;}
+.badge-a {padding:1px 3px; margin:2px; text-transform:uppercase; font-size:12px; letter-spacing:1px;}
 
 .title_box{
   width:240px;
