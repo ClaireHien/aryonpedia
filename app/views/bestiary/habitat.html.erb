@@ -1,11 +1,11 @@
 
 <% n = HabitatBestiary.find_by(name: params[:id]) %>
 
-<%= render 'indexbestiary' %>
-
 <div class="under_left" style="border: 1px solid <%= n.color %>;">
-<%= render 'headbestiary' %>
+<%= render 'indexbestiary' %>
 </div>
+
+<%= render 'headbestiary' %>
 
 <h1 style="color:<%=n.color%>;"><%= n.name %></h1>
 
