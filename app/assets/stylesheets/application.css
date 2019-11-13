@@ -86,8 +86,6 @@ transition: background-color 1s;}
 .propro a:hover {background-color: #f0f0f0;}
 .contripro {font-size:13px; padding: 10px 0px;font-family: 'Nunito Sans', sans-serif;}
 
-.badge-a {font-style: normal; letter-spacing:1px; padding: 0px 3px; margin:1px;font-size:12px; text-transform:uppercase;}
-
 /* PAGE PROFIL */ 
 
 .img_profile {
@@ -172,7 +170,7 @@ input[id^="spoiler"]{display: none;}
 .art_title {font-size:18px;background-color: #fafafa;letter-spacing:2px; text-transform:uppercase; border-bottom:1px solid #dedede;}
 
 .art_content {padding:5px; background-color:#ffffff;}
-.art_foot {padding:1px 5px;background-color: #fafafa;font-size:10px;text-transform: uppercase; letter-spacing: 2px;}
+.art_foot {border-top:1px solid #dedede;padding:1px 5px;background-color: #fafafa;font-size:10px;text-transform: uppercase; letter-spacing: 2px;}
 
 /* PANNEAU D'ADMINISTRATION */
 
