@@ -28,8 +28,11 @@ h1 {text-transform: uppercase; letter-spacing: 4px; padding:10px 100px; display:
 }
 .alert-aryon {background-color: #ededed;}
 
+/* FORMULAIRES */
 h5 {text-transform:uppercase;}
 .mini {font-size:12px; color:#adadad;}
+
+.deroul {width:100%;}
 
 .btn-aryon{width:100%; text-transform:uppercase; letter-spacing: 4px;
   background-color: #afdddc !important;

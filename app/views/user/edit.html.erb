@@ -1,47 +1,52 @@
 
-  <h1>Editer votre profil </h1>
+  
 
-  <br />
+  <% user = User.find(params[:id]) %>
+  
+  <h1>Editer votre profil </h1>
+  <div class="underh1">Profil de <%= user.pseudo %></div>
+
 
   <%if @user %>
   <div class="alert alert-danger" role="alert">
   <p>Nous n'avons pas réussi à modifier votre profil </p>
-  </div><br />
-<% end %>
-
-  <% user = User.find(params[:id]) %>
+  </div><br /><% end %>
 
   <%= form_for user do |u| %>
   
-    <h3> <%= current_user.pseudo %> </h3>
-  
     <div class="form-group">
-    <label>Vos personnages</label>
-    <%= u.text_area :character, class: "form-control" %>
+    <h5>Vos personnages</h5>
+    <%= u.text_field :character, class: "form-control" %>
+    <span class="mini">Votre ou vos personnage(s) sur le forum d'ARYON</span>
     </div>
 
     <div class="form-group">
-    <label>Présentation</label>
+    <h5>Rang</h5>
+    <%= u.text_field :rank, class: "form-control" %>
+    <span class="mini">Votre rang, affiché sous votre pseudo</span>
+    </div>
+
+    <div class="form-group">
+    <h5>Présentation</h5>
     <%= u.text_area :description, class: "form-control" %>
+    <span class="mini">Quelques lignes où vous pouvez écrire ce que vous voulez, cela s'affichera dans votre profil</span>
     </div>
 
     <div class="form-group">
-    <label>URL de votre image de profil</label>
-    <%= u.text_area :img_profile, class: "form-control" %>
+    <h5>URL de votre image de profil</h5>
+    <%= u.text_field :img_profile, class: "form-control" %>
+    <span class="mini">URL hébergé depuis un autre site de votre image de profil : 200*200px minimum</span>
     </div>
 
     <div class="form-group">
-    <label>Rang</label>
-    <%= u.text_area :rank, class: "form-control" %>
-    </div>
+    <h5>Mot de passe</h5>
+    <%= u.text_field :password, class: "form-control" %>
+    <span class="mini">Vous pouvez rentrer un nouveau mot de passe si vous le souhaitez, sinon retapez le même.</span>
 
-    <div class="form-group">
-    <label>Mot de passe</label>
-    <%= u.text_area :password, class: "form-control" %>
     </div>
   
     <div class="form-group">
-    <button type="submit" class="btn btn-info">Modifier</button>
+    <button type="submit" class="btn btn-aryon">Modifier</button>
     </div>
   
   <% end %>
