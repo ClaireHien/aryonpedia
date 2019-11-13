@@ -6,7 +6,7 @@
   font-family: 'Nanum Gothic';}
 
 .left_box{width:300px;padding: 80px 20px;
-  background-color: #dedede;}
+  background-image: linear-gradient(70deg, rgba(255,255,255,0), #fefefe);}
 .box {text-align:justify;width:800px;min-height: 800px;padding: 80px 20px;
   background-color: #ffffff;}
 
@@ -59,6 +59,12 @@ transition: background-color 1s;}
   transition: background-color 1s;}
 .h_nav:hover{background-color: #12556c;}
 
+.homeleft {border:1px solid #ededed; padding:5px; text-transform:uppercase;text-align:center;
+  position: fixed; width:260px; z-index:2;}
+
+.left {width:260px;position: fixed;top: 180px;left: 20px;}
+.under_left{position: fixed;left:0px;top:0px;width:300px;z-index:0;min-height: 800px; padding:5px;}
+
 .titleleft {
   font-size:20px;
   text-align:center;
@@ -75,14 +81,8 @@ transition: background-color 1s;}
   margin-bottom:3px;
 }
 
-.aryon{
-  text-transform: uppercase;
-  text-align:center;
-  display:block;
-  background-color: #aaaaaa;
-  padding:2px;
-  font-size:10px;
-}
+.aryon{display:block;padding:2px;font-size:10px;
+  background-image: linear-gradient(20deg, #3fadac, #d7ece5);}
 
 .index_list {
   background-color: #ffffff;
@@ -105,9 +105,6 @@ transition: background-color 1s;}
   padding:2px;margin-bottom:3px;}
 .propro a:hover {background-color: #f0f0f0;}
 .contripro {font-size:13px; padding: 10px 0px;font-family: 'Nunito Sans', sans-serif;}
-
-.left {width:260px;position: fixed;top: 180px;left: 20px;}
-.under_left{position: fixed;left:0px;top:0px;width:300px;z-index:0;min-height: 800px;}
 
 /* PAGE PROFIL */ 
 
