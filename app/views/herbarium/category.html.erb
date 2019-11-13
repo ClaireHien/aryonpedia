@@ -1,6 +1,6 @@
 
 <% n = Category.find_by(name: params[:id]) %>
-<div class="under_left" style="background-color:<%= n.color %>;">
+<div class="under_left" style="border: 1px solid <%= n.color %>;">
 
 <%= render 'indexherbarium' %>
 

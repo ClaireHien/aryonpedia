@@ -1,11 +1,9 @@
-<div class="left">
-<div class="titleleft">Herbier</div>
-<a href="<%= new_herbarium_path%>" class="navleft">Ajouter une plante</a>
-<a href="/herbarium" class="navleft">Voir toutes les plantes</a>
+<a href="<%= new_herbarium_path%>" class="navright">Ajouter une plante</a>
+<a href="/herbarium" class="navright">Voir toutes les plantes</a>
 
 <div class="index_list">
 
-  <strong>Catégorie : </strong><br />
+  <h5>Categorie</h5>
   <% all_cat = Category.all%>
   <% all_cat.each do |c| %>
 
@@ -13,27 +11,25 @@
   <%end%>
 
   <br /><br />
-  <strong>Saisons : </strong><br />
+  <h5>Saisons</h5>
   <% all_season = Season.all%>
   <% all_season.each do |s| %>
       <span style="background-color: <%= s.color %>;" class="badge"><a href="/herbarium/season/<%= s.name%>"><%= s.name %></a></span> 
   <%end%>
 
   <br /><br />
-  <strong>Rareté : </strong><br />
+  <h5>Rarete</h5>
   <% all_rarity = RarityHerbarium.all%>
     <% all_rarity.each do |r| %>
       <span style="background-color: <%= r.color %>;" class="badge"><a href="/herbarium/rarity/<%= r.name%>"><%= r.name %></a></span>
     <%end%>
 
   <br /><br />
-  <strong>Habitat : </strong><br />
+  <h5>Habitat</h5>
   <% all_habitat = HabitatHerbarium.all%>
   <% all_habitat.each do |hh| %>
       <span style="background-color: <%= hh.color %>;" class="badge"><a href="/herbarium/habitat/<%= hh.name%>"><%= hh.name %></a></span>
   <%end%>
 
-
-</div>
 
 </div>

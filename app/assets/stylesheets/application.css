@@ -5,8 +5,7 @@
   background-image: url('https://i.imgur.com/UoSkyD9.jpg');background-repeat:repeat;background-position:right;
   font-family: 'Nanum Gothic';}
 
-.left_box{width:300px;padding: 80px 20px;
-  background-image: linear-gradient(70deg, rgba(255,255,255,0), #fefefe);}
+.left_box{width:300px;padding: 80px 20px;}
 .box {text-align:justify;width:800px;min-height: 800px;padding: 80px 20px;
   background-color: #ffffff;}
 
@@ -59,11 +58,10 @@ transition: background-color 1s;}
   transition: background-color 1s;}
 .h_nav:hover{background-color: #12556c;}
 
-.homeleft {border:1px solid #ededed; padding:5px; text-transform:uppercase;text-align:center;
+.homeleft {border:1px solid #dedede; padding:5px; text-transform:uppercase;text-align:center;
   position: fixed; width:260px; z-index:2;}
 
 .under_left{position: fixed;left:20px;top:180px;width:260px;z-index:0; padding:5px;}
-
 
 .aryon{display:block;padding:2px;font-size:10px;
   background-image: linear-gradient(20deg, #3fadac, #d7ece5);}
