@@ -96,79 +96,35 @@ transition: background-color 1s;}
 
 /* PAGES SHOW */
 
-.art_title_show {
-  font-size:30px;
-  text-align:center;
-  background-color: #cecece;
-}
+.art_title_show {font-size:30px; letter-spacing: 2px; text-transform:uppercase; background-image:url('https://i.imgur.com/UoSkyD9.jpg');text-align:center;
+border-bottom:1px solid #dedede;}
 
-.art_descrip {
-  padding:10px;
-  background-color: #ededed;
-  font-size:13px; 
-}
+.art_descrip {padding:10px 20px;border-top:1px solid #dedede;
+  background-color: #fafafa;font-size:13px;}
 
-.art_bot{
-  font-size:12px; 
-  padding:2px;
-  text-align:right;
-  text-transform: uppercase;
-}
+.art_bot{font-size:12px;padding:2px;text-align:right;text-transform: uppercase;letter-spacing:2px;}
 
-.big_image {
-  max-width: 760px;
-}
-
+.big_image {max-width: 760px;}
 input[id^="spoiler"]{display: none;}
  input[id^="spoiler"] + label {
-   display: block;
-   width: 100%;
-   margin-top: 20px;
-   padding: 5px 20px;
-   background: #dedede;
-   text-align: center;
-   font-size: 15px;
-   border-radius: 5px;
-   cursor: pointer;
-   text-transform:uppercase;
-   transition: all .6s;
- }
- input[id^="spoiler"]:checked + label {
-   color: #333;
-   background: #ccc;
- }
-
+   display: block;width: 100%; letter-spacing:2px;
+   margin-top: 20px;padding: 5px 20px;background-color: #afdddc !important;
+   background-image: linear-gradient(70deg, rgba(255,255,255,0), #d7ece5, rgba(255,255,255,0));
+   text-align: center;font-size: 15px;border-radius: 5px;cursor: pointer;text-transform:uppercase;transition: all 1s;}
+ input[id^="spoiler"]:checked + label {color: #333;background-color: #3fadac !important;}
  input[id^="spoiler"] ~ .spoiler {
-   width: 100%;
-   height: 0;
-   overflow: hidden;
-   opacity: 0;
-   background: #eee;
-   border: 1px solid #ccc;
-   border-radius: 8px;
-   transition: all .6s;
- }
- input[id^="spoiler"]:checked + label + .spoiler{
-   height: auto;
-   opacity: 1;
- }
- 
-
+   width: 100%;height: 0;overflow: hidden;transition: all 1s;
+   opacity: 0;background: #eee;border: 1px solid #ccc;border-radius: 8px; }
+ input[id^="spoiler"]:checked + label + .spoiler{height: auto;opacity: 1;}
 
 /* PAGE DES CREATURES/PLANTES */
 
-.title_box{
-  width:240px;
-  text-align:center;
-  background-color:#dedede;
-}
-
+.title_box{width:240px;text-align:center;background-color:#dedede;}
 .article {width:240px;padding:5px;text-align:center;margin-bottom:10px;border:1px solid #dedede;}
 .article img {width: 100%;opacity:0.8;height: 150px;object-fit: cover;}
 .article:hover {border:1px solid #afafaf;}
 .article:hover img{opacity:1.0;}
 .art_title {font-size:18px;background-color: #fafafa;letter-spacing:2px; text-transform:uppercase; border-bottom:1px solid #dedede;}
-
 .art_content {padding:5px; background-color:#ffffff;}
 .art_foot {border-top:1px solid #dedede;padding:1px 5px;background-color: #fafafa;font-size:10px;text-transform: uppercase; letter-spacing: 2px;}
 
