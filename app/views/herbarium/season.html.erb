@@ -9,7 +9,10 @@
 
 
 <%= render 'headherbarium' %>
-<h1 style="color:<%=n.color%>;"><%= n.name %></h1>
+
+
+<h2 style="border-bottom: 3px solid <%= n.color%>;"><span class="mini2">Saison</span> <%= n.name %> </h2>
+<br />
 
 <% season = Season.find_by(name: params[:id]) %>
 <% all_herbarium = Herbarium.where(season_id: season.id) %>

@@ -8,8 +8,9 @@
 
 <%= render 'headherbarium' %>
 
-<h1 style="color:<%=n.color%>;"><%= n.name %></h1>
 
+<h2 style="border-bottom: 3px solid <%= n.color%>;"><span class="mini2">Habitat</span> <%= n.name %> </h2>
+<br />
 
 <% habitat = HabitatHerbarium.find_by(name: params[:id]) %>
 <% all_herbarium = Herbarium.where(habitat_herbarium_id: habitat.id) %>

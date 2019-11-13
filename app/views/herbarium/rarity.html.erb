@@ -6,8 +6,9 @@
 
 
 <%= render 'headherbarium' %>
-<h1 style="color:<%=n.color%>;"><%= n.name %></h1>
 
+<h2 style="border-bottom: 3px solid <%= n.color%>;"><span class="mini2">Rarete</span> <%= n.name %> </h2>
+<br />
 
 <% rarity = RarityHerbarium.find_by(name: params[:id]) %>
 <% all_herbarium = Herbarium.where(rarity_herbarium_id: rarity.id) %>
