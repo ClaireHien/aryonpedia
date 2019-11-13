@@ -64,21 +64,6 @@ transition: background-color 1s;}
 
 .under_left{position: fixed;left:20px;top:180px;width:260px;z-index:0; padding:5px;}
 
-.titleleft {
-  font-size:20px;
-  text-align:center;
-  text-transform: uppercase;
-  margin-bottom:10px;
-}
-
-.navleft{
-  text-transform: uppercase;
-  text-align:center;
-  display:block;
-  background-color: #ffffff;
-  padding:2px;
-  margin-bottom:3px;
-}
 
 .aryon{display:block;padding:2px;font-size:10px;
   background-image: linear-gradient(20deg, #3fadac, #d7ece5);}
@@ -90,7 +75,7 @@ transition: background-color 1s;}
   
 .profile_pos {text-transform:uppercase;border:1px solid #dedede; padding: 5px 5px 2px 5px;
   width:200px;position: fixed;right:10px;top: 80px;}
-.navright {text-align:center;display:block;
+.navright {text-align:center;display:block; text-transform:uppercase;
   background-color: #ffffff;padding:2px;margin-bottom:3px;letter-spacing: 2px; font-size:12px;}
 .navright:hover {background-color: #fafafa !important;}
 
@@ -175,6 +160,8 @@ input[id^="spoiler"]{display: none;}
 
 
 /* PAGE DES CREATURES/PLANTES */
+
+.badge {border-radius: 0px;}
 
 .title_box{
   width:240px;
