@@ -1,0 +1,47 @@
+
+<% unless current_user %>
+<div class="profile_pos">
+      <a class="navright" href="<%=new_user_path%>">Inscription</a>
+      <a class="navright" href="<%=new_session_path%>">Connexion</a>
+</div>
+
+<% else %>
+<div class="profile_pos">
+  <div class="white"><img src="<%=current_user.img_profile%>"></div>
+
+  <div class="profile">
+  <div class="pseudopro">
+  <%= current_user.pseudo %></div><br />
+  <div class="rankpro"><%if current_user.rank != "A.dmin0018" %>
+    <%= current_user.rank %>
+  <%else%>
+    Administrateur
+  <%end%></div>
+<span class="propro">
+  <a href="/user/<%= current_user.id%>">Profil</a>
+  <%= link_to "Se déconnecter", session_path(session.id), method: :delete%>
+</span>
+
+  <div class="separation"></div>
+<% b = Bestiary.where(user_id: current_user.id) %><% h = Herbarium.where(user_id: current_user.id) %>
+    <div class="contripro"><span style="color:#adadad;">Contribution<%if b.length > 1 || h.length > 1%>s<%end%></span> 
+      <div class="d-flex">
+        <div style="padding:0px 20px;">
+        <em><%= b.length%></em></div>
+        <div>Creature<%if b.length > 1%>s<%end%></div></div>
+      <div class="d-flex">
+        <div style="padding:0px 20px;">
+        <em><%= h.length %></em></div>
+        <div>Plante<%if h.length  > 1%>s<%end%></div>
+      </div>
+    </div>
+  </div>
+
+  <% if current_user.rank == "A.dmin0018"%>
+    <a href="<%=admin_path%>" class="navright">Panneau d'administration</a>
+  <%end%>
+  
+
+</div>
+
+<%end%>
