@@ -1,0 +1,15 @@
+
+<h1>Le bestiaire</h1>
+ 
+<form action= <%= search_bestiary_index_path %> method="POST">
+  <input type="hidden" name="authenticity_token" value=<%=form_authenticity_token%> >
+  <span class="mini">Rechercher une bête dans le bestiaire</span>
+<div class="d-flex justify-content-right">
+    <div style="width:70%; margin-right:20px;">
+    <input class="form-control" type="text" name="b_name">
+    </div>
+    <div style="width:30%;"><input type="submit" value="Rechercher" class="btn btn-aryon">
+    </div>
+    </div>
+</form>
+<br /><br />

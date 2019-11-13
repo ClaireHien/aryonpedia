@@ -5,8 +5,8 @@
 <%= render 'indexbestiary' %>
 </div>
 
+<%= render 'headbestiary' %>
 
-<h2>Habitat</h2>
 <h1 style="color:<%=n.color%>;"><%= n.name %></h1>
 
 <% habitat = HabitatBestiary.find_by(name: params[:id]) %>
