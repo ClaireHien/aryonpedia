@@ -119,7 +119,7 @@ input[id^="spoiler"]{display: none;}
 
 /* PAGE DES CREATURES/PLANTES */
 
-.title_box{width:240px;text-align:center;background-color:#dedede;}
+.title_box{width:240;text-align:center;background-color:#dedede;}
 .article {width:240px;padding:5px;text-align:center;margin-bottom:10px;border:1px solid #dedede;}
 .article img {width: 100%;opacity:0.8;height: 150px;object-fit: cover;}
 .article:hover {border:1px solid #afafaf;}
@@ -129,23 +129,14 @@ input[id^="spoiler"]{display: none;}
 .art_foot {border-top:1px solid #dedede;padding:1px 5px;background-color: #fafafa;font-size:10px;text-transform: uppercase; letter-spacing: 2px;}
 
 /* PANNEAU D'ADMINISTRATION */
+.title_box2{width:100%;text-align:center;text-transform:uppercase; letter-spacing: 2px;
+  background-image: linear-gradient(70deg, #afdddc, #d7ece5, #afdddc);}
 
-.min_ico {
-  width:50px;
-  object-fit: cover;
-  height:50px;
-}
+.min_ico {  width:50px;object-fit: cover;height:50px;}
+.tab {padding: 2px 5px;margin: 2px; font-size:12px;text-align:center; letter-spacing:2px;background-color:#ffffff; margin-right:10px;}
 
-.tab {
-  padding: 2px;
-  margin: 2px;
-  background-color: #dadada;
-}
+.ind1 {background-color: #fafafa; opacity:1.0;}
+.ind1:hover {background-color:#dedede;}
 
-.ind1 {
-  background-color: #b3b3b3;
-}
-
-.ind2 {
-  background-color: #e2e2e2;
-}
+.ind2 {background-color: #efefef; opacity:1.0;}
+.ind2:hover {background-color:#dedede;}

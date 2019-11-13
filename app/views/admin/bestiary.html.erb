@@ -1,11 +1,10 @@
 <%= render 'adminhead' %>
 
 
+<h1>Le bestiaire</h1>
+<div class="underh1">Panneau d'administration</div>
 
-
-<h1>Toutes les créatures du bestiaire</h1>
-
-<br /><br />
+<div style="border:1px solid #dedede; padding:5px;">
 <% bestiary = Bestiary.all %>
 <% x = 1 %>
 
@@ -17,6 +16,7 @@
 
 <table width="100%"><tr>  
   <td width="50"><img src="<%= b.image %>" class="min_ico"></td>
+  <td width="10"></td>
   <td width="250">
   <%= b.id %> - <strong><%= b.name %></strong> <br />
   <small><%= b.level.name %> - <%= b.rarity_bestiary.name %> </small>
@@ -41,6 +41,7 @@
 
 <table width="100%"><tr>  
   <td width="50"><img src="<%= b.image %>" class="min_ico"></td>
+  <td width="10"></td>
   <td width="250">
   <%= b.id %> - <strong><%= b.name %></strong> <br />
   <small><%= b.level.name %> - <%= b.rarity_bestiary.name %> </small>
@@ -60,3 +61,5 @@
 <%end%>
 
 <%end%>
+
+</div>

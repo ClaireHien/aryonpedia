@@ -2,9 +2,11 @@
 
 
 
-<h1>Toutes les plantes de l'herbier</h1>
+<h1>L'herbier</h1>
+<div class="underh1">Panneau d'administration</div>
 
-<br /><br />
+<div style="border:1px solid #dedede; padding:5px;">
+
 <% herbarium = Herbarium.all %>
 <% x = 1 %>
 
@@ -17,6 +19,7 @@
 <table width="100%">
     <tr>
     <td width="50"><img src="<%= h.image %>" class="min_ico"></td>
+    <td width="10"></td>
     <td width="250">
     <%= h.id %> - <strong><%= h.name %></strong> <br />
     <small><%= h.category.name %> - <%= h.rarity_herbarium.name %> </small>
@@ -43,6 +46,7 @@
 <table width="100%">
 <tr>
 <td width="50"><img src="<%= h.image %>" class="min_ico"></td>
+<td width="10"></td>
 <td width="250">
 <%= h.id %> - <strong><%= h.name %></strong> <br />
 <small><%= h.category.name %> - <%= h.rarity_herbarium.name %> </small>
@@ -66,3 +70,5 @@
 
 
 <%end%>
+
+</div>

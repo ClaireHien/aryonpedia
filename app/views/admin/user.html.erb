@@ -3,8 +3,9 @@
 
 
 <h1>Tous les membres</h1>
+<div class="underh1">Panneau d'administration</div>
 
-<br /><br />
+<div style="border:1px solid #dedede; padding:5px;">
 <% user = User.all %>
 <% x = 1 %>
 
@@ -16,6 +17,7 @@
 
 <table width="100%"><tr>  
   <td width="50"><img src="<%= u.img_profile %>" class="min_ico"></td>
+  <td width="10"></td>
   <td width="200">
   <%= u.id %> - <strong><%= u.pseudo %></strong> <br />
   <small><%= u.rank %></small>
@@ -44,6 +46,7 @@
 
 <table width="100%"><tr>  
   <td width="50"><img src="<%= u.img_profile %>" class="min_ico"></td>
+  <td width="10"></td>
   <td width="200">
   <%= u.id %> - <strong><%= u.pseudo %></strong> <br />
   <small><%= u.rank %></small>
@@ -69,3 +72,5 @@
 <%end%>
 
 <%end%>
+
+</div>
