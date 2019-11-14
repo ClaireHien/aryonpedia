@@ -27,6 +27,7 @@ h1 {text-transform: uppercase; letter-spacing: 4px; padding:10px 100px; display:
 h2 {text-transform:uppercase; letter-spacing: 2px; padding: 0px 50px; text-align:right;}
 .alert-aryon {background-color: #ededed;}
 
+.home{font-size:15px;}
 /* FORMULAIRES */
 h5 {text-transform:uppercase;}
 .mini {font-size:12px; color:#adadad;}
@@ -140,3 +141,7 @@ input[id^="spoiler"]{display: none;}
 
 .ind2 {background-color: #efefef; opacity:1.0;}
 .ind2:hover {background-color:#dedede;}
+
+/* FOOTER */
+
+.footerhome {font-size:10px; text-transform:uppercase; text-align:right; margin: 60px 0px -60px 0px; color:#999999;}
