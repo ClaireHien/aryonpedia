@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :search_herbarium, only: [:create] 
   resources :herbarium 
   resources :bestiary
+  
+  resources :search, only: [:show]
 
   get '/bestiary/level/:id', to: 'bestiary#level'
   get '/bestiary/habitat/:id', to: 'bestiary#habitat'

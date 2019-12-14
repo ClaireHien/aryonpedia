@@ -7,7 +7,10 @@
     <% all_level = Level.all%>
     <% all_level.each do |lv| %>
       <span style="background-color: <%= lv.color %>;" class="badge">
-        <a href="/bestiary/level/<%= lv.name%>"><%= lv.name %></a></span> 
+        <%= link_to search_path(lv.name), :remote => true do %>
+          <%= lv.name %>
+        <% end %>
+      </span>
     <%end%>
 
     <br /><br />
