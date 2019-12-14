@@ -20,18 +20,20 @@ class SearchController < ApplicationController
         @search = params[:search].capitalize
       end  
 
-    b_description = Bestiary.where('description LIKE ?', "%#{@search}%")
-    b_description.each do |b|
-      if @all_bestiary.include?(b) == false
-        @all_bestiary << b
+      b_description = Bestiary.where('description LIKE ?', "%#{@search}%")
+      b_description.each do |b|
+        if @all_bestiary.include?(b) == false
+          @all_bestiary << b
+        end
       end
-    end
 
-    b_name = Bestiary.where('name LIKE ?', "%#{@search}%")
-    b_name.each do |b|
-      if @all_bestiary.include?(b) == false
-        @all_bestiary << b
+      b_name = Bestiary.where('name LIKE ?', "%#{@search}%")
+      b_name.each do |b|
+        if @all_bestiary.include?(b) == false
+          @all_bestiary << b
+        end
       end
+
     end
   end
 
