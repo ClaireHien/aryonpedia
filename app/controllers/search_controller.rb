@@ -3,17 +3,28 @@ class SearchController < ApplicationController
   ## RECHERCHE POUR LE BESTIAIRE 
 
   def index
-    @search = params[:search].downcase
+    @all_bestiary = []
 
     @all_level = Level.all
     @all_rarity = RarityBestiary.all
     @all_habitat = HabitatBestiary.all
 
-    @all_bestiary = []
+    n = 0
+
+    2.times do 
+
+      if n == 0
+        @search = params[:search].downcase
+        n = 1
+      else 
+        @search = params[:search].capitalize
+      end  
 
     b_description = Bestiary.where('description LIKE ?', "%#{@search}%")
     b_description.each do |b|
-      @all_bestiary << b
+      if @all_bestiary.include?(b) == false
+        @all_bestiary << b
+      end
     end
 
     b_name = Bestiary.where('name LIKE ?', "%#{@search}%")
