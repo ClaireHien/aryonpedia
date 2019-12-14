@@ -1,4 +1,30 @@
 class SearchHController < ApplicationController
+
+  ## RECHERCHE POUR L'HERBIER 
+
+  def index
+    @search = params[:search].downcase
+
+    @all_cat = Category.all
+    @all_season = Season.all
+    @all_rarity = RarityHerbarium.all
+    @all_habitat = HabitatHerbarium.all
+
+    @all_herbarium = []
+
+    h_description = Herbarium.where('description LIKE ?', "%#{@search}%")
+    h_description.each do |h|
+      @all_herbarium << h
+    end
+
+    h_name = Herbarium.where('name LIKE ?', "%#{@search}%")
+    h_name.each do |h|
+      if @all_herbarium.include?(h) == false
+        @all_herbarium << h
+      end
+    end
+  end
+
   def show
 
     all_season = Season.all
