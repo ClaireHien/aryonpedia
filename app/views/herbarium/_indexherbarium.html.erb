@@ -1,6 +1,9 @@
 <a href="<%= new_herbarium_path%>" class="navright">Ajouter une plante</a>
 <a href="/herbarium" class="navright">Voir toutes les plantes</a>
 
+
+<% if params[:id] %> 
+<% elsif %>
 <div class="index_list">
 
   <h5>Categorie</h5>
@@ -41,3 +44,5 @@
 
 
 </div>
+
+<%end%>

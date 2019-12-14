@@ -1,6 +1,8 @@
 <a href="<%= new_bestiary_path%>" class="navright">Ajouter une créature</a>
 <a href="/bestiary" class="navright">Voir toutes les créatures</a>
 
+<% if params[:id] %> 
+<% elsif %>
 <div class="index_list">
 
     <h5>Dangerosite</h5>
@@ -33,4 +35,5 @@
       <%end%>
 
   </div>
+  <%end%>
 

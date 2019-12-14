@@ -33,9 +33,17 @@ class BestiaryController < ApplicationController
     end
   
     def show
+      @all_bestiary = Bestiary.all
+      @all_level = Level.all
+      @all_rarity = RarityBestiary.all
+      @all_habitat = HabitatBestiary.all
     end
   
     def edit
+      @all_bestiary = Bestiary.all
+      @all_level = Level.all
+      @all_rarity = RarityBestiary.all
+      @all_habitat = HabitatBestiary.all
     end
   
     def update
@@ -51,6 +59,10 @@ class BestiaryController < ApplicationController
     end
   
     def new
+      @all_bestiary = Bestiary.all
+      @all_level = Level.all
+      @all_rarity = RarityBestiary.all
+      @all_habitat = HabitatBestiary.all
     end
   
     def destroy

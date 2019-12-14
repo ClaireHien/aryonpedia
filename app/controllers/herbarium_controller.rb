@@ -33,9 +33,17 @@ class HerbariumController < ApplicationController
     end
   
     def show
+      @all_cat = Category.all
+      @all_season = Season.all
+      @all_rarity = RarityHerbarium.all
+      @all_habitat = HabitatHerbarium.all
     end
   
     def edit
+      @all_cat = Category.all
+      @all_season = Season.all
+      @all_rarity = RarityHerbarium.all
+      @all_habitat = HabitatHerbarium.all
     end
   
     def update
@@ -52,6 +60,10 @@ class HerbariumController < ApplicationController
     end
   
     def new
+      @all_cat = Category.all
+      @all_season = Season.all
+      @all_rarity = RarityHerbarium.all
+      @all_habitat = HabitatHerbarium.all
     end
   
     def destroy
