@@ -19,7 +19,7 @@
   <%end%></div>
 <span class="propro">
   <a href="/user/<%= current_user.id%>">Profil</a>
-  <%= link_to "Se déconnecter", session_path(session.id), method: :delete%>
+  <%= link_to "Se déconnecter", session_path(current_user.id), method: :delete %>
 </span>
 
   <div class="separation"></div>

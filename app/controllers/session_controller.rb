@@ -23,6 +23,7 @@ class SessionController < ApplicationController
   end
 
   def destroy
+    puts "hello!"
     user_id = current_user.id
     session.delete(user_id)
     redirect_to "/"
