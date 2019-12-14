@@ -4,6 +4,7 @@ class BestiaryController < ApplicationController
 
     def index
       puts "index"
+      @all_bestiary = Bestiary.all
     end
   
     def create

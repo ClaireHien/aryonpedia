@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-around flex-wrap">
+
+<% @all_bestiary.each do |bestiary| %>
+  
+  <div class="article card d-flex flex-column justify-content-between">
+
+    <div><a href="/bestiary/<%= bestiary.id%>">
+    <img src="<%= bestiary.image%>" alt="image de la créature"></a><br />
+    <div class="art_title"><%= bestiary.name %></div>
+    </div>
+
+    <div class="art_content">
+    <span style="background-color: <%= bestiary.level.color %>;" class="badge">
+    <a href="/bestiary/level/<%= bestiary.level.name %>"><%= bestiary.level.name %></a></span>
+    <span style="background-color: <%= bestiary.rarity_bestiary.color %>;" class="badge">
+    <a href="/bestiary/rarity/<%= bestiary.rarity_bestiary.name %>"><%= bestiary.rarity_bestiary.name %></a></span>
+    <span style="background-color: <%= bestiary.habitat_bestiary.color %>;" class="badge">
+    <a href="/bestiary/habitat/<%= bestiary.habitat_bestiary.name %>"><%= bestiary.habitat_bestiary.name %></a></span>
+    </div>
+
+    <a href="/bestiary/<%= bestiary.id %>"><div class="art_foot">
+      En savoir plus
+    </div></a>
+
+  </div>
+
+<% end %>
+</div>
