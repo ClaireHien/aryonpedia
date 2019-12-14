@@ -3,8 +3,10 @@ class BestiaryController < ApplicationController
   before_action :check_user, only: [:edit, :update, :destroy]
 
     def index
-      puts "index"
       @all_bestiary = Bestiary.all
+      @all_level = Level.all
+      @all_rarity = RarityBestiary.all
+      @all_habitat = HabitatBestiary.all
     end
   
     def create
@@ -31,16 +33,12 @@ class BestiaryController < ApplicationController
     end
   
     def show
-      puts "show"
     end
   
     def edit
-      puts "edit"
     end
   
     def update
-      puts "update"
-
       @bestiary = Bestiary.find(params[:id])
       bestiary_params = params.require(:bestiary).permit(:name, :location, :habitat_bestiary_id, :rarity_bestiary_id, :level_id, :description, :height, :image)
 
@@ -53,25 +51,12 @@ class BestiaryController < ApplicationController
     end
   
     def new
-      puts "new"
     end
   
     def destroy
-      puts "destroy"
-
-        @bestiary = Bestiary.find(params[:id])
-        @bestiary.destroy
-        redirect_to "/bestiary"
-
-    end
-
-    def level
-    end
-
-    def rarity
-    end
-
-    def habitat
+      @bestiary = Bestiary.find(params[:id])
+      @bestiary.delete
+      redirect_to "/bestiary"
     end
 
   private

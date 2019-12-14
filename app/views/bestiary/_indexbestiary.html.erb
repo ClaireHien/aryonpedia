@@ -4,8 +4,7 @@
 <div class="index_list">
 
     <h5>Dangerosite</h5>
-    <% all_level = Level.all%>
-    <% all_level.each do |lv| %>
+    <% @all_level.each do |lv| %>
       <span style="background-color: <%= lv.color %>;" class="badge">
         <%= link_to search_path(lv.name), :remote => true do %>
           <%= lv.name %>
@@ -15,18 +14,22 @@
 
     <br /><br />
     <h5>Rarete</h5>
-    <% all_rarity = RarityBestiary.all%>
-      <% all_rarity.each do |r| %>
+      <% @all_rarity.each do |r| %>
         <span style="background-color: <%= r.color %>;" class="badge">
-        <a href="/bestiary/rarity/<%= r.name%>"><%= r.name %></a></span> 
+        <%= link_to search_path(r.name), :remote => true do %>
+          <%= r.name %>
+        <% end %>
+        </span> 
       <%end%>
  
     <br /><br />
     <h5>Habitat</h5>
-    <% all_habitat = HabitatBestiary.all%>
-      <% all_habitat.each do |h| %>
+      <% @all_habitat.each do |h| %>
         <span style="background-color: <%= h.color %>;" class="badge">
-        <a href="/bestiary/habitat/<%= h.name%>"><%= h.name %></a></span> 
+        <%= link_to search_path(h.name), :remote => true do %>
+          <%= h.name %>
+        <% end %>
+        </span> 
       <%end%>
 
   </div>

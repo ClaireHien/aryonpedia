@@ -4,11 +4,13 @@ class HerbariumController < ApplicationController
 
     def index
       puts "index"
+      @all_cat = Category.all
+      @all_season = Season.all
+      @all_rarity = RarityHerbarium.all
+      @all_habitat = HabitatHerbarium.all
     end
   
     def create
-      puts "create"
-  
       @herbarium = Herbarium.new(name: params["h_name"],
                       season_id: params["h_season"],
                       location: params["h_location"],
@@ -31,16 +33,12 @@ class HerbariumController < ApplicationController
     end
   
     def show
-      puts "show"
     end
   
     def edit
-      puts "edit"
     end
   
     def update
-      puts "update"
-
       @herbarium = Herbarium.find(params[:id])
       herbarium_params = params.require(:herbarium).permit(:name, :location, :habitat_herbarium_id, :rarity_herbarium_id, :season_id, :category_id, :description, :height, :image)
 
@@ -54,30 +52,15 @@ class HerbariumController < ApplicationController
     end
   
     def new
-      puts "new"
     end
   
     def destroy
-      puts "destroy"
 
       @herbarium = Herbarium.find(params[:id])
-      @herbarium.destroy
+      @herbarium.delete
       redirect_to "/herbarium"
 
     end
-
-    def rarity
-    end
-
-    def category
-    end
-
-    def habitat
-    end
-
-    def season
-    end
-  
 
   private
 
