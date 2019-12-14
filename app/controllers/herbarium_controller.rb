@@ -3,7 +3,7 @@ class HerbariumController < ApplicationController
   before_action :check_user, only: [:edit, :update, :destroy]
 
     def index
-      puts "index"
+      @all_herbarium = Herbarium.all
       @all_cat = Category.all
       @all_season = Season.all
       @all_rarity = RarityHerbarium.all

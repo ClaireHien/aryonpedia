@@ -4,31 +4,39 @@
 <div class="index_list">
 
   <h5>Categorie</h5>
-  <% all_cat = Category.all%>
-  <% all_cat.each do |c| %>
-
-      <span style="background-color: <%= c.color %>;" class="badge"><a href="/herbarium/category/<%= c.name%>"><%= c.name %></a></span>
+  <% @all_cat.each do |c| %>
+      <span style="background-color: <%= c.color %>;" class="badge">
+      <%= link_to search_h_path(c.name), :remote => true do %>
+        <%= c.name %>
+      <% end %>
+      </span>
   <%end%>
 
   <br /><br />
   <h5>Saisons</h5>
-  <% all_season = Season.all%>
-  <% all_season.each do |s| %>
-      <span style="background-color: <%= s.color %>;" class="badge"><a href="/herbarium/season/<%= s.name%>"><%= s.name %></a></span> 
+  <% @all_season.each do |s| %>
+      <span style="background-color: <%= s.color %>;" class="badge">
+      <%= link_to search_h_path(s.name), :remote => true do %>
+        <%= s.name %>
+      <% end %>      </span> 
   <%end%>
 
   <br /><br />
   <h5>Rarete</h5>
-  <% all_rarity = RarityHerbarium.all%>
-    <% all_rarity.each do |r| %>
-      <span style="background-color: <%= r.color %>;" class="badge"><a href="/herbarium/rarity/<%= r.name%>"><%= r.name %></a></span>
+    <% @all_rarity.each do |r| %>
+      <span style="background-color: <%= r.color %>;" class="badge">
+      <%= link_to search_h_path(r.name), :remote => true do %>
+        <%= r.name %>
+      <% end %>      </span>
     <%end%>
 
   <br /><br />
   <h5>Habitat</h5>
-  <% all_habitat = HabitatHerbarium.all%>
-  <% all_habitat.each do |hh| %>
-      <span style="background-color: <%= hh.color %>;" class="badge"><a href="/herbarium/habitat/<%= hh.name%>"><%= hh.name %></a></span>
+  <% @all_habitat.each do |hh| %>
+      <span style="background-color: <%= hh.color %>;" class="badge">
+      <%= link_to search_h_path(hh.name), :remote => true do %>
+        <%= hh.name %>
+      <% end %>      </span>
   <%end%>
 
 
