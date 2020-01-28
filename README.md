@@ -1,9 +1,9 @@
 ### ARYONPEDIA
 ## Site annexe au forum RPG : LE ROYAUME D'ARYON
 
-https://aryonpedia.herokuapp.com/
+LE SITE ARYONPEDIA : https://aryonpedia.herokuapp.com/
 
-http://aryon.forumactif.com/
+LE FORUM : http://aryon.forumactif.com/
 
 * Possibilité de créer un compte en ayant le code ARYON disponible uniquement aux membres du forum
 
