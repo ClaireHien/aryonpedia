@@ -1,24 +1,14 @@
-# README
+### ARYONPEDIA
+## Site annexe au forum RPG : LE ROYAUME D'ARYON
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://aryonpedia.herokuapp.com/
 
-Things you may want to cover:
+http://aryon.forumactif.com/
 
-* Ruby version
+* Possibilité de créer un compte en ayant le code ARYON disponible uniquement aux membres du forum
 
-* System dependencies
+**En tant qu'invité :**
+* Facilité de recherche des créatures du bestiaire et des plantes de l'herbier par les différentes catégories ou la barre de recherche
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+**En tant qu'utilisateur :**
+* Possibilité de rajouter directement des créatures et plantes au site via un formulaire. 
