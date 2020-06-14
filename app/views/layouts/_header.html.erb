@@ -1,0 +1,44 @@
+<header>
+
+  <nav class="f-left">
+    <%= link_to "Accueil", root_path %>
+    <%= link_to "Le forum", "http://aryon.forumactif.com/" %>
+
+    <ul class="f-right">
+      <li>
+        <%= link_to "Bestiaire", bestiary_index_path %>
+        <ul><li><%= link_to "Ajouter une créature", new_bestiary_path %>
+        </li></ul>
+      </li>
+      <li>
+        <%= link_to "Herbier", herbarium_index_path %>
+        <ul><li><%= link_to "Ajouter une plante", new_herbarium_path %>
+        </li></ul>
+      </li>
+    </ul>
+
+  </nav>
+
+  <nav class="f-right">
+
+    <% unless current_user %>
+      <%=link_to "Inscription", new_user_path%>
+      <%=link_to "Connexion", new_session_path%>
+    <% else %>
+    <ul class="f-left">
+      <li>
+        <%= link_to current_user.pseudo, user_path(current_user.id) %>
+        <ul>
+          <li><%= link_to "Editer son profil", edit_user_path(current_user.id) %></li>
+          <% if current_user.rank == "A.dmin0018"%>
+            <li><%= link_to "Panneau d'administration", admin_path%></li>
+          <%end%>
+          <li><%= link_to "Se déconnecter", session_path(current_user.id), method: :delete %></li>
+        </ul>
+      </li>
+    </ul>
+    <%end%>
+
+  </nav>
+
+</header>

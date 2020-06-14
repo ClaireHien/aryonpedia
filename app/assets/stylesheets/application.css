@@ -1,13 +1,56 @@
 
 /* GÉNÉRAL */
 
-.body {
-  background-image: url('https://i.imgur.com/UoSkyD9.jpg');background-repeat:repeat;background-position:right;
-  font-family: 'Nanum Gothic';}
+*{padding:0; margin:0;}
+
+body {
+  background: url('https://i.imgur.com/UoSkyD9.jpg') repeat;
+  font-family: sans-serif;
+}
+
+header{
+  position:fixed;
+  height:60px;
+  line-height: 60px;
+  background: linear-gradient(0deg, rgba(255,0,0,0%), rgba(0,0,0,30%));
+  z-index:999;
+  width:100%;
+  text-transform: uppercase;
+}
+
+main{
+  text-align:justify;
+  width:800px;
+  padding: 80px 20px;
+  background-color: #ffffff;
+}
+
+footer {
+  font-size:10px;
+  text-transform:uppercase;
+  text-align:right;
+  margin: 0px;
+  color:red;
+}
+
+ul li{list-style: none; float:left;}
+
+.f-left{float:left;}
+.f-right{float:right;}
+
+header nav ul li ul li{display:none; clear:both;line-height: normal; font-size:12px;}
+header nav ul li:hover ul li{display:block;}
+
+header a{
+  display:block;
+  text-align:center;
+  float:left;
+  width:150px;
+}
+
+/* ancien */
 
 .left_box{width:300px;padding: 80px 20px;}
-.box {text-align:justify;width:800px;min-height: 800px;padding: 80px 20px;
-  background-color: #ffffff;}
 
 .separation {
   border-bottom: 1px solid #ededed;
@@ -141,7 +184,3 @@ input[id^="spoiler"]{display: none;}
 
 .ind2 {background-color: #efefef; opacity:1.0;}
 .ind2:hover {background-color:#dedede;}
-
-/* FOOTER */
-
-.footerhome {font-size:10px; text-transform:uppercase; text-align:right; margin: 60px 0px -60px 0px; color:#999999;}

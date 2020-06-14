@@ -15,24 +15,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </head>
 
-  <body><div class="body">
 
-  <%= render 'layouts/navbar' %>
-  <%= render 'layouts/profile' %>
+  <body>
 
-<div class="d-flex flex-nowrap">
-<div class="left_box">
+  <%= render 'layouts/header'%>
 
-<%= render'layouts/navleft'%>
-
-</div>
-<div class="box">
+  <main>
     <%= yield %>
+  </main>
 
-    <%= render 'layouts/footer' %>
-</div>
-</div>
+  <%= render 'layouts/footer' %>
 
-</div>
+
   </body>
 </html>
