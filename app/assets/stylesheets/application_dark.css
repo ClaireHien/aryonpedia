@@ -19,14 +19,14 @@
 
 
 :root {
-    --white-grey: #fafafa;
-    --light-grey: #f4f4f4;
-    --grey: #eaeaea;
-    --mid-grey: #707070;
-    --dark-grey: #232323;
+    --white-grey: #202020;
+    --light-grey: #200220;
+    --grey: #303300;
+    --mid-grey: #550055;
+    --dark-grey: #005500;
 }
 
 body {
-    background: url('https://i.imgur.com/UoSkyD9.jpg') repeat;
-    font-family: sans-serif;
-  }
+  background: url('https://i.imgur.com/UoSkyD9.jpg') repeat;
+  font-family: sans-serif;
+}

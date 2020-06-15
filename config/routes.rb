@@ -17,4 +17,7 @@ Rails.application.routes.draw do
   get '/home', to: 'static#home'
   get '/check', to: 'static#check'
 
+  get '/moon', to: 'application#moon', as: 'moon'
+  get '/sun', to: 'application#sun', as: 'sun'
+
 end
