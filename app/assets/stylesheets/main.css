@@ -20,3 +20,10 @@ a:hover {color: #3fadac !important;text-decoration: none !important;}
 
 .f-left{float:left;}
 .f-right{float:right;}
+
+#list-article{
+  column-count: auto;
+  column-width: 300px;
+  max-width:95%;
+  margin:20px auto;
+}

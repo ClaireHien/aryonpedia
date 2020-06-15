@@ -31,18 +31,6 @@ header a{
   width:150px;
 }
 
-aside{
-  position:fixed;
-  z-index:998;
-  width:300px;
-  margin-left:-250px;
-}
-
-aside:hover{
-  margin-left:0px;
-}
-
-
 /* ancien */
 
 .left_box{width:300px;padding: 80px 20px;}
@@ -56,7 +44,6 @@ em {color: #3fadac !important;}
 .underh1 {text-align:right; font-size: 12px; text-transform: uppercase; margin-bottom:50px;
   background-color:#ededed; padding: 1px 10px;font-family: 'Nunito Sans', sans-serif;
   background-image: linear-gradient(70deg, rgba(255,255,255,0), #c8f0e3);}
-h2 {text-transform:uppercase; letter-spacing: 2px; padding: 0px 50px; text-align:right;}
 .alert-aryon {background-color: #ededed;}
 
 .home{font-size:15px;}
