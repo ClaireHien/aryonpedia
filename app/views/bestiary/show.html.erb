@@ -1,5 +1,4 @@
 
-
 <% bestiary = Bestiary.find(params[:id]) %>
 
 <h1><%= bestiary.name %></h1>
@@ -11,6 +10,18 @@
 <%end%><%end%>
 
 Proposé par <a href="/user/<%= bestiary.user.id %>"><%= bestiary.user.pseudo %></a>
+
+
+<% if bestiary.check != "validate" %>
+  <br>
+  En attente de validation
+  <% unless current_user %><%else%><% if current_user.rank == "Ar-admin2020"%>
+
+  <%= button_to 'Validation', validate_path(:bestiary_id => bestiary.id), method: :put%>
+
+  <%end%><%end%>
+
+<%end%>
 
 <section>
   <img src="<%= bestiary.image %>" alt="image de la créature">
@@ -25,6 +36,13 @@ Proposé par <a href="/user/<%= bestiary.user.id %>"><%= bestiary.user.pseudo %>
     <span style="color: <%= bestiary.habitat_bestiary.color %>;"><i class="fas fa-home"></i></span>
     Habitat : <strong><%= bestiary.habitat_bestiary.name %></strong><br>
     <small><%= bestiary.location %></small><br>
+    
+    <%if bestiary.pet %>
+    <% if bestiary.pet.id != 1 %>
+    <span style="color: <%= bestiary.pet.color %>;"><i class="fas fa-heart"></i></span>
+    Familier : <strong><%= bestiary.pet.name %></strong>
+    <%end%>
+    <%end%>
   </p>
   <h3>Description</h3>
   <p>

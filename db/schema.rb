@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_10_181622) do
+ActiveRecord::Schema.define(version: 2020_06_15_145735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,8 +27,11 @@ ActiveRecord::Schema.define(version: 2019_11_10_181622) do
     t.bigint "habitat_bestiary_id"
     t.bigint "rarity_bestiary_id"
     t.bigint "user_id"
+    t.bigint "pet_id"
+    t.string "check"
     t.index ["habitat_bestiary_id"], name: "index_bestiaries_on_habitat_bestiary_id"
     t.index ["level_id"], name: "index_bestiaries_on_level_id"
+    t.index ["pet_id"], name: "index_bestiaries_on_pet_id"
     t.index ["rarity_bestiary_id"], name: "index_bestiaries_on_rarity_bestiary_id"
     t.index ["user_id"], name: "index_bestiaries_on_user_id"
   end
@@ -67,6 +70,7 @@ ActiveRecord::Schema.define(version: 2019_11_10_181622) do
     t.bigint "category_id"
     t.bigint "season_id"
     t.bigint "user_id"
+    t.string "check"
     t.index ["category_id"], name: "index_herbaria_on_category_id"
     t.index ["habitat_herbarium_id"], name: "index_herbaria_on_habitat_herbarium_id"
     t.index ["rarity_herbarium_id"], name: "index_herbaria_on_rarity_herbarium_id"
@@ -79,6 +83,13 @@ ActiveRecord::Schema.define(version: 2019_11_10_181622) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "color"
+  end
+
+  create_table "pets", force: :cascade do |t|
+    t.string "name"
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "rarity_bestiaries", force: :cascade do |t|
@@ -116,6 +127,7 @@ ActiveRecord::Schema.define(version: 2019_11_10_181622) do
 
   add_foreign_key "bestiaries", "habitat_bestiaries"
   add_foreign_key "bestiaries", "levels"
+  add_foreign_key "bestiaries", "pets"
   add_foreign_key "bestiaries", "rarity_bestiaries"
   add_foreign_key "bestiaries", "users"
   add_foreign_key "herbaria", "categories"

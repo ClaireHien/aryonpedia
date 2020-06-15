@@ -2,6 +2,10 @@
 
 <% @all_bestiary.each do |bestiary| %>
 
+  <% if bestiary.check != "validate" %>
+
+  <% else %>
+
   <article>
     <a href="/bestiary/<%= bestiary.id %>">
       <img src="<%= bestiary.image%>" alt="image de la créature">
@@ -17,9 +21,16 @@
       Rareté : <strong><%= bestiary.rarity_bestiary.name %></strong><br>
       <span style="color: <%= bestiary.habitat_bestiary.color %>;"><i class="fas fa-home"></i></span>
       Habitat : <strong><%= bestiary.habitat_bestiary.name %></strong>
+      
+      <% if bestiary.pet.id != 1 %><br>
+      <span style="color: <%= bestiary.pet.color %>;"><i class="fas fa-heart"></i></span>
+      Familier : <strong><%= bestiary.pet.name %></strong>
+      <%end%>
     </p>
 
   </article>
+
+  <%end%>
   
 
 <% end %> 

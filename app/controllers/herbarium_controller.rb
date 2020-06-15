@@ -3,12 +3,24 @@ class HerbariumController < ApplicationController
   before_action :check_user, only: [:edit, :update, :destroy]
 
     def index
-      @all_herbarium = Herbarium.all
+      @all_herbarium = Herbarium.where(check: "validate")
       @all_cat = Category.all
       @all_season = Season.all
       @all_rarity = RarityHerbarium.all
       @all_habitat = HabitatHerbarium.all
     end
+
+    def validate
+      @herbarium = Herbarium.find(params[:herbarium_id])
+      @herbarium.check = "validate"
+
+      if @herbarium.save
+        redirect_to :action => "show", :id => @herbarium.id
+      else
+        redirect_to root_path
+      end
+    end
+
   
     def create
       @herbarium = Herbarium.new(name: params["h_name"],
@@ -20,7 +32,8 @@ class HerbariumController < ApplicationController
                       user_id: current_user.id,
                       habitat_herbarium_id: params["h_habitat"],
                       category_id: params["h_category"],
-                      rarity_herbarium_id: params["h_rarity"],)
+                      rarity_herbarium_id: params["h_rarity"],
+                      check: "none")
   
         if @herbarium.save 
           puts "------------- créature ajoutée"

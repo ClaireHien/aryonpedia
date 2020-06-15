@@ -20,4 +20,7 @@ Rails.application.routes.draw do
   get '/moon', to: 'application#moon', as: 'moon'
   get '/sun', to: 'application#sun', as: 'sun'
 
+  put '/validate', to: 'bestiary#validate'
+  put '/validate_herbarium', to: 'herbarium#validate'
+
 end

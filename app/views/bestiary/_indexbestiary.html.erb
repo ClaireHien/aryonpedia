@@ -24,15 +24,25 @@
             </span> 
           <%end%>
     
-        <br /><br />
-        <h5>Habitat</h5>
-          <% @all_habitat.each do |h| %>
-            <span style="background-color: <%= h.color %>;" class="badge">
-            <%= link_to search_path(h.name), :remote => true do %>
-              <%= h.name %>
-            <% end %>
-            </span> 
-          <%end%>
+          <br /><br />
+          <h5>Habitat</h5>
+            <% @all_habitat.each do |h| %>
+              <span style="background-color: <%= h.color %>;" class="badge">
+              <%= link_to search_path(h.name), :remote => true do %>
+                <%= h.name %>
+              <% end %>
+              </span> 
+            <%end%>
+
+            <br /><br />
+            <h5>Familier</h5>
+              <% @all_pet.each do |p| %>
+                <span style="background-color: <%= p.color %>;" class="badge">
+                <%= link_to search_path(p.name), :remote => true do %>
+                  <%= p.name %>
+                <% end %>
+                </span> 
+              <%end%>
 
       </div>
 

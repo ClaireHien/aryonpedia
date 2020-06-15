@@ -1,0 +1,32 @@
+
+<div class="list-admin">
+
+<% @all_herbarium.each do |h| %>
+
+  <%if h.check != "validate" %>
+
+  <div>
+  <img src="<%= h.image %>">  
+  <%= h.id %> - <strong><%= h.name %></strong>
+  <small>
+    <span style="color: <%= h.category.color %>;"><i class="fab fa-canadian-maple-leaf"></i></span>
+    <%= h.category.name %> -
+    <span style="color: <%= h.rarity_herbarium.color %>;"><i class="fas fa-star"></i></span> 
+    <%= h.rarity_herbarium.name %> - 
+    <span style="color: <%= h.habitat_herbarium.color %>;"><i class="fas fa-home"></i></span>
+    <%= h.habitat_herbarium.name %> - 
+    <span style="color: <%= h.season.color %>;"><i class="fas fa-snowflake"></i></span>
+    <%= h.season.name %>
+  </small>
+
+  <%= link_to herbarium_path(h.id), method: :delete, :data => {:confirm => 'Êtes vous sur de vouloir supprimer cette créature ? Cette action est irréversible'} do %> <i class="fas fa-trash-alt"></i> <%end%>
+  <%= link_to "Editer", edit_herbarium_path(h.id) %>
+  <%= link_to "Voir", herbarium_path(h.id) %>
+
+  </div>
+
+  <%end%>
+
+<%end%>
+
+</div>

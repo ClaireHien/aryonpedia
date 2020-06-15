@@ -12,6 +12,18 @@
 
 Proposé par <a href="/user/<%= herbarium.user.id %>"><%= herbarium.user.pseudo %></a>
 
+<% if herbarium.check != "validate" %>
+  <br>
+  En attente de validation
+  <% unless current_user %><%else%><% if current_user.rank == "Ar-admin2020"%>
+
+  <%= button_to 'Validation', validate_herbarium_path(:herbarium_id => herbarium.id), method: :put%>
+
+  <%end%><%end%>
+
+<%end%>
+
+
 <section>
   <img src="<%= herbarium.image %>" alt="image de la créature">
   <h3>Informations</h3>

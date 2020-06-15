@@ -23,7 +23,7 @@
     <div class="form-group" id="new_bestiary" style="width:48%;">
     <h5>Niveau de dangerosité</h5>
               <%= b.text_field :level_id, class: "form-control" %>
-<span class="mini">
+      <span class="mini">
         <% all_level = Level.all %>
           <% all_level.each do |lv| %>
             <%= lv.id %> - <%= lv.name %> | 
@@ -62,6 +62,18 @@
     <h5>Taille</h5>
     <%= b.text_field :height, class: "form-control" %>
     </div>
+
+    <div class="form-group" id="new_bestiary" style="width:48%;">
+    <h5>Familier</h5>
+              <%= b.text_field :pet_id, class: "form-control" %>
+      <span class="mini">
+        <% all_pet = Pet.all %>
+          <% all_pet.each do |p| %>
+            <%= p.id %> - <%= p.name %> | 
+        <%end%>
+      </span>
+    </div>
+    
     </div>
 
     <div class="form-group">

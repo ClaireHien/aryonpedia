@@ -7,6 +7,7 @@ class Bestiary < ApplicationRecord
     belongs_to :level
     belongs_to :user
     belongs_to :rarity_bestiary
+    belongs_to :pet
   
   
   

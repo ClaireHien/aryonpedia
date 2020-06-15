@@ -17,6 +17,12 @@
       <%= b.rarity_bestiary.name %> - 
       <span style="color: <%= b.habitat_bestiary.color %>;"><i class="fas fa-home"></i></span>
       <%= b.habitat_bestiary.name %>
+      <%if b.pet %>
+      <% if b.pet.id != 1 %> - 
+        <span style="color: <%= b.pet.color %>;"><i class="fas fa-heart"></i></span>
+        <%= b.pet.name %>
+      <%end%>
+      <%end%>
     </small>
 
     <%= link_to bestiary_path(b.id), method: :delete, :data => {:confirm => 'Êtes vous sur de vouloir supprimer cette créature ? Cette action est irréversible'} do %> <i class="fas fa-trash-alt"></i> <%end%>

@@ -8,6 +8,7 @@ class SearchController < ApplicationController
     @all_level = Level.all
     @all_rarity = RarityBestiary.all
     @all_habitat = HabitatBestiary.all
+    @all_pet = Pet.all
 
     n = 0
 
@@ -60,6 +61,14 @@ class SearchController < ApplicationController
       if params[:id] == h.name
         habitat = HabitatBestiary.find_by(name: h.name)
         @all_bestiary = Bestiary.where(habitat_bestiary_id: habitat.id)
+      end
+    end
+
+    all_pet = Pet.all
+    all_pet.each do |p|
+      if params[:id] == p.name
+        pet = Pet.find_by(name: p.name)
+        @all_bestiary = Bestiary.where(pet_id: pet.id)
       end
     end
 
