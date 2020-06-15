@@ -6,10 +6,12 @@
 
 
 <h1>Le bestiaire</h1>
-<span class="mini">Rechercher une bête dans le bestiaire</span>
-<%= form_tag "/search", :method => 'get', :role => 'search' do %>
-    <%= text_field_tag :search, params[:search], :class => "search-bar up ls2 form-control mr-sm-2", :placeholder => "Rechercher" %>
-<% end %>
+<div class="search-box">
+    <span class="mini">Rechercher une bête dans le bestiaire</span>
+    <%= form_tag "/search", :method => 'get', :role => 'search' do %>
+        <%= text_field_tag :search, params[:search], :class => "search-bar up ls2 form-control mr-sm-2", :placeholder => "Rechercher" %>
+    <% end %>
+</div>
 
 <div id="list-article">
 

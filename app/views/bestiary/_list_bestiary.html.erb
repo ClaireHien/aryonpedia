@@ -11,8 +11,11 @@
       <%= bestiary.name %>
     </h2>
     <p>
+      <span style="color: <%= bestiary.level.color %>;"><i class="fas fa-skull-crossbones"></i></span>
       Dangerosité : <strong><%= bestiary.level.name %></strong><br>
+      <span style="color: <%= bestiary.rarity_bestiary.color %>;"><i class="fas fa-star"></i></span>
       Rareté : <strong><%= bestiary.rarity_bestiary.name %></strong><br>
+      <span style="color: <%= bestiary.habitat_bestiary.color %>;"><i class="fas fa-home"></i></span>
       Habitat : <strong><%= bestiary.habitat_bestiary.name %></strong>
     </p>
 

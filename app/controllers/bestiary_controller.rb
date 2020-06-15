@@ -52,7 +52,7 @@ class BestiaryController < ApplicationController
 
       puts bestiary_params 
       if @bestiary.update(bestiary_params)
-        redirect_to '/bestiary'
+        redirect_to :action => "show", :id => @bestiary.id
       else
         render :edit
       end

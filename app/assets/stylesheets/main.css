@@ -20,6 +20,7 @@ a:hover {color: #3fadac !important;text-decoration: none !important;}
 
 .f-left{float:left;}
 .f-right{float:right;}
+.mini {font-size:12px; color:#adadad;}
 
 #list-article{
   column-count: auto;

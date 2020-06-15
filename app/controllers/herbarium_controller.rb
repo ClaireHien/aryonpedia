@@ -52,7 +52,7 @@ class HerbariumController < ApplicationController
 
       puts herbarium_params 
       if @herbarium.update(herbarium_params)
-        redirect_to '/herbarium'
+        redirect_to :action => "show", :id => @herbarium.id
       else
         render :edit
       end

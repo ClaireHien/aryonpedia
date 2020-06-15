@@ -2,56 +2,32 @@
 
 <% bestiary = Bestiary.find(params[:id]) %>
 
-<% n = bestiary.level %>
-<div class="under_left" style="border:1px solid <%= n.color %>;">
+<h1><%= bestiary.name %></h1>
 
-<%= render 'indexbestiary' %>
+<%=link_to "Retour au bestiaire",  bestiary_index_path %>
 
-</div>
- 
-
-<div class="card" style="max-width: 760px;">
-
-  <div class="art_title_show"><%= bestiary.name %></div>
-
-  <div class="row no-gutters">
-    <div>
-      <img src="<%= bestiary.image %>" class="img_profile" alt="image de la créature">
-    </div>
-    
-    <div class="col-md-8">
-
-      <div class="card-body">
-        <p class="card-text">
-
-        Dangerosité : <font class="badge" style="background-color:<%= bestiary.level.color %>;"><%= bestiary.level.name %></font><br />
-        Rareté : <font class="badge" style="background-color:<%= bestiary.rarity_bestiary.color %>;"><%= bestiary.rarity_bestiary.name %></font><br />
-        Habitat : <font class="badge" style="background-color:<%= bestiary.habitat_bestiary.color %>;"><%= bestiary.habitat_bestiary.name %></font><br />
-        <small><%= bestiary.location %></small><br />
-        Taille : <font class="badge"><%= bestiary.height %></font><br />        
-        
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="art_descrip">
-    <%= bestiary.description %>
-  </div>
-
-</div>
-<input type="checkbox" id="spoiler" /> 
-<label for="spoiler">Voir l'image en plus grand</label>
-<div class="spoiler">
-<img class="big_image" src="<%= bestiary.image %>">
-</div>
-
-
-
-<div class="art_bot text-muted">
-<% unless current_user %><%else%>
-<% if current_user.rank == "A.dmin0018"%>
-  <a href="<%=edit_bestiary_path%>">editer</a> | 
+<% unless current_user %><%else%><% if current_user.rank == "A.dmin0018"%>
+  <a href="<%=edit_bestiary_path%>">editer</a> | <%= link_to "supprimer", bestiary_path, method: :delete, :data => {:confirm => 'Êtes vous sur de vouloir supprimer cette créature ? Cette action est irréversible'} %> | 
 <%end%><%end%>
+
 Proposé par <a href="/user/<%= bestiary.user.id %>"><%= bestiary.user.pseudo %></a>
-</div>
+
+<section>
+  <img src="<%= bestiary.image %>" alt="image de la créature">
+  <h3>Informations</h3>
+  <p>
+    <span style="color: <%= bestiary.level.color %>;"><i class="fas fa-skull-crossbones"></i></span>
+    Dangerosité : <strong><%= bestiary.level.name %></strong><br>
+    <span style="color: <%= bestiary.rarity_bestiary.color %>;"><i class="fas fa-star"></i></span>
+    Rareté : <strong><%= bestiary.rarity_bestiary.name %></strong><br>
+    <span><i class="fas fa-arrows-alt-v"></i></span>
+    Taille : <strong><%= bestiary.height %></strong><br>
+    <span style="color: <%= bestiary.habitat_bestiary.color %>;"><i class="fas fa-home"></i></span>
+    Habitat : <strong><%= bestiary.habitat_bestiary.name %></strong><br>
+    <small><%= bestiary.location %></small><br>
+  </p>
+  <h3>Description</h3>
+  <p>
+    <%= bestiary.description %>
+  </p>
+</section>

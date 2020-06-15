@@ -1,3 +1,10 @@
+
+.search-box{
+  width:30%;
+  min-width:300px;  
+  margin:auto;
+}
+
 aside{
   position:fixed;
   z-index:998;
@@ -59,4 +66,39 @@ article p{
 }
 article:hover p{
   display:block;
+}
+
+article p span, section p span{
+  width:30px; 
+  display:block;
+  font-size:15px;
+  float:left;
+}
+
+article p br{
+  clear: both;
+}
+
+section{
+  max-width:95%;
+  overflow:auto;
+  margin:20px auto;
+  background-color: var(--white-grey);
+}
+
+section img{
+  float:left;
+  margin-right:20px;
+  width:50%;
+  min-width:400px;
+}
+
+section p{
+  text-align: justify;
+  margin:20px;
+}
+
+section p small{
+  padding:0px 30px; 
+  font-style: italic; 
 }
