@@ -21,6 +21,15 @@ footer {
 
 ul li{list-style: none; float:left;}
 
+header nav form{
+  float:left;
+}
+header nav form input{
+  text-transform: uppercase;
+  background:none; 
+  border:none;
+}
+
 header nav ul li ul li{display:none; clear:both;line-height: normal; font-size:12px;}
 header nav ul li:hover ul li{display:block;}
 
