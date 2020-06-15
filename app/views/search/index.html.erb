@@ -1,11 +1,16 @@
-<div class="under_left" style="border: 1px solid #dedede;">
+<aside>
 
-<%= render 'bestiary/indexbestiary' %>
-</div>
+    <%= render 'bestiary/indexbestiary' %>
 
-<%= render 'bestiary/headbestiary' %>
+</aside>
 
+<h1>Le bestiaire</h1>
+<span class="mini">Rechercher une bête dans le bestiaire</span>
+
+<%= form_tag "/search", :method => 'get', :role => 'search' do %>
+    <%= text_field_tag :search, params[:search], :class => "search-bar up ls2 form-control mr-sm-2", :placeholder => "Rechercher" %>
+<% end %>
 
 <div id="list_object">
-<%= render 'bestiary/list_bestiary' %>
+    <%= render 'bestiary/list_bestiary'%>
 </div>

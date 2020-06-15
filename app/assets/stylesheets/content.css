@@ -1,0 +1,10 @@
+aside div.f-left{
+    width:250px;
+}
+
+.vertical-menu{
+    float:left;
+    writing-mode: sideways-lr;
+    -webkit-writing-mode: sideways-lr;
+    -ms-writing-mode: sideways-lr;
+}

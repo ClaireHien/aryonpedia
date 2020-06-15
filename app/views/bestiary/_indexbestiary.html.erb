@@ -1,39 +1,46 @@
-<a href="<%= new_bestiary_path%>" class="navright">Ajouter une créature</a>
-<a href="/bestiary" class="navright">Voir toutes les créatures</a>
+<div class="f-left" style="border:1px solid red; ">
 
-<% if params[:id] %> 
-<% elsif %>
-<div class="index_list">
 
-    <h5>Dangerosite</h5>
-    <% @all_level.each do |lv| %>
-      <span style="background-color: <%= lv.color %>;" class="badge">
-        <%= link_to search_path(lv.name), :remote => true do %>
-          <%= lv.name %>
-        <% end %>
-      </span>
-    <%end%>
+    <a href="/bestiary" class="navright">Voir toutes les créatures</a>
 
-    <br /><br />
-    <h5>Rarete</h5>
-      <% @all_rarity.each do |r| %>
-        <span style="background-color: <%= r.color %>;" class="badge">
-        <%= link_to search_path(r.name), :remote => true do %>
-          <%= r.name %>
-        <% end %>
-        </span> 
+    <% if params[:id] %> 
+    <% elsif %>
+    <div class="index_list">
+
+        <h5>Dangerosite</h5>
+        <% @all_level.each do |lv| %>
+          <span style="background-color: <%= lv.color %>;" class="badge">
+            <%= link_to search_path(lv.name), :remote => true do %>
+              <%= lv.name %>
+            <% end %>
+          </span>
+        <%end%>
+
+        <br /><br />
+        <h5>Rarete</h5>
+          <% @all_rarity.each do |r| %>
+            <span style="background-color: <%= r.color %>;" class="badge">
+            <%= link_to search_path(r.name), :remote => true do %>
+              <%= r.name %>
+            <% end %>
+            </span> 
+          <%end%>
+    
+        <br /><br />
+        <h5>Habitat</h5>
+          <% @all_habitat.each do |h| %>
+            <span style="background-color: <%= h.color %>;" class="badge">
+            <%= link_to search_path(h.name), :remote => true do %>
+              <%= h.name %>
+            <% end %>
+            </span> 
+          <%end%>
+
+      </div>
       <%end%>
- 
-    <br /><br />
-    <h5>Habitat</h5>
-      <% @all_habitat.each do |h| %>
-        <span style="background-color: <%= h.color %>;" class="badge">
-        <%= link_to search_path(h.name), :remote => true do %>
-          <%= h.name %>
-        <% end %>
-        </span> 
-      <%end%>
 
-  </div>
-  <%end%>
+</div>
 
+<div class="vertical-menu">
+  Trier
+</div>

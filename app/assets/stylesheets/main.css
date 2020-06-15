@@ -1,0 +1,22 @@
+
+:root {
+    --white-grey: #fafafa;
+    --light-grey: #f4f4f4;
+    --grey: #eaeaea;
+    --mid-grey: #707070;
+    --dark-grey: #232323;
+}
+
+*{padding:0; margin:0;transition-duration: 1s;} *:hover {transition-duration: 1s;}
+
+body {
+  background: url('https://i.imgur.com/UoSkyD9.jpg') repeat;
+  font-family: sans-serif;
+}
+
+h1 {text-transform: uppercase; text-align:center; letter-spacing: 4px; padding:10px 100px; display:block; border:1px solid #ededed;}
+a {color: #101010 !important;text-decoration: none !important;}
+a:hover {color: #3fadac !important;text-decoration: none !important;}
+
+.f-left{float:left;}
+.f-right{float:right;}
