@@ -37,11 +37,13 @@
             <br /><br />
             <h5>Familier</h5>
               <% @all_pet.each do |p| %>
+                <% if p.id != 1 %>
                 <span style="background-color: <%= p.color %>;" class="badge">
                 <%= link_to search_path(p.name), :remote => true do %>
                   <%= p.name %>
                 <% end %>
                 </span> 
+                <%end%>
               <%end%>
 
       </div>

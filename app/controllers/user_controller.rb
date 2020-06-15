@@ -21,7 +21,7 @@ class UserController < ApplicationController
 
     puts @user.code
     
-    if @user.code != "48Aryon84"
+    if @user.code != "pediaryon20"
       puts "------------- pas le bon code :"
       render "/user/new"
 
