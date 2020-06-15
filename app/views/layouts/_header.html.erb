@@ -30,7 +30,7 @@
         <%= link_to current_user.pseudo, user_path(current_user.id) %>
         <ul>
           <li><%= link_to "Editer son profil", edit_user_path(current_user.id) %></li>
-          <% if current_user.rank == "A.dmin0018"%>
+          <% if current_user.rank == "Ar-admin2020"%>
             <li><%= link_to "Panneau d'administration", admin_path%></li>
           <%end%>
           <li><%= link_to "Se déconnecter", session_path(current_user.id), method: :delete %></li>

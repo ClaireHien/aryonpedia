@@ -1,74 +1,33 @@
 <%= render 'adminhead' %>
 
-
-
 <h1>L'herbier</h1>
 <div class="underh1">Panneau d'administration</div>
 
-<div style="border:1px solid #dedede; padding:5px;">
+<div class="list-admin">
 
-<% herbarium = Herbarium.all %>
-<% x = 1 %>
+  <% @all_herbarium.each do |h| %>
 
-<% herbarium.each do |h| %>
-
-  <% if x == 1 %>
-    <div class="ind1">
-    <% x = x + 1 %>  
-
-<table width="100%">
-    <tr>
-    <td width="50"><img src="<%= h.image %>" class="min_ico"></td>
-    <td width="10"></td>
-    <td width="250">
-    <%= h.id %> - <strong><%= h.name %></strong> <br />
-    <small><%= h.category.name %> - <%= h.rarity_herbarium.name %> </small>
-    </td>
-    <td>
+    <div>
+    <img src="<%= h.image %>">  
+    <%= h.id %> - <strong><%= h.name %></strong>
     <small>
-    <strong><%= h.habitat_herbarium.name %></strong> : <%= h.location %><br />
-    <%= h.season.name %></small>
-    </td>
-    <td width="50">
-    <div class="tab"><a href="/herbarium/<%= h.id %>">VOIR</a></div>
-    </td> 
-    <td width="60">
-    <div class="tab"><a href="/herbarium/<%= h.id %>/edit">EDITER</a></div>
-  </td>
-  </tr></table>
-  
-  </div>
-    
-  <% else %>
-    <div class="ind2">
-    <% x = 1 %>
-  
-<table width="100%">
-<tr>
-<td width="50"><img src="<%= h.image %>" class="min_ico"></td>
-<td width="10"></td>
-<td width="250">
-<%= h.id %> - <strong><%= h.name %></strong> <br />
-<small><%= h.category.name %> - <%= h.rarity_herbarium.name %> </small>
-</td>
-<td>
-<small>
-<strong><%= h.habitat_herbarium.name %></strong> : <%= h.location %><br />
-<%= h.season.name %></small>
-</td>
-<td width="50">
-<div class="tab"><a href="/herbarium/<%= h.id %>">VOIR</a></div>
-</td> 
-<td width="60">
-<div class="tab"><a href="/herbarium/<%= h.id %>/edit">EDITER</a></div>
-</td>
-</tr></table>
-  
-  </div>
-    
+      <span style="color: <%= h.category.color %>;"><i class="fab fa-canadian-maple-leaf"></i></span>
+      <%= h.category.name %> -
+      <span style="color: <%= h.rarity_herbarium.color %>;"><i class="fas fa-star"></i></span> 
+      <%= h.rarity_herbarium.name %> - 
+      <span style="color: <%= h.habitat_herbarium.color %>;"><i class="fas fa-home"></i></span>
+      <%= h.habitat_herbarium.name %> - 
+      <span style="color: <%= h.season.color %>;"><i class="fas fa-snowflake"></i></span>
+      <%= h.season.name %>
+    </small>
+
+    <%= link_to herbarium_path(h.id), method: :delete, :data => {:confirm => 'Êtes vous sur de vouloir supprimer cette créature ? Cette action est irréversible'} do %> <i class="fas fa-trash-alt"></i> <%end%>
+    <%= link_to "Editer", edit_herbarium_path(h.id) %>
+    <%= link_to "Voir", herbarium_path(h.id) %>
+
+    </div>
+
+
   <%end%>
-
-
-<%end%>
 
 </div>

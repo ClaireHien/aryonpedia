@@ -24,7 +24,7 @@ class BestiaryController < ApplicationController
   
         if @bestiary.save 
           puts "------------- créature ajoutée"
-          redirect_to "/bestiary"
+          redirect_to :action => "show", :id => @bestiary.id
         else
           puts "------------- créature refusée"
           render "/bestiary/new"
@@ -81,7 +81,7 @@ class BestiaryController < ApplicationController
   end
 
   def check_user
-    if current_user.rank != "A.dmin0018"
+    if current_user.rank != "Ar-admin2020"
       redirect_to "/check"
     end
   end

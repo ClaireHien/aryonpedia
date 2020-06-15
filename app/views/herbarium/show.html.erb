@@ -6,7 +6,7 @@
 
 <%=link_to "Retour à l'herbier",  herbarium_index_path %>
 
-<% unless current_user %><%else%><% if current_user.rank == "A.dmin0018"%>
+<% unless current_user %><%else%><% if current_user.rank == "Ar-admin2020"%>
   <a href="<%=edit_herbarium_path%>">editer</a> | <%= link_to "supprimer", herbarium_path, method: :delete, :data => {:confirm => 'Êtes vous sur de vouloir supprimer cette plante ? Cette action est irréversible'} %> | 
 <%end%><%end%>
 

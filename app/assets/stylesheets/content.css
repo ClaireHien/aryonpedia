@@ -79,7 +79,7 @@ article p br{
   clear: both;
 }
 
-section{
+section, form#new_bestiary, form#new_herbarium, #profile, .list-admin{
   max-width:95%;
   overflow:auto;
   margin:20px auto;
@@ -101,4 +101,61 @@ section p{
 section p small{
   padding:0px 30px; 
   font-style: italic; 
+}
+
+form#new_bestiary, form#new_herbarium{padding:20px;}
+
+.img_profile{
+  width:100px;
+  height:100px;
+  float:left;
+  margin-right:20px;
+  border:1px solid var(--white-grey);
+}
+
+.list-admin div{
+  background-color: var(--white-grey);
+  border:1px solid var(--white-grey);
+  clear: both;
+  overflow:auto;
+}
+
+.list-admin div:nth-child(2n+1){
+  background-color: var(--light-grey);
+}
+
+.list-admin div:hover{
+  background: linear-gradient(-90deg, rgba(0,0,0,0.2), transparent);
+}
+
+.list-admin div img{
+  float:left;
+  width:50px;
+  height:50px;
+  object-fit: cover;
+  margin-right:20px;
+}
+
+.list-admin div strong{
+  line-height:50px;
+  padding:0px 20px 0px 10px;
+}
+
+.list-admin div a{
+  font-size:10px;
+  text-transform: uppercase;
+  letter-spacing:2px;
+  float:right;
+  display:block;
+  background-color: var(--white-grey);
+  padding:5px;
+  margin:12px 10px;
+}
+
+.list-admin div>span{
+  background-color: var(--light-grey);
+  padding:0px 20px;
+  font-size:11px;
+  text-transform: uppercase;
+  margin:20px;
 }

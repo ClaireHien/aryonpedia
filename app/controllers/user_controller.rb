@@ -5,6 +5,12 @@ class UserController < ApplicationController
     puts "new user"
   end
 
+  def show
+    @all_bestiary = Bestiary.where(user_id: params[:id])
+    @all_herbarium = Herbarium.where(user_id: params[:id])
+
+  end
+
   def create
     puts "create user"
 

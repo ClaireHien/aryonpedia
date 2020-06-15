@@ -24,7 +24,7 @@ class HerbariumController < ApplicationController
   
         if @herbarium.save 
           puts "------------- créature ajoutée"
-          redirect_to "/herbarium"
+          redirect_to :action => "show", :id => @herbarium.id
         else
           puts "------------- créature refusée"
           render "/herbarium/new"
@@ -84,7 +84,7 @@ class HerbariumController < ApplicationController
   end
 
   def check_user
-    if current_user.rank != "A.dmin0018"
+    if current_user.rank != "Ar-admin2020"
       redirect_to "/check"
     end
   end
