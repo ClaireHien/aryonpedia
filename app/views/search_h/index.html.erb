@@ -1,11 +1,16 @@
-<div class="under_left" style="border: 1px solid #dedede;">
-
-<%= render 'herbarium/indexherbarium' %>
-</div>
-
-<%= render 'herbarium/headherbarium' %>
+<aside>
+    <%= render 'herbarium/indexherbarium' %>
+</aside>
 
 
-<div id="list_object">
-<%= render 'herbarium/list_herbarium' %>
+<h1>L'herbier</h1>
+
+  <span class="mini">Rechercher une plante dans l'herbier</span>
+ 
+  <%= form_tag "/search_h", :method => 'get', :role => 'search' do %>
+    <%= text_field_tag :search, params[:search], :class => "search-bar up ls2 form-control mr-sm-2", :placeholder => "Rechercher" %>
+  <% end %>
+
+<div id="list-article">
+    <%= render 'herbarium/list_herbarium' %>
 </div>
