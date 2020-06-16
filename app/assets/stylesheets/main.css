@@ -15,7 +15,7 @@ body {
   min-height: 100%;
 }
 
-a {color: var(--dark-grey) !important;text-decoration: none !important;}
+a {color: var(--text) !important;text-decoration: none !important; text-shadow: 1px 0px 2px var(--color);}
 a:hover {color: var(--dark-color) !important;text-decoration: none !important;}
 
 
@@ -23,11 +23,29 @@ h1 {
   text-transform: uppercase;
   text-align:center;
   font-family: 'Francois One', sans-serif;
+  text-shadow:0 0 30px var(--color),2px 1px 2px rgba(0, 0, 0, 0.8), -5px 2px 2px rgba(0, 0, 0, 0.2), 0 0 150px var(--light-color);
+  font-size:50px;
 }
+
+.under-title{
+  display:block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top:-10px;
+  font-size:15px;
+  width:100%;
+  text-align:center;
+  color: var(--text);
+  text-shadow:0 0 5px var(--color);
+}
+.under-title a{color: var(--text) !important;}
+
 h2{
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
+section{text-align:justify;}
 
 .f-left{float:left;}
 .f-right{float:right;}

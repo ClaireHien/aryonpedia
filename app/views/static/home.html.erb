@@ -1,9 +1,8 @@
 <aside id="aside-home">
   <nav>
-    <a href="#01">Qu'est ce que l'aryonpédia ?</a>
-    <a href="#02">Comment feuilleter l'Aryonpédia ?</a>
-    <a href="#03">Comment contribuer ?</a>
-    <a href="#04">Contact</a>
+    <a href="#first">Qu'est ce que l'aryonpédia ?</a>
+    <a href="#second">Comment contribuer ?</a>
+    <a href="#third">Contact</a>
   </nav>
 </aside>
 
@@ -12,7 +11,7 @@
 
     <div class="title-home">
       <h1>Aryonpédia</h1>
-      <h2>Encyclopédie d'Aryon sur la faune et la flore</h2>
+      <span class="under-title">Encyclopédie d'Aryon sur la faune et la flore</span>
     </div>
 
     <div class="f-left" id="home-left">
@@ -23,76 +22,56 @@
       <%=link_to "Herbier", herbarium_index_path %>
     </div>
 
-    <a href="#01"><i class="fas fa-angle-down"></i></a>
-
+    <a href="#first"><i class="fas fa-angle-down"></i></a>
     <p>Image de Hgjart</p>
 
   </div>
 </section> 
 
-<section id="01">
+<section id="first">
+  <h1>Qu'est ce que l'Aryonpédia ?</h1>
+  <span class="under-title">C'est un site annexe du forum RPG : <a href="http://aryon.forumactif.com/" target="_blank">LE ROYAUME D'ARYON</a>. </span>
+  <p class="mt-3">
+    Il a pour but de <em>recenser toutes les créatures du bestiaire et les plantes de l'herbier de l'univers d'Aryon</em> pour permettre à ses membres de rechercher plus simplement et plus rapidement une créature ou une plante en particulier.
+  </p>
 
-<p><h5>Qu'est ce que l'Aryonpédia ?</h5>
-C'est un site annexe du forum RPG : <a href="http://aryon.forumactif.com/" target="_blank">LE ROYAUME D'ARYON</a>. <br /><br />
-Il a pour but de <em>recenser toutes les créatures du bestiaire et les plantes de l'herbier de l'univers d'Aryon</em> pour permettre à ses membres de rechercher plus simplement et plus rapidement une créature ou une plante en particulier. </p>
+  <h2 class="text-center">Quelques chiffres</h2>
+  <% c = User.all %>
+  <% b = Bestiary.all %>
+  <% h = Herbarium.all %>
+  <div class="d-flex justify-content-center">
+    <div>
+      Nombre de contribueurs : <br>
+      <strong><%= c.length %></strong>
+    </div>
+    <div>
+      Nombre de créatures  : <br>
+      <strong><%= b.length %></strong>
+    </div>
+    <div>
+      Nombre de plantes : <br>
+      <strong><%= h.length %></strong>
+    </div>
+  </div>
 
-<div class="separation"></div>
-<p><h5>Quelques chiffres</h5>
-<div class="btn-aryon btn" style="margin-bottom:5px;">
-<% c = User.all %>
-Nombre de contribueurs : <%= c.length %>
-</div>
-<div class="btn-aryon btn" style="margin-bottom:5px;">
-<% b = Bestiary.all %>
-Nombre de créatures  : <%= b.length %>
-</div>
-<div class="btn-aryon btn" style="margin-bottom:5px;">
-<% h = Herbarium.all %>
-Nombre de plantes : <%= h.length %>
-</div>
-</p>
-<div class="separation"></div>
-
-</section>
-
-<section id="02">
-
-<p><h5>Comment feuilleter le bestiaire et l'herbier ?</h5>
-Vous avez deux liens dans la barre de naviguation tout en haut : l'un pour le bestiaire et le second pour l'herbier. Ces liens vous mène a une page index de toutes les plantes et créatures qui ont été ajouté à l'Aryonpédia. <br /><br />
-Vous trouverez ensuite à gauche différents critères qui vous permettent d'afficher uniquement les créatures et plantes attachées à ce critère !<br />
-Ou directement rechercher une créature ou plante par son nom grâce à la barre de recherche. <br /><br />
-Ensuite, vous pouvez cliquer directement sur l'image de votre créature / plante ou sur le lien <em>En savoir plus</em> pour pouvoir lire la fiche complète de la créature / plante. 
-</p>
-
-<div class="separation"></div>
-
-</section>
-
-<section id="03">
-
-<p><h5 id="pouet">Comment contribuer ?</h5>
+<h2 class="text-center mt-5" id="second">Comment contribuer ?</h2>
+<p>
 Vous êtes membre du forum d'Aryon et vous avez de nombreuses idées de plantes ou d'animaux fantastiques ? Evidemment que vous pouvez contribuer à remplir notre Aryonpédia. <br /><br />
-Pour cela, il faut que vous veniez demander l'autorisation pour créer un compte sur ce site en remplissant le formulaire et le postant à la suite de ce sujet : <a href="http://aryon.forumactif.com/t2056-contribuer-a-l-aryonpedia" target="_blank">www</a>. Puis un administrateur viendra valider votre demande et vous enverra par MP le code nécessaire à l'inscription. Une fois ce code obtenu, vous pouvez tout simplement créer un compte avec le bouton s'inscrire sur votre droite et vous connecter. <br />
-Vous aurez ensuite accès à la page de création de créature / plantes et vous pourrez rajouter toutes les idées que vous avez ! Pensez à chaque fois que vous rajoutez quelque chose sur ce site, de venir le signaler sur le forum dans ce sujet : <a href="http://aryon.forumactif.com/t2056-contribuer-a-l-aryonpedia" target="_blank">www</a>. 
+Pour cela, il faut que vous veniez demander l'autorisation pour créer un compte sur ce site en remplissant le formulaire et le postant à la suite de ce sujet : <a href="http://aryon.forumactif.com/t2056-contribuer-a-l-aryonpedia" target="_blank">www</a>. Puis un administrateur viendra valider votre demande et vous enverra par MP le code nécessaire à l'inscription. Une fois ce code obtenu, vous pouvez tout simplement créer votre compte. <br /><br>
+Vous aurez ensuite accès à la page de création de créatures / plantes et vous pourrez rajouter toutes les idées que vous avez ! Pensez à chaque fois que vous rajoutez quelque chose sur ce site, de venir le signaler sur le forum dans ce sujet : <a href="http://aryon.forumactif.com/t2056-contribuer-a-l-aryonpedia" target="_blank">www</a>. <br>
+<small class="mini">La créature ou plante que vous aurez proposé ne sera visible sur l'Aryonpédia qu'après validation du staff.</small>
 </p>
-<div class="separation"></div>
+
 
 </section>
-<section id="04">
-<p><h5>Contacter un administrateur ? </h5>
+<section id="third">
+<h1>Contacter un administrateur ? </h1>
+<p>
 Pas de formulaire de contact sur ce site. Si vous souhaitez contacter un administrateur, vous pouvez le faire via <a href="http://aryon.forumactif.com/" target="_blank">le forum d'Aryon</a>.<br />
 <ul><li>Si vous êtes déjà membre, vous pouvez envoyer un message privée à <em>Atheas Renmyrth</em>, fondatrice du forum et du site
 <li>Sinon, vous pouvez poster un message dans la <a href="http://aryon.forumactif.com/f8-questions-suggestions" target="_blank">zone invités</a>.
 </ul>
 </p>
-
-
-<div style="width:100px; height:100px; margin:10px; background-color:var(--light-grey);"> </div>
-<div style="width:100px; height:100px; margin:10px; background-color:var(--grey);"> </div>
-<div style="width:100px; height:100px; margin:10px; background-color:var(--dark-grey);"> </div>
-<div style="width:100px; height:100px; margin:10px; background-color:var(--light-color);"> </div>
-<div style="width:100px; height:100px; margin:10px; background-color:var(--color);"> </div>
-<div style="width:100px; height:100px; margin:10px; background-color:var(--dark-color);"> </div>
 
 
 </section>
