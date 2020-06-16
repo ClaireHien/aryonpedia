@@ -14,19 +14,19 @@
  *= require_self
  *= require main
  *= require layouts
+ *= require home
  *= require content
  */
 
 
 :root {
-    --white-grey: #fafafa;
-    --light-grey: #f4f4f4;
-    --grey: #eaeaea;
-    --mid-grey: #707070;
+    --body:#ededed;
+    --text:#050505;
+    --gradient: rgba(20, 20, 20, 0.5);
+    --light-grey: #fafafa;
+    --grey: #c0c0c0;
     --dark-grey: #232323;
+    --light-color:#a5d2e3;
+    --color:#3f8ba9;
+    --dark-color:#004660;
 }
-
-body {
-    background: url('https://i.imgur.com/UoSkyD9.jpg') repeat;
-    font-family: sans-serif;
-  }

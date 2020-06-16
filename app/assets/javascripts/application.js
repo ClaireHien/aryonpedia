@@ -13,3 +13,11 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery
+
+$(document).ready(function(){
+    /* mon js */
+
+    
+}); 
+  

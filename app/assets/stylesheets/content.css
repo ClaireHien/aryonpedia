@@ -1,4 +1,4 @@
-
+/*
 .search-box{
   width:30%;
   min-width:300px;  
@@ -19,7 +19,7 @@ aside:hover{
 aside div.f-left{
   width:250px;
 }
-
+*/
 .vertical-menu{
   float:left;
   writing-mode: sideways-lr;
@@ -42,7 +42,7 @@ article img{
 article:hover img{
   opacity:0.3;
 }
-  
+/*
 h2{
   font-size:15px;
   padding:5px 10px;
@@ -52,7 +52,7 @@ h2{
   position:absolute;
   top:20px;
   left:20px;
-}
+}*/
 
 article p{
   position:absolute;
@@ -78,7 +78,7 @@ article p span, section p span{
 article p br{
   clear: both;
 }
-
+/*
 section, form#new_bestiary, form#new_herbarium, #profile, .list-admin{
   max-width:95%;
   overflow:auto;
@@ -102,7 +102,7 @@ section p small{
   padding:0px 30px; 
   font-style: italic; 
 }
-
+*/
 form#new_bestiary, form#new_herbarium{padding:20px;}
 
 .img_profile{

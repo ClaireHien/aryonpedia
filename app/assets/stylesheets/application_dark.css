@@ -13,20 +13,20 @@
  *= require bootstrap
  *= require_self
  *= require main
+ *= require home
  *= require layouts
  *= require content
  */
 
 
 :root {
-    --white-grey: #202020;
-    --light-grey: #200220;
-    --grey: #303300;
-    --mid-grey: #550055;
-    --dark-grey: #005500;
-}
-
-body {
-  background: url('https://i.imgur.com/UoSkyD9.jpg') repeat;
-  font-family: sans-serif;
+  --body:#252525;
+  --text:#dedede;
+  --gradient: rgba(0, 0, 0, 0.5);
+  --light-grey: #303030;
+  --grey: #202020;
+  --dark-grey: #050505;
+  --light-color:#85b0d5;
+  --color:#3f78a9;
+  --dark-color:#113452;
 }

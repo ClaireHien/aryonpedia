@@ -7,9 +7,12 @@ class SessionController < ApplicationController
   def create
 
     @user = User.find_by(pseudo: params["u_pseudo"])
-    puts @user.pseudo
-    puts @user.password
+    puts "#"*50
+    puts User.find_by(pseudo: params["u_pseudo"])
+    puts "#"*50
     connexion = @user.authenticate(params["u_password"])
+    puts  @user.authenticate(params["u_password"])
+    puts "#"*50
 
     if connexion == false
       puts "------------- connexion refusée"

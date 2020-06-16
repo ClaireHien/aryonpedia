@@ -5,10 +5,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Nanum+Gothic|Shadows+Into+Light&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a05a567acc.js" crossorigin="anonymous"></script>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+
     <% if cookies[:moon] %>
     <%= stylesheet_link_tag 'application_dark', media: 'all', 'data-turbolinks-track': 'reload' %>
     <% else %>

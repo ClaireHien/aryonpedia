@@ -1,0 +1,105 @@
+#back-home{
+    background: url(hgjart.jpg) 0 0/cover no-repeat border-box scroll;;
+    margin-top:-70px;
+    height:100vh; 
+    width:100%;
+}
+
+#back-home>div {
+  position:absolute;
+  width:100%;
+  height:100vh;
+}
+
+.title-home{
+  position:relative;
+  top:10%;
+  z-index:10;
+}
+
+.title-home h1{
+  text-decoration: underline;
+  color: var(--dark-grey);
+  font-size:90px;
+  text-shadow:0 0 30px var(--color),5px 2px 2px rgba(0, 0, 0, 0.8), -5px 2px 2px rgba(0, 0, 0, 0.2), 0 0 150px var(--light-color);
+}
+.title-home h2{
+  margin-top:-10px;
+  font-size:15px;
+  width:100%;
+  text-align:center;
+  color: var(--dark-grey);
+  text-shadow:0 0 5px var(--color);
+}
+.title-home:hover h1, #back-home div+a{text-shadow:0 0 30px var(--light-color),5px 2px 2px rgba(0, 0, 0, 0.8), -5px 2px 2px rgba(0, 0, 0, 0.2), 0 0 150px var(--light-color);}
+.title-home:hover h2{text-shadow:0 0 5px var(--light-color)}
+
+#back-home div+a{
+  position:absolute;
+  left:45%; right:45%;
+  bottom:10%;
+  text-align:center;
+  font-size:60px;
+}
+
+#back-home p, #aside-home a{
+  opacity:0.7;
+  padding:2px 5px;
+  margin:2px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color) !important;
+  background-color: var(--dark-grey);
+  font-size:8px;
+}
+
+#back-home p:hover, #aside-home a:hover{opacity:1;}
+
+#back-home p{
+  position:absolute;
+  right:5%; bottom:5%;
+}
+
+#aside-home{
+  position:fixed;
+  right:20px;
+  top:30%;
+  width:200px;
+  z-index:50;
+  text-align:right;
+}
+
+#aside-home a{display:block;}
+
+#home-left, #home-right{
+  position:absolute;
+  top:0%;
+  width:50%;
+  height:100%;
+}
+#home-left{left:0%;}
+#home-right{right:0%;}
+#home-left:hover{box-shadow: 600px 0px 300px -200px  var(--gradient) inset;}
+#home-right:hover{box-shadow: -600px 0px 300px -200px  var(--gradient) inset;}
+
+#back-home div div a{
+  font-size:30px;
+  font-family: 'Francois One', sans-serif;
+  border-radius: 2px;
+  color: var(--text) !important;
+  text-align:center;
+  padding:10px 20px;
+  text-transform: uppercase;
+  position: absolute;
+  top:40%;
+  opacity:0.8;
+  background-color: var(--light-grey);
+} 
+#home-left a{right:10%;}
+#home-right a{left:10%;}
+#home-left:hover a, #home-right:hover a{background-color: var(--color);}
+
+#plus{
+  max-width:1000px;
+  margin:auto;
+}
