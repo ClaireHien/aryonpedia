@@ -1,17 +1,16 @@
 <aside>
 
-<div class="f-left" style="border:1px solid red; ">
+  <div class="f-left">
+    <nav>
+      <%=link_to "Vue d'ensemble", admin_path%>
+      <%=link_to "Les membres", admin_user_path%>
+      <%=link_to "Le bestiaire", admin_bestiary_path%>
+      <%=link_to "L'herbier", admin_herbarium_path%>
+    </nav>
+  </div>
 
-<a href="<%= admin_user_path%>" class="navright">Les membres</a>
-<a href="<%= admin_bestiary_path%>" class="navright">Le bestiaire</a>
-<a href="<%= admin_herbarium_path%>" class="navright">L'herbier</a>
-<a href="/admin" class="aryon" style="text-transform:uppercase; text-align:center;">Vue d'ensemble</a> 
-
-</div>
-
-<div class="vertical-menu">
-  Menu <i class="fas fa-caret-down"></i>
-</div>
-
+  <div class="vertical-menu f-one">
+    Menu
+  </div>
 
 </aside>

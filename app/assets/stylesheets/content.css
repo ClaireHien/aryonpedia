@@ -254,29 +254,16 @@ form.edit_herbarium, form.edit_bestiary button:hover{
   color: var(--text);
 }
 
-/***************************************************************************************************************************************************/
-/***************************************************************************************************************************************************/
-/***************************************************************************************************************************************************/
-/***************************************************************************************************************************************************/
-/***************************************************************************************************************************************************/
-/***************************************************************************************************************************************************/
-
+.list-admin{border:1px solid var(--grey);margin-top:10px;}
 
 .list-admin div{
-  background-color: var(--white-grey);
-  border:1px solid var(--white-grey);
+  background-color: var(--body);
+  border:1px solid var(--body);
   clear: both;
   overflow:auto;
 }
-
-.list-admin div:nth-child(2n+1){
-  background-color: var(--light-grey);
-}
-
-.list-admin div:hover{
-  background: linear-gradient(-90deg, rgba(0,0,0,0.2), transparent);
-}
-
+.list-admin div:nth-child(2n+1){background-color: var(--light-grey);}
+.list-admin div:hover{background: linear-gradient(-90deg, var(--light-color), transparent);}
 .list-admin div img{
   float:left;
   width:50px;
@@ -284,12 +271,10 @@ form.edit_herbarium, form.edit_bestiary button:hover{
   object-fit: cover;
   margin-right:20px;
 }
-
 .list-admin div strong{
   line-height:50px;
   padding:0px 20px 0px 10px;
 }
-
 .list-admin div a{
   font-size:10px;
   text-transform: uppercase;
@@ -300,11 +285,51 @@ form.edit_herbarium, form.edit_bestiary button:hover{
   padding:5px;
   margin:12px 10px;
 }
-
 .list-admin div>span{
   background-color: var(--light-grey);
   padding:0px 20px;
   font-size:11px;
   text-transform: uppercase;
+  letter-spacing: 1px;
   margin:20px;
 }
+
+.gen-admin{
+  width:49%;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding:20px;
+  border-left:5px solid var(--light-grey);
+}
+.gen-admin:nth-child(2n+1){
+  width:49%;
+  border-right:5px solid var(--light-grey);
+  border-left:0px solid var(--light-grey);
+}
+.gen-admin>span{
+  font-size:11px;
+  margin:-10px 0px 20px 0px;
+  display:block;
+}
+.gen-admin div div{
+  width:49%;
+  min-width:250px;
+  padding:10px;
+  text-align:left;
+  background-color: var(--light-grey);
+  margin:3px 0.5%;
+}
+.gen-admin div div span{
+  display:block;
+  font-size:11px;
+  padding:2px;
+  clear: both;
+  border-bottom:0.5px solid var(--body);
+}
+
+.gen-admin div div span:hover{
+  background: linear-gradient(90deg, transparent, var(--color));
+}
+.gen-admin div div strong{float:right;}
+
+.gen-admin div div span:last-child{border-bottom:0px solid var(--body); }

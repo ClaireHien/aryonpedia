@@ -1,73 +1,133 @@
 <%= render 'adminhead' %>
 
 <h1>Vue generale</h1>
-<div class="underh1">Panneau d'administration</div>
+<span class="under-title">Panneau d'administration</span>
 
-En attente de validation.. 
-
+<div class="wrapper">
+  <h2><strong>En attente de validation</strong></h2>
+  <span class="mini up ls2">Le bestiaire</span>
   <%= render 'bestiarytocheck' %>
+  <br>
+  <span class="mini up ls2">L'herbier</span>
   <%= render 'herbariumtocheck' %>
-
-
-<div class="d-flex flex-nowrap justify-content-between">
-<div style="width:49%; text-align:right;"><h1>bestiaire</h1>
-
-<%all_bestiary = Bestiary.all %>
-<div class="title_box2">Nombre de bêtes : <%= all_bestiary.length %></div><br /><br />
-
-<h5>Rarete</h5>
-<% all_rarity = RarityBestiary.all%>
-  <% all_rarity.each do |r| %>
-    <%rarity = Bestiary.where(rarity_bestiary_id: r.id)%>
-    <%= r.name %> - <em> <%= rarity.length %></em><br />
-  <%end%><br />
-
-<h5>Habitat</h5>
-<% all_habitat = HabitatBestiary.all%>
-  <% all_habitat.each do |h| %>
-    <%habitat = Bestiary.where(habitat_bestiary_id: h.id)%>
-    <%= h.name %> - <em> <%= habitat.length %></em><br />
-  <%end%><br />
-
-  <h5>Dangerosite</h5>
-  <% all_level = Level.all%>
-    <% all_level.each do |lv| %>
-      <%level = Bestiary.where(level_id: lv.id)%>
-      <%= lv.name %> - <em> <%= level.length %></em><br />
-    <%end%><br />
-  
 </div>
-<div style="width:49%;"><h1>herbier</h1>
 
-<%all_herbarium = Herbarium.all %>
-<div class="title_box2">Nombre de plantes : <%= all_herbarium.length %></div><br /><br />
+<h1 class="mt-5">Les chiffres</h1>
+<span class="under-title">Statistiques générales</span>
 
-<h5>Rarete</h5>
-<% all_rarity = RarityHerbarium.all%>
-  <% all_rarity.each do |r| %>
-    <%rarity = Herbarium.where(rarity_herbarium_id: r.id)%>
-     <em><%= rarity.length %></em> - <%= r.name %><br />
-  <%end%><br />
+<div class="d-flex flex-nowrap justify-content-center">
+  <div class="text-right gen-admin">
+    <h2><strong>Le bestiaire</strong></h2>
 
-<h5>Habitat</h5>
-<% all_habitat = HabitatHerbarium.all%>
-  <% all_habitat.each do |hh| %>
-    <%habitat = Herbarium.where(habitat_herbarium_id: hh.id)%>
-    <em><%= habitat.length %></em> - <%= hh.name %> <br />
-  <%end%><br />
+    <%all_bestiary = Bestiary.all %>
+    <span>Nombre de bêtes : <%= all_bestiary.length %></span>
 
-<h5>Saisons</h5>
-<% all_season = Season.all%>
-  <% all_season.each do |s| %>
-    <%season = Herbarium.where(season_id: s.id)%>
-    <em><%= season.length %></em> - <%= s.name %> <br />
-  <%end%><br /><br />
+    <div class="d-flex flex-wrap justify-content-between">
 
-<h5>Categories</h5>
-<% all_cat = Category.all%>
-  <% all_cat.each do |c| %>
-    <%cat = Herbarium.where(category_id: c.id)%>
-    <em><%= cat.length %></em> - <%= c.name %> <br />
-  <%end%><br />
-</div>
+      <div>
+        <h5>Rarete</h5>
+        <% all_rarity = RarityBestiary.all%>
+        <% all_rarity.each do |r| %>
+          <%rarity = Bestiary.where(rarity_bestiary_id: r.id)%>
+          <span>
+            <%= r.name %><strong> <%= rarity.length %></strong>
+          </span>
+        <%end%>
+      </div>
+
+      <div>
+        <h5>Habitat</h5>
+        <% all_habitat = HabitatBestiary.all%>
+        <% all_habitat.each do |h| %>
+          <%habitat = Bestiary.where(habitat_bestiary_id: h.id)%>
+          <span>
+            <%= h.name %><strong> <%= habitat.length %></strong>
+          </span>
+        <%end%>
+      </div>
+
+      <div>
+        <h5>Dangerosite</h5>
+        <% all_level = Level.all%>
+        <% all_level.each do |lv| %>
+          <%level = Bestiary.where(level_id: lv.id)%>
+          <span>
+            <%= lv.name %><strong> <%= level.length %></strong>
+          </span>
+        <%end%>
+      </div>
+
+      <div>
+        <h5>Familier</h5>
+        <% all_pet = Pet.all%>
+        <% all_pet.each do |p| %>
+          <%pet = Bestiary.where(pet_id: p.id)%>
+          <span>
+            <%= p.name %><strong> <%= pet.length %></strong>
+          </span>
+        <%end%>
+      </div>
+
+    </div>
+    
+  </div>
+
+  <div class="gen-admin">
+    <h2><strong>L'herbier</strong></h2>
+
+    <%all_herbarium = Herbarium.all %>
+    <span>Nombre de plantes : <%= all_herbarium.length %></span>
+
+    <div class="d-flex flex-wrap justify-content-between">
+
+      <div>
+        <h5>Rarete</h5>
+        <% all_rarity = RarityHerbarium.all%>
+        <% all_rarity.each do |r| %>
+          <%rarity = Herbarium.where(rarity_herbarium_id: r.id)%>
+          <span>
+            <%= r.name %><strong><%= rarity.length %></strong>
+          </span>
+          </span>
+        <%end%>
+      </div>
+
+      <div>
+        <h5>Habitat</h5>
+        <% all_habitat = HabitatHerbarium.all%>
+        <% all_habitat.each do |hh| %>
+          <%habitat = Herbarium.where(habitat_herbarium_id: hh.id)%>
+          <span>
+            <%= hh.name %><strong><%= habitat.length %></strong>
+          </span>
+        <%end%>
+      </div>
+
+      <div>
+        <h5>Saison</h5>
+        <% all_season = Season.all%>
+        <% all_season.each do |s| %>
+          <%season = Herbarium.where(season_id: s.id)%>
+          <span>
+            <%= s.name %><strong><%= season.length %></strong>
+          </span>
+        <%end%>
+      </div>
+
+      <div>
+        <h5>Categorie</h5>
+        <% all_cat = Category.all%>
+        <% all_cat.each do |c| %>
+          <%cat = Herbarium.where(category_id: c.id)%>
+          <span>
+            <%= c.name %><strong><%= cat.length %></strong> 
+          </span>
+        <%end%>
+      </div>
+    
+    </div>
+
+    </div>
+
+  </div>
 </div>
