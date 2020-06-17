@@ -21,6 +21,7 @@
 
 :root {
   --body:#252525;
+  --grey-op:rgba(0,0,0,0.7);
   --text:#dedede;
   --gradient: rgba(0, 0, 0, 0.5);
   --light-grey: #303030;

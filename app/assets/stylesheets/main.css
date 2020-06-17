@@ -49,7 +49,7 @@ section{text-align:justify;}
 
 .f-left{float:left;}
 .f-right{float:right;}
-.mini {font-size:12px; color:var(--grey);}
+.mini {font-size:12px; color:var(--dark-grey);}
 .f-one{font-family: 'Francois One', sans-serif;}
 
 #list-article{

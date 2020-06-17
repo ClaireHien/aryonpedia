@@ -1,47 +1,60 @@
-
+ 
 
 <% herbarium = Herbarium.find(params[:id]) %>
 
 <h1><%= herbarium.name %></h1>
+<span class="under-title">
+  <% if herbarium.check != "validate" %> 
+    En attente de validation | 
+  <% end %>
+    Plante proposée par
+    <a href="/user/<%= herbarium.user.id %>"><%= herbarium.user.pseudo %></a>
+</span>
 
-<%=link_to "Retour à l'herbier",  herbarium_index_path %>
+<nav id="nav-show">
+  <%=link_to "Retour à l'herbier",  herbarium_index_path %>
 
-<% unless current_user %><%else%><% if current_user.rank == "Ar-admin2020"%>
-  <a href="<%=edit_herbarium_path%>">editer</a> | <%= link_to "supprimer", herbarium_path, method: :delete, :data => {:confirm => 'Êtes vous sur de vouloir supprimer cette plante ? Cette action est irréversible'} %> | 
-<%end%><%end%>
+  <% unless current_user %><%else%>
+    <% if current_user.rank == "Ar-admin2020"%>
+      <%= link_to "Editer", edit_herbarium_path %> 
+      <%= link_to "supprimer", herbarium_path, method: :delete, :data => {:confirm => 'Êtes vous sur de vouloir supprimer cette plante ? Cette action est irréversible'} %> 
+      <% if herbarium.check != "validate" %>
+        <%= button_to 'Valider la plante', validate_herbarium_path(:herbarium_id => herbarium.id), method: :put%>
+      <%end%>
+    <%end%>
+  <%end%>
 
-Proposé par <a href="/user/<%= herbarium.user.id %>"><%= herbarium.user.pseudo %></a>
-
-<% if herbarium.check != "validate" %>
-  <br>
-  En attente de validation
-  <% unless current_user %><%else%><% if current_user.rank == "Ar-admin2020"%>
-
-  <%= button_to 'Validation', validate_herbarium_path(:herbarium_id => herbarium.id), method: :put%>
-
-  <%end%><%end%>
-
-<%end%>
+</nav>
 
 
-<section>
+<section id="show">
   <img src="<%= herbarium.image %>" alt="image de la créature">
-  <h3>Informations</h3>
-  <p>
-    <span style="color: <%= herbarium.category.color %>;"><i class="fab fa-canadian-maple-leaf"></i></span>
-    Catégorie : <strong><%= herbarium.category.name %></strong><br>
-    <span style="color: <%= herbarium.rarity_herbarium.color %>;"><i class="fas fa-star"></i></span>
-    Rareté : <strong><%= herbarium.rarity_herbarium.name %></strong><br>
-    <span><i class="fas fa-arrows-alt-v"></i></span>
-    Taille : <strong><%= herbarium.height %></strong><br>
-    <span style="color: <%= herbarium.season.color %>;"><i class="fas fa-snowflake"></i></span>
-    Saison : <strong><%= herbarium.season.name %></strong><br>
-    <span style="color: <%= herbarium.habitat_herbarium.color %>;"><i class="fas fa-home"></i></span>
-    Habitat : <strong><%= herbarium.habitat_herbarium.name %></strong><br>
-    <small><%= herbarium.location %></small><br>
-  </p>
-  <h3>Description</h3>
-  <p>
-    <%= herbarium.description %>
-  </p>
+  
+  <div>
+    <h2>Informations</h2>
+    <p>
+      <span style="color: <%= herbarium.category.color %>;"><i class="fab fa-canadian-maple-leaf"></i></span>
+      Catégorie : <strong><%= herbarium.category.name %></strong><br>
+
+      <span style="color: <%= herbarium.rarity_herbarium.color %>;"><i class="fas fa-star"></i></span>
+      Rareté : <strong><%= herbarium.rarity_herbarium.name %></strong><br>
+
+      <span><i class="fas fa-arrows-alt-v"></i></span>
+      Taille : <strong><%= herbarium.height %></strong><br>
+
+      <span style="color: <%= herbarium.season.color %>;"><i class="fas fa-snowflake"></i></span>
+      Saison : <strong><%= herbarium.season.name %></strong><br>
+
+      <span style="color: <%= herbarium.habitat_herbarium.color %>;"><i class="fas fa-home"></i></span>
+      Habitat : <strong><%= herbarium.habitat_herbarium.name %></strong><br>
+      <small><%= herbarium.location %></small>
+    </p>
+  </div>
+
+  <div>
+    <h2>Description</h2>
+    <p>
+      <%= herbarium.description %>
+    </p>
+  </div>
 </section>

@@ -1,30 +1,60 @@
-/*
-.search-box{
-  width:30%;
-  min-width:300px;  
-  margin:auto;
-}
 
 aside{
   position:fixed;
-  z-index:998;
+  z-index:990;
   width:300px;
   margin-left:-250px;
 }
+aside#all-list{top:70px;}
+aside#all-list div i{font-size:40px;margin-left:-5px;}
 
-aside:hover{
-  margin-left:0px;
+aside#level{top: 110px;}
+aside#rarity{top: 240px;}
+aside#habitat{top: 320px;}
+aside#pet{top: 420px;}
+
+aside#category{top: 110px;}
+aside#rarity-h{top: 210px;}
+aside#habitat-h{top: 290px;}
+aside#season{top: 380px;}
+
+aside:hover{z-index:998; margin-left:0px;}
+aside a{
+  text-shadow: none;
+  display:block;
+  margin:2px;
+  text-transform: uppercase;
+  font-size:12px;
+  letter-spacing: 2px;
 }
-
+aside a:hover{
+  padding-left:20px;
+}
+aside a span{
+  padding-left:20px;
+}
 aside div.f-left{
   width:250px;
+  background-color: var(--light-grey);
+  padding:10px 10px 10px 20px;
 }
-*/
 .vertical-menu{
+  text-transform: uppercase;
+  font-size:20px;
   float:left;
   writing-mode: sideways-lr;
   -webkit-writing-mode: sideways-lr;
   -ms-writing-mode: sideways-lr;
+}
+
+.search-box{
+  width:40%;
+  min-width:300px;  
+  margin:20px auto;
+}
+.search-box input{
+  background-color: var(--light-grey);
+  border:1px solid var(--grey);
 }
 
 article{
@@ -35,75 +65,94 @@ article{
   background-color:var(--dark-grey);
   border:1px solid var(--white-grey); 
 }
-
-article img{
-  width:100%;
-}
-article:hover img{
-  opacity:0.3;
-}
-/*
-h2{
+article img{width:100%;}
+article:hover img{opacity:0.3;}
+article h2{
   font-size:15px;
   padding:5px 10px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background-color: var(--white-grey);
+  background-color: var(--light-grey);
   position:absolute;
   top:20px;
   left:20px;
-}*/
-
+}
+article:hover h2{background-color: var(--color);}
 article p{
   position:absolute;
   padding:10px;
   width:100%;
   font-size:12px;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: var(--grey-op);
   top:70px;
   left:0px;
   display:none;
 }
-article:hover p{
-  display:block;
-}
-
+article:hover p{display:block;}
 article p span, section p span{
   width:30px; 
   display:block;
   font-size:15px;
   float:left;
 }
+article p br{clear: both;}
 
-article p br{
-  clear: both;
+#nav-show{margin:20px 0px 20px 30px;}
+#nav-show form{float:left; margin-right:20px;}
+#nav-show a, #nav-show input{
+  text-shadow: none;
+  font-size:11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: var(--light-grey);
+  padding:2px 10px;
+  border-radius: 2px;
+  border:none;
 }
-/*
-section, form#new_bestiary, form#new_herbarium, #profile, .list-admin{
+#nav-show a:hover{background-color: var(--light-color);}
+#nav-show input{
+  background-color: var(--color);
+  color:var(--text);
+}
+#nav-show input:hover{
+  background-color: var(--dark-color);
+  color:var(--light-grey);
+}
+
+section#show, form#new, form#new_herbarium, #profile, .list-admin{
   max-width:95%;
   overflow:auto;
   margin:20px auto;
-  background-color: var(--white-grey);
+  clear: both;
 }
-
-section img{
+section#show div, section#show img{
   float:left;
-  margin-right:20px;
-  width:50%;
+  border-radius: 2px;
+  margin: 0.5%;
+  width:49%;
   min-width:400px;
 }
-
-section p{
-  text-align: justify;
-  margin:20px;
+section#show div{
+  background-color: var(--light-grey);
+  padding:20px;
 }
-
-section p small{
+section#show h2{
+  margin:20px 50px;
+  text-shadow: 2px 0px 1px rgba(0, 0, 0, 0.3), 0px 0px 10px var(--color);
+}
+section#show p{
+  text-align: justify;
+  margin:20px 50px 20px 0px;
+}
+section#show p small{
   padding:0px 30px; 
   font-style: italic; 
 }
-*/
-form#new_bestiary, form#new_herbarium{padding:20px;}
+section#show p#text-show{
+  font-size:14px;
+}
+
+form#new, form#new_herbarium{padding:20px;}
 
 .img_profile{
   width:100px;

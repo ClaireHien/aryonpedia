@@ -1,57 +1,79 @@
-<div class="f-left" style="border:1px solid red; ">
+<aside id="all-list">
+  <div class="f-left">
+    <%= link_to "Tout afficher", herbarium_index_path %>
+  </div>
+  <div class="vertical-menu f-one">
+    <i class="fas fa-caret-down"></i>
+  </div>
+</aside>
+
+<aside id="category">
+  <div class="f-left">
+    <nav>
+      <% @all_cat.each do |c| %>
+        <%= link_to search_h_path(c.name), :remote => true do %>
+          <span style="border-left: 10px solid <%= c.color %>;">
+            <%= c.name %>
+          </span>
+        <% end %>
+      <%end%>
+    </nav>
+  </div>
+  <div class="vertical-menu f-one">
+    Category
+  </div>
+</aside>
 
 
-<a href="/herbarium" class="navright">Voir toutes les plantes</a>
+<aside id="season">
+  <div class="f-left">
+    <nav>
+      <% @all_season.each do |s| %>
+          <%= link_to search_h_path(s.name), :remote => true do %>
+            <span style="border-left: 10px solid <%= s.color %>;">
+              <%= s.name %> 
+            </span>
+          <% end %> 
+      <%end%>
+    </nav>
+  </div>
+  <div class="vertical-menu f-one">
+    Saison
+  </div>
+</aside>
 
 
-<% if params[:id] %> 
-<% elsif %>
-<div class="index_list">
-
-  <h5>Categorie</h5>
-  <% @all_cat.each do |c| %>
-      <span style="background-color: <%= c.color %>;" class="badge">
-      <%= link_to search_h_path(c.name), :remote => true do %>
-        <%= c.name %>
-      <% end %>
-      </span>
-  <%end%>
-
-  <br /><br />
-  <h5>Saisons</h5>
-  <% @all_season.each do |s| %>
-      <span style="background-color: <%= s.color %>;" class="badge">
-      <%= link_to search_h_path(s.name), :remote => true do %>
-        <%= s.name %>
-      <% end %>      </span> 
-  <%end%>
-
-  <br /><br />
-  <h5>Rarete</h5>
-    <% @all_rarity.each do |r| %>
-      <span style="background-color: <%= r.color %>;" class="badge">
-      <%= link_to search_h_path(r.name), :remote => true do %>
-        <%= r.name %>
-      <% end %>      </span>
-    <%end%>
-
-  <br /><br />
-  <h5>Habitat</h5>
-  <% @all_habitat.each do |hh| %>
-      <span style="background-color: <%= hh.color %>;" class="badge">
-      <%= link_to search_h_path(hh.name), :remote => true do %>
-        <%= hh.name %>
-      <% end %>      </span>
-  <%end%>
+<aside id="rarity-h">
+  <div class="f-left">
+    <nav>
+      <% @all_rarity.each do |r| %>
+        <%= link_to search_h_path(r.name), :remote => true do %>
+          <span style="border-left: 10px solid <%= r.color %>;">
+            <%= r.name %> 
+          </span>
+        <% end %>    
+      <%end%>
+    </nav>
+  </div>
+  <div class="vertical-menu f-one">
+    Rareté
+  </div>
+</aside>
 
 
-</div>
-
-<%end%>
-
-
-</div>
-
-<div class="vertical-menu">
-  Trier <i class="fas fa-caret-down"></i>
-</div>
+<aside id="habitat-h">
+  <div class="f-left">
+    <nav>
+      <% @all_habitat.each do |hh| %>
+        <%= link_to search_h_path(hh.name), :remote => true do %>
+          <span style="border-left: 10px solid <%= hh.color %>;">
+            <%= hh.name %> 
+          </span>
+        <% end %>     
+      <%end%>
+    </nav>
+  </div>
+  <div class="vertical-menu f-one">
+    Habitat
+  </div>
+</aside>

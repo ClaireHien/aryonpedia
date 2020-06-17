@@ -1,55 +1,79 @@
-<div class="f-left" style="border:1px solid red; ">
+<aside id="all-list">
+  <div class="f-left">
+    <%= link_to "Tout afficher", bestiary_index_path%>
+  </div>
+  <div class="vertical-menu f-one">
+    <i class="fas fa-caret-down"></i>
+  </div>
+</aside>
 
-
-    <a href="/bestiary" class="navright">Voir toutes les créatures</a>
-
-    <div class="index_list">
-
-        <h5>Dangerosite</h5>
-        <% @all_level.each do |lv| %>
-          <span style="background-color: <%= lv.color %>;" class="badge">
-            <%= link_to search_path(lv.name), :remote => true do %>
-              <%= lv.name %>
-            <% end %>
+<aside id="level">
+  <div class="f-left">
+    <nav>
+      <% @all_level.each do |lv| %>
+        <%= link_to search_path(lv.name), :remote => true do %>
+          <span style="border-left: 10px solid <%= lv.color %> !important;">
+            <%= lv.name %>
           </span>
-        <%end%>
+        <% end %>
+      <%end%>
+    </nav>
+  </div>
+  <div class="vertical-menu f-one">
+    Dangerosité
+  </div>
+</aside>
 
-        <br /><br />
-        <h5>Rarete</h5>
-          <% @all_rarity.each do |r| %>
-            <span style="background-color: <%= r.color %>;" class="badge">
-            <%= link_to search_path(r.name), :remote => true do %>
-              <%= r.name %>
-            <% end %>
+<aside id="rarity">
+
+  <div class="f-left">
+    <nav>
+      <% @all_rarity.each do |r| %>
+        <%= link_to search_path(r.name), :remote => true do %>
+          <span style="border-left: 10px solid <%= r.color %>;">
+            <%= r.name %>
+          </span> 
+        <% end %>
+      <%end%>
+    </nav>       
+  </div>
+  <div class="vertical-menu f-one">
+    Rareté
+  </div>
+</aside>
+
+<aside id="habitat">
+  <div class="f-left">
+    <nav>
+      <% @all_habitat.each do |h| %>
+        <%= link_to search_path(h.name), :remote => true do %>
+          <span style="border-left: 10px solid <%= h.color %>;">
+            <%= h.name %>
+          </span> 
+        <% end %>
+      <%end%>
+    </nav>
+  </div>
+  <div class="vertical-menu f-one">
+    Habitats
+  </div>
+</aside>
+
+<aside id="pet">
+  <div class="f-left">
+    <nav>
+      <% @all_pet.each do |p| %>
+        <% if p.id != 1 %>
+          <%= link_to search_path(p.name), :remote => true do %>
+            <span style="border-left: 10px solid <%= p.color %>;">
+              <%= p.name %>
             </span> 
-          <%end%>
-    
-          <br /><br />
-          <h5>Habitat</h5>
-            <% @all_habitat.each do |h| %>
-              <span style="background-color: <%= h.color %>;" class="badge">
-              <%= link_to search_path(h.name), :remote => true do %>
-                <%= h.name %>
-              <% end %>
-              </span> 
-            <%end%>
-
-            <br /><br />
-            <h5>Familier</h5>
-              <% @all_pet.each do |p| %>
-                <% if p.id != 1 %>
-                <span style="background-color: <%= p.color %>;" class="badge">
-                <%= link_to search_path(p.name), :remote => true do %>
-                  <%= p.name %>
-                <% end %>
-                </span> 
-                <%end%>
-              <%end%>
-
-      </div>
-
-</div>
-
-<div class="vertical-menu">
-  Trier <i class="fas fa-caret-down"></i>
-</div>
+          <% end %>
+        <%end%>
+      <%end%>
+    </nav>
+  </div>
+  <div class="vertical-menu f-one">
+    Familiers
+  </div>
+</aside>

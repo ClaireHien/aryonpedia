@@ -54,17 +54,6 @@
   right:5%; bottom:5%;
 }
 
-#aside-home{
-  position:fixed;
-  right:20px;
-  top:30%;
-  width:200px;
-  z-index:50;
-  text-align:right;
-}
-
-#aside-home a{display:block;}
-
 #home-left, #home-right{
   position:absolute;
   top:0%;
@@ -98,7 +87,7 @@
   margin:auto;
 }
 
-section#first{
+section#first, section#second{
   max-width: 800px;
   margin: 50px auto 0px auto;
 }

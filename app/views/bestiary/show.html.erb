@@ -2,50 +2,61 @@
 <% bestiary = Bestiary.find(params[:id]) %>
 
 <h1><%= bestiary.name %></h1>
+<span class="under-title">
+  <% if bestiary.check != "validate" %> 
+    En attente de validation | 
+  <% end %>
+    Créature proposée par
+    <a href="/user/<%= bestiary.user.id %>"><%= bestiary.user.pseudo %></a>
+</span>
 
-<%=link_to "Retour au bestiaire",  bestiary_index_path %>
+<nav id="nav-show">
+  <%=link_to "Retour au bestiaire",  bestiary_index_path %>
 
-<% unless current_user %><%else%><% if current_user.rank == "Ar-admin2020"%>
-  <a href="<%=edit_bestiary_path%>">editer</a> | <%= link_to "supprimer", bestiary_path, method: :delete, :data => {:confirm => 'Êtes vous sur de vouloir supprimer cette créature ? Cette action est irréversible'} %> | 
-<%end%><%end%>
+  <% unless current_user %><%else%>
+    <% if current_user.rank == "Ar-admin2020"%>
+      <%= link_to "Editer", edit_bestiary_path %> 
+      <%= link_to "supprimer", bestiary_path, method: :delete, :data => {:confirm => 'Êtes vous sur de vouloir supprimer cette créature ? Cette action est irréversible'} %> 
+      <% if bestiary.check != "validate" %>
+        <%= button_to 'Valider la créature', validate_path(:bestiary_id => bestiary.id), method: :put%>
+      <%end%>
+    <%end%>
+  <%end%>
 
-Proposé par <a href="/user/<%= bestiary.user.id %>"><%= bestiary.user.pseudo %></a>
+</nav>
 
-
-<% if bestiary.check != "validate" %>
-  <br>
-  En attente de validation
-  <% unless current_user %><%else%><% if current_user.rank == "Ar-admin2020"%>
-
-  <%= button_to 'Validation', validate_path(:bestiary_id => bestiary.id), method: :put%>
-
-  <%end%><%end%>
-
-<%end%>
-
-<section>
+<section id="show">
   <img src="<%= bestiary.image %>" alt="image de la créature">
-  <h3>Informations</h3>
-  <p>
-    <span style="color: <%= bestiary.level.color %>;"><i class="fas fa-skull-crossbones"></i></span>
-    Dangerosité : <strong><%= bestiary.level.name %></strong><br>
-    <span style="color: <%= bestiary.rarity_bestiary.color %>;"><i class="fas fa-star"></i></span>
-    Rareté : <strong><%= bestiary.rarity_bestiary.name %></strong><br>
-    <span><i class="fas fa-arrows-alt-v"></i></span>
-    Taille : <strong><%= bestiary.height %></strong><br>
-    <span style="color: <%= bestiary.habitat_bestiary.color %>;"><i class="fas fa-home"></i></span>
-    Habitat : <strong><%= bestiary.habitat_bestiary.name %></strong><br>
-    <small><%= bestiary.location %></small><br>
-    
-    <%if bestiary.pet %>
-    <% if bestiary.pet.id != 1 %>
-    <span style="color: <%= bestiary.pet.color %>;"><i class="fas fa-heart"></i></span>
-    Familier : <strong><%= bestiary.pet.name %></strong>
-    <%end%>
-    <%end%>
-  </p>
-  <h3>Description</h3>
-  <p>
-    <%= bestiary.description %>
-  </p>
+
+  <div>
+    <h2>Informations</h2>
+    <p>
+      <span style="color: <%= bestiary.level.color %>;"><i class="fas fa-skull-crossbones"></i></span>
+      Dangerosité : <strong><%= bestiary.level.name %></strong><br>
+
+      <span style="color: <%= bestiary.rarity_bestiary.color %>;"><i class="fas fa-star"></i></span>
+      Rareté : <strong><%= bestiary.rarity_bestiary.name %></strong><br>
+
+      <span><i class="fas fa-arrows-alt-v"></i></span>
+      Taille : <strong><%= bestiary.height %></strong><br>
+
+      <span style="color: <%= bestiary.habitat_bestiary.color %>;"><i class="fas fa-home"></i></span>
+      Habitat : <strong><%= bestiary.habitat_bestiary.name %></strong><br>
+      <small><%= bestiary.location %></small><br>
+      
+      <%if bestiary.pet %>
+        <% if bestiary.pet.id != 1 %>
+          <span style="color: <%= bestiary.pet.color %>;"><i class="fas fa-heart"></i></span>
+          Familier : <strong><%= bestiary.pet.name %></strong>
+        <%end%>
+      <%end%>
+    </p>
+  </div>
+  
+  <div>
+    <h2>Description</h2>
+    <p id="text-show">
+      <%= bestiary.description %>
+    </p>
+  </div>
 </section>

@@ -1,9 +1,8 @@
-<aside>
-    <%= render 'indexherbarium' %>
-</aside>
-
+<%= render 'indexherbarium' %>
 
 <h1>L'herbier</h1>
+<span class="under-title">Toutes les plantes fantastiques de l'univers d'Aryon</span>
+
   <div class="search-box">
     <span class="mini">Rechercher une plante dans l'herbier</span>
     <%= form_tag "/search_h", :method => 'get', :role => 'search' do %>

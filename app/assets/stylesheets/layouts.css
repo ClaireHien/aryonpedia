@@ -13,10 +13,16 @@ header{
 main{padding:70px 0px;}
 
 footer {
+  z-index:99;
+  background-color:var(--grey);
+  height:30px;
+  line-height:30px;
   font-size:10px;
+  letter-spacing: 2px;
   text-transform:uppercase;
   text-align:right;
   margin: 0px;
+  padding-right:100px;
 }
 
 ul li{list-style: none; float:left;}
