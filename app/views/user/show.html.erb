@@ -1,29 +1,32 @@
 <% id = params[:id] %>
 <% user = User.find(id) %>
 
-
-<h1>Profil de <%= user.pseudo %></h1>
   
 <div id="profile">
-<img src="<%=user.img_profile%>" class="img_profile" alt="image de profil">
-  <h5>
-  <%if user.rank != "Ar-admin2020" %>
-  <%= user.rank %>
-  <%else%> 
-  Administrateur
-  <%end%></h5>
-
-  <p>
-  <strong>Personnages : </strong> <%= user.character %><br />
-  <small class="text-muted"><%= user.description %></small>
-  </p>
-
-  </p>
+  <div>
+    <h1><%= user.pseudo %></h1> 
+    <span class="under-title">
+      <%if user.rank != "Ar-admin2020" %>
+        <%= user.rank %>
+      <%else%> 
+        Administrateur
+      <%end%>
+    </span>
   </div>
+  <img src="<%=user.img_profile%>" alt="image de profil">
+  <p>
+    <strong>Personnages : </strong> <%= user.character %><br />
+    <small class="text-muted"><%= user.description %></small>
+  </p>
 
-<h1>Contributions</h1>
+</div>
 
-<%= @all_bestiary.length%> créatures | <%= @all_herbarium.length%> plantes
+<h1>Contributions</h1> 
+<span class="under-title">
+  <%= @all_bestiary.length%> créatures | 
+  <%= @all_herbarium.length%> plantes
+</span>
+
 
 <div id="list-article">
 

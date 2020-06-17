@@ -1,16 +1,16 @@
-<aside>
+<%= render 'bestiary/indexbestiary' %>
 
-    <%= render 'bestiary/indexbestiary' %>
-
-</aside>
 
 <h1>Le bestiaire</h1>
-<span class="mini">Rechercher une bête dans le bestiaire</span>
+<span class="under-title">Toutes les créatures fantastiques de l'univers d'Aryon</span>
 
-<%= form_tag "/search", :method => 'get', :role => 'search' do %>
+<div class="search-box">
+  <span class="mini">Rechercher une bête dans le bestiaire</span>
+  <%= form_tag "/search", :method => 'get', :role => 'search' do %>
     <%= text_field_tag :search, params[:search], :class => "search-bar up ls2 form-control mr-sm-2", :placeholder => "Rechercher" %>
-<% end %>
+  <% end %>
+</div>
 
 <div id="list-article">
-    <%= render 'bestiary/list_bestiary'%>
+  <%= render 'bestiary/list_bestiary'%>
 </div>

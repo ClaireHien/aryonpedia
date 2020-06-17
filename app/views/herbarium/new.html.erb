@@ -1,69 +1,82 @@
 <h1>Ajouter une plante</h1>
-<div class="underh1">Remplissons l'herbier !</div>
+<span class="under-title">Remplissons l'herbier !</span>
  
 <%if @herbarium %>
-<div class="alert alert-aryon" role="alert">
-  <p>Tu as mal rempli le formulaire</p>
-</div><br />
+  <div class="alert alert-aryon" role="alert">
+    <p>Tu as mal rempli le formulaire</p>
+  </div>
 <% end %>
 
 <form action= <%= herbarium_index_path %> method="POST" id="new_herbarium">
   <input type="hidden" name="authenticity_token" value=<%=form_authenticity_token%> >
 
-    <h5>Nom de la plante</h5>
-    <input class="form-control" type="text" name="h_name">
-    <span class="mini">En commençant par une majuscule, pas de chiffres ou de signes spéciaux</span>
-<br /><br />
+    <div>
+    
+      <h5>Nom de la plante</h5>
+      <input class="form-control" type="text" name="h_name">
+      <span class="mini">En commençant par une majuscule, pas de chiffres ou de signes spéciaux</span>
 
-<div class="d-flex justify-content-between flex-wrap">
-    <div style="width:45%;">
-    <h5>Categorie</h5><select name="h_category" form="new_herbarium" class="deroul">
-    <% all_cat = Category.all %>
-    <% all_cat.each do |cat| %>
-      <option value="<%=cat.id%>"><%=cat.name%></option>
-    <%end%>
-    </select><br /><br />
+      <h5>Description </h5>
+      <textarea class="form-control" type="text" name="h_description"></textarea>
+      
+      <h5>Url de l'image</h5> <input class="form-control" type="text" name="h_image">
+      <span class="mini">URL hébergée depuis un site extérieur - Pas besoin de recadrer l'image - Minimum 400*400 px</span>
+      <br /><br />
 
-    </div><div style="width:45%;">
+    </div>
 
-    <h5>Rarete</h5> <select name="h_rarity" form="new_herbarium" class="deroul">
-    <% all_rarity = RarityHerbarium.all %>
-    <% all_rarity.each do |r| %>
-      <option value="<%=r.id%>"><%=r.name%></option>
-    <%end%>
-    </select><br /><br />
-     </div><div style="width:45%;">
+    <div>
 
-    <h5>Habitat</h5> <select name="h_habitat" form="new_herbarium" class="deroul">
-    <% all_habitat = HabitatHerbarium.all %>
-    <% all_habitat.each do |hh| %>
-      <option value="<%=hh.id%>"><%=hh.name%></option>
-    <%end%>
-    </select>
-    </div><div style="width:45%;">
+      <div>
+        <h5>Categorie</h5>
+        <select name="h_category" form="new_herbarium" class="deroul">
+          <% all_cat = Category.all %>
+          <% all_cat.each do |cat| %>
+            <option value="<%=cat.id%>"><%=cat.name%></option>
+          <%end%>
+        </select>
+      </div>
+        
+      <div>
+        <h5>Rarete</h5>
+        <select name="h_rarity" form="new_herbarium" class="deroul">
+          <% all_rarity = RarityHerbarium.all %>
+          <% all_rarity.each do |r| %>
+            <option value="<%=r.id%>"><%=r.name%></option>
+          <%end%>
+        </select>
+      </div>
+      
+      <div>
+        <h5>Habitat</h5> <select name="h_habitat" form="new_herbarium" class="deroul">
+          <% all_habitat = HabitatHerbarium.all %>
+          <% all_habitat.each do |hh| %>
+            <option value="<%=hh.id%>"><%=hh.name%></option>
+          <%end%>
+        </select>
+      </div>
 
-    <h5>Saison</h5> <select name="h_season" form="new_herbarium" class="deroul">
-    <% all_season = Season.all %>
-    <% all_season.each do |s| %>
-      <option value="<%=s.id%>"><%=s.name%></option>
-    <%end%>
-    </select>
-    </div></div><br /><br />
+      <div>
+        <h5>Saison</h5>
+        <select name="h_season" form="new_herbarium" class="deroul">
+          <% all_season = Season.all %>
+          <% all_season.each do |s| %>
+            <option value="<%=s.id%>"><%=s.name%></option>
+          <%end%>
+        </select>
+      </div>
 
-    <h5>Lieu</h5> <input class="form-control" type="text" name="h_location">
-    <span class="mini">Plus de précisions sur son habitat naturel, les endroits où on peut la trouver </span><br />
-    <br />
+      <h5>Lieu</h5>
+      <input class="form-control" type="text" name="h_location">
+      <span class="mini">Plus de précisions sur son habitat naturel, les endroits où on peut la trouver </span>
 
-    <h5>Taille</h5> <input class="form-control" type="text" name="h_height">
-    <span class="mini">Plus de précisions sur la taille générale, l'envergure... </span><br />
-    <br />
+      <h5>Taille</h5>
+      <input class="form-control" type="text" name="h_height">
+      <span class="mini">Plus de précisions sur la taille générale, l'envergure... </span>
 
-    <h5>Description </h5><textarea class="form-control" type="text" name="h_description"></textarea><br />
+    </div>
 
-    <h5>Url de l'image</h5> <input class="form-control" type="text" name="h_image">
-    <span class="mini">URL hébergée depuis un site extérieur - Pas besoin de recadrer l'image - Minimum 400*400 px</span>
-    <br /><br />
+  <input type="submit" value="Envoyer">
 
-  <input type="submit" value="Envoyer" class="btn btn-aryon">
 </form>
 

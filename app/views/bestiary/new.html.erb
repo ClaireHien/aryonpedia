@@ -1,68 +1,69 @@
 <h1>Ajouter une creature</h1>
-<div class="underh1">Remplissons le bestiaire !</div>
+<span class="under-title">Remplissons le bestiaire !</span>
 
 <%if @bestiary %>
-<div class="alert alert-aryon" role="alert">
-  <p>Tu as mal rempli le formulaire</p>
-</div><br />
+  <div class="alert alert-aryon" role="alert">
+    <p>Tu as mal rempli le formulaire</p>
+  </div>
 <% end %>
 
 <form action=<%= bestiary_index_path %> method="POST" id="new_bestiary">
   <input type="hidden" name="authenticity_token" value=<%=form_authenticity_token%> >
 
-    <h5>Nom de la creature</h5> <input class="form-control" type="text" name="b_name">
-    <span class="mini">En commençant par une majuscule, pas de chiffres ou de signes spéciaux</span>
+    <div>
+      <h5>Nom de la creature</h5>
+      <input class="form-control" type="text" name="b_name">
+      <span class="mini">En commençant par une majuscule, pas de chiffres ou de signes spéciaux</span>
 
-    <div class="d-flex justify-content-between">
-      <div style="width:30%;">
+      <h5>Description</h5>
+      <textarea class="form-control" type="text" name="b_description"></textarea><br />
+
+      <h5>Url de l'image</h5>
+      <input class="form-control" type="text" name="b_image">
+      <span class="mini">URL hébergée depuis un site extérieur - Pas besoin de recadrer l'image - Minimum 400*400 px</span>
+    </div>
+
+    <div>
+
+      <div>
         <h5>Dangerosite</h5>
         <select name="b_level" form="new_bestiary" class="deroul">
-        <% all_level = Level.all %>
-        <% all_level.each do |lv| %>
-          <option value="<%=lv.id%>"><%=lv.name%></option>
-        <%end%></select>
-
-      </div><div style="width:30%;">
-
-        <h5>Rarete</h5>
-        <select name="b_rarity" form="new_bestiary" class="deroul">
-        <% all_rarity = RarityBestiary.all %>
-        <% all_rarity.each do |r| %>
-          <option value="<%=r.id%>"><%=r.name%></option>
-        <%end%>
-        </select>
-
-      </div><div style="width:30%;">
-
-        <h5>Habitat</h5>
-        <select name="b_habitat" form="new_bestiary" class="deroul">
-        <% all_habitat = HabitatBestiary.all %>
-        <% all_habitat.each do |h| %>
-          <option value="<%=h.id%>"><%=h.name%></option>
-        <%end%>
+          <% all_level = Level.all %>
+          <% all_level.each do |lv| %>
+            <option value="<%=lv.id%>"><%=lv.name%></option>
+          <%end%>
         </select>
       </div>
-    </div>
+
+      <div>
+        <h5>Rarete</h5>
+        <select name="b_rarity" form="new_bestiary" class="deroul">
+          <% all_rarity = RarityBestiary.all %>
+          <% all_rarity.each do |r| %>
+            <option value="<%=r.id%>"><%=r.name%></option>
+          <%end%>
+        </select>
+      </div>
+
+      <div>
+        <h5>Habitat</h5>
+        <select name="b_habitat" form="new_bestiary" class="deroul">
+          <% all_habitat = HabitatBestiary.all %>
+          <% all_habitat.each do |h| %>
+            <option value="<%=h.id%>"><%=h.name%></option>
+          <%end%>
+        </select>
+      </div>
+
+      <h5>Lieu</h5>
+      <input class="form-control" type="text" name="b_location">
+      <span class="mini">Plus de précisions sur son habitat naturel, les endroits où on peut le trouver </span>
+
+      <h5>Taille</h5>
+      <input class="form-control" type="text" name="b_height">
+      <span class="mini">Plus de précisions sur la taille générale, l'envergure... </span>
     
-    <div class="d-flex justify-content-between">
-      <div style="width:50%;">
-
-    <h5>Lieu</h5> <input class="form-control" type="text" name="b_location">
-     <span class="mini">Plus de précisions sur son habitat naturel, les endroits où on peut le trouver </span><br />
     </div>
 
-    <div style="width:50%;">
-
-    <h5>Taille</h5><input class="form-control" type="text" name="b_height">
-        <span class="mini">Plus de précisions sur la taille générale, l'envergure... </span><br />
-    <br />
-    </div></div>
-
-   <h5>Description</h5> <textarea class="form-control" type="text" name="b_description"></textarea><br />
-
-    <h5>Url de l'image</h5> <input class="form-control" type="text" name="b_image">
-    <span class="mini">URL hébergée depuis un site extérieur - Pas besoin de recadrer l'image - Minimum 400*400 px</span>
-    <br /><br />
-
-  <input type="submit" value="Envoyer" class="btn btn-aryon">
+  <input type="submit" value="Envoyer">
 </form>

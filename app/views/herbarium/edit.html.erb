@@ -1,94 +1,90 @@
 
-  <% herbarium = Herbarium.find(params[:id]) %>
-  <h1>Editer une plante </h1>
-  <div class="underh1"><%= herbarium.name %></div>
+<% herbarium = Herbarium.find(params[:id]) %>
+<h1>Editer une plante </h1>
+<span class="under-title"><%= herbarium.name %></span>
 
-  <%if @herbarium %>
+<%if @herbarium %>
   <div class="alert alert-aryon" role="alert">
-  <p>Nous n'avons pas réussi à modifier cette plante</p>
-  </div><br />
+    <p>Nous n'avons pas réussi à modifier cette plante</p>
+  </div>
 <% end %>
 
-  <%= form_for herbarium do |h| %>
-  
-  
-    <div class="form-group">
+<%= form_for herbarium do |h| %>
+
+  <div class="form-group">
     <h5>Nom de la plante</h5>
     <%= h.text_field :name, class: "form-control" %>
-    </div>
+  </div>
 
-    <div class="d-flex justify-content-between flex-wrap">
+  <div class="d-flex justify-content-between flex-wrap">
 
-    <div class="form-group" style="width:48%;">
+  <div class="form-group" style="width:48%;">
     <h5>Catégorie</h5>
-        <%= h.text_field :category_id, class: "form-control" %>
-
+    <%= h.text_field :category_id, class: "form-control" %>
     <span class="mini">
-        <% all_cat = Category.all %>
-          <% all_cat.each do |c| %>
-            <%= c.id %> - <%= c.name %> | 
-        <%end%>
-      </span>
-    </div>
+      <% all_cat = Category.all %>
+        <% all_cat.each do |c| %>
+          <%= c.id %> - <%= c.name %> | 
+      <%end%>
+    </span>
+  </div>
 
-    <div class="form-group" style="width:48%;">
+  <div class="form-group" style="width:48%;">
     <h5>Saison</h5>
-              <%= h.text_field :season_id, class: "form-control" %>
-<span class="mini">
-        <% all_season = Season.all %>
-          <% all_season.each do |s| %>
-            <%= s.id %> - <%= s.name %> | 
-        <%end%>
-      </span>
-    </div>
+    <%= h.text_field :season_id, class: "form-control" %>
+    <span class="mini">
+      <% all_season = Season.all %>
+        <% all_season.each do |s| %>
+          <%= s.id %> - <%= s.name %> | 
+      <%end%>
+    </span>
+  </div>
 
-    <div class="form-group" style="width:48%;">
-    <h5>Rareté</h5>
-              <%= h.text_field :rarity_herbarium_id, class: "form-control" %>
-<span class="mini">
-        <% all_rarity = RarityHerbarium.all %>
-          <% all_rarity.each do |r| %>
-            <%= r.id %> - <%= r.name %> | 
-        <%end%>
-      </span>
-    </div>
+  <div class="form-group" style="width:48%;">
+  <h5>Rareté</h5>
+    <%= h.text_field :rarity_herbarium_id, class: "form-control" %>
+    <span class="mini">
+      <% all_rarity = RarityHerbarium.all %>
+        <% all_rarity.each do |r| %>
+          <%= r.id %> - <%= r.name %> | 
+      <%end%>
+    </span>
+  </div>
 
-    <div class="form-group" style="width:48%;">
+  <div class="form-group" style="width:48%;">
     <h5>Habitat</h5>
-              <%= h.text_field :habitat_herbarium_id, class: "form-control" %>
-<span class="mini">
-        <% all_habitat = HabitatHerbarium.all %>
-          <% all_habitat.each do |b| %>
-            <%= b.id %> - <%= b.name %> | 
-        <%end%>
-      </span>
-    </div>
+    <%= h.text_field :habitat_herbarium_id, class: "form-control" %>
+    <span class="mini">
+      <% all_habitat = HabitatHerbarium.all %>
+        <% all_habitat.each do |b| %>
+          <%= b.id %> - <%= b.name %> | 
+      <%end%>
+    </span>
+  </div>
 
-    <div class="form-group" style="width:48%;">
+  <div class="form-group" style="width:48%;">
     <h5>Lieu</h5>
     <%= h.text_field :location, class: "form-control" %>
-    </div>
+  </div>
 
-    <div class="form-group" style="width:48%;">
+  <div class="form-group" style="width:48%;">
     <h5>Taille</h5>
     <%= h.text_field :height, class: "form-control" %>
-    </div>
-    </div>
+  </div>
+  </div>
 
-    <div class="form-group">
+  <div class="form-group">
     <h5>Description</h5>
     <%= h.text_area :description, class: "form-control" %>
-    </div>
+  </div>
 
-    <div class="form-group">
+  <div class="form-group">
     <h5>URL de l'image</h5>
     <%= h.text_field :image, class: "form-control" %>
-    </div>
-  
-    <div class="form-group">
-    <button type="submit" class="btn btn-aryon">Modifier</button>
-    </div>
-  
-  <% end %>
-  
-  
+  </div>
+
+  <div class="form-group">
+    <button type="submit">Modifier</button>
+  </div>
+
+<% end %>

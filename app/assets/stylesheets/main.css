@@ -45,6 +45,11 @@ h2{
   letter-spacing: 2px;
 }
 
+h5{
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
 section{text-align:justify;}
 
 .f-left{float:left;}

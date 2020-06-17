@@ -58,6 +58,7 @@ aside div.f-left{
 }
 
 article{
+  border-radius: 2px;
   width:100%;
   position:relative;
   display: inline-block;
@@ -65,7 +66,10 @@ article{
   background-color:var(--dark-grey);
   border:1px solid var(--white-grey); 
 }
-article img{width:100%;}
+article img{
+  width:100%;
+  border-radius: 2px;
+}
 article:hover img{opacity:0.3;}
 article h2{
   font-size:15px;
@@ -119,7 +123,7 @@ article p br{clear: both;}
   color:var(--light-grey);
 }
 
-section#show, form#new, form#new_herbarium, #profile, .list-admin{
+section#show{
   max-width:95%;
   overflow:auto;
   margin:20px auto;
@@ -154,13 +158,109 @@ section#show p#text-show{
 
 form#new, form#new_herbarium{padding:20px;}
 
-.img_profile{
+#profile{
+  background-color: var(--light-grey);
+  width:95%;
+  padding:10px;
+  border-radius: 2px;
+  overflow: auto;
+  margin: 50px auto;
+}
+#profile div{
+  float:left;
+  margin:10px 50px;
+}
+#profile img{
   width:100px;
+  border-radius: 2px;
   height:100px;
+  background-color: var(--dark-grey);
   float:left;
   margin-right:20px;
   border:1px solid var(--white-grey);
 }
+
+form.edit_user, form#new_herbarium, form#new_bestiary, form.edit_herbarium, form.edit_bestiary{
+  width:95%;
+  margin:50px auto;
+  background-color: var(--light-grey);
+  padding:20px;
+  overflow:auto;
+}
+
+form#new_herbarium>div, form#new_bestiary>div{
+  float:left;
+  width:48%;
+  min-width:400px;
+  margin:1%;
+}
+
+form#new_herbarium div div, form#new_bestiary div div{
+  margin:20px 0px;
+  clear: both;
+  width:100%;
+  position: relative;
+}
+form#new_herbarium select, form#new_bestiary select{
+  width:60%;
+  min-width:200px;
+  border-radius: 2px;
+  padding:3px;
+  position: absolute;
+  right:0;
+  top:0;
+  background-color: var(--body);
+  border:none;
+  -moz-appearance: none; text-indent: 0.01px; text-overflow: ''; 
+}
+form#new_herbarium div span, form#new_bestiary span, form.edit_herbarium, form.edit_bestiary span{margin-bottom:20px; display:block;}
+form#new_herbarium textarea, form#new_bestiary textarea, form.edit_herbarium, form.edit_bestiary textarea{
+  height:140px;
+  margin-bottom:20px;
+}
+form.edit_user input, form.edit_user textarea,
+form#new_herbarium input, form#new_herbarium textarea,
+form#new_bestiary input, form#new_bestiary textarea, 
+form.edit_herbarium, form.edit_bestiary input, form.edit_herbarium, form.edit_bestiary textarea{
+  background-color: var(--body);
+  border:none;
+}
+form.edit_user input:focus, form.edit_user textarea:focus, 
+form#new_herbarium input:focus, form#new_herbarium textarea:focus, form#new_herbarium select:focus,
+form#new_bestiary input:focus, form#new_bestiary textarea:focus, form#new_bestiary select:focus, 
+form.edit_herbarium, form.edit_bestiary input:focus, form.edit_herbarium, form.edit_bestiary textarea:focus{
+  background: linear-gradient(-90deg, transparent, var(--light-color));
+  border:none;
+}
+
+form.edit_user button,
+form#new_herbarium input[type="submit"], 
+form#new_bestiary input[type="submit"], 
+form.edit_herbarium, form.edit_bestiary button{
+  background-color: var(--color);
+  text-transform: uppercase;
+  color: var(--text);
+  width:40%;
+  margin:20px 30% 0px 30%;
+  letter-spacing: 4px;
+  padding:10px;
+  border-radius: 2px;
+}
+form.edit_user button:hover,
+form#new_herbarium input[type="submit"]:hover,
+form#new_bestiary input[type="submit"]:hover,
+form.edit_herbarium, form.edit_bestiary button:hover{
+  background-color: var(--light-color);
+  color: var(--text);
+}
+
+/***************************************************************************************************************************************************/
+/***************************************************************************************************************************************************/
+/***************************************************************************************************************************************************/
+/***************************************************************************************************************************************************/
+/***************************************************************************************************************************************************/
+/***************************************************************************************************************************************************/
+
 
 .list-admin div{
   background-color: var(--white-grey);
