@@ -1,12 +1,13 @@
 <h1>Inscription</h1> 
-<div class="underh1">Déjà inscrit ? <%= link_to "Connecte-toi !", new_session_path %></div>
+<span class="under-title">Déjà inscrit ? <%= link_to "Connecte-toi !", new_session_path %></span>
+
 <%if @user %>
-<div class="alert alert-aryon" role="alert">
-  <p>Nous n'avons pas réussi a valider votre inscription</p>
-</div><br />
+  <div class="alert alert-aryon" role="alert">
+    <p>Nous n'avons pas réussi a valider votre inscription</p>
+  </div><br />
 <% end %>
 
-<form action= <%= user_index_path %> method="POST">
+<form action= <%= user_index_path %> method="POST" id="new_user">
   <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %> >
     <h5>Pseudo</h5> <input class="form-control" type="text" name="u_pseudo">
     <span class="mini">Le pseudo que vous avez donné dans votre demande de code</span>
@@ -14,13 +15,10 @@
     <h5>Nom(s) de votre/vos personnage(s)</h5> <input class="form-control" type="text" name="u_character">
     <span class="mini">Votre ou vos personnage(s) sur le forum LE ROYAUME D'ARYON</span>
     <br /><br />
-    <div class="d-flex justify-content-between">
-    <div styyle="width:45%;">
     <h5>Mot de passe</h5><input class="form-control" type="password" name="u_password">
-    <span class="mini">Minimum 6 caractères</span>
-    </div><div style="width:65%;">
+    <span class="mini">Minimum 6 caractères</span><br><br>
     <h5>Code Aryon</h5><input class="form-control" type="password" name="code_aryon">
     <span class="mini">Le code d'inscription que vous avez reçu par MP sur le forum.</span>
-    </div></div><br />
+    
   <input type="submit" value="S'inscrire" class="btn btn-aryon">
 </form>

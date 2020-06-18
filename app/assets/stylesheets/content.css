@@ -163,8 +163,8 @@ form#new, form#new_herbarium{padding:20px;}
   width:95%;
   padding:10px;
   border-radius: 2px;
-  overflow: auto;
   margin: 50px auto;
+  height:120px;
 }
 #profile div{
   float:left;
@@ -172,21 +172,23 @@ form#new, form#new_herbarium{padding:20px;}
 }
 #profile img{
   width:100px;
-  border-radius: 2px;
   height:100px;
+  object-fit: cover;
+  border-radius: 2px;
   background-color: var(--dark-grey);
   float:left;
   margin-right:20px;
   border:1px solid var(--white-grey);
 }
 
-form.edit_user, form#new_herbarium, form#new_bestiary, form.edit_herbarium, form.edit_bestiary{
+form.edit_user, form#new_herbarium, form#new_bestiary, form.edit_herbarium, form.edit_bestiary, form#new_user{
   width:95%;
   margin:50px auto;
   background-color: var(--light-grey);
   padding:20px;
   overflow:auto;
 }
+form#new_user{width:500px;}
 
 form#new_herbarium>div, form#new_bestiary>div{
   float:left;
@@ -214,21 +216,23 @@ form#new_herbarium select, form#new_bestiary select{
   -moz-appearance: none; text-indent: 0.01px; text-overflow: ''; 
 }
 form#new_herbarium div span, form#new_bestiary span, form.edit_herbarium, form.edit_bestiary span{margin-bottom:20px; display:block;}
-form#new_herbarium textarea, form#new_bestiary textarea, form.edit_herbarium, form.edit_bestiary textarea{
+form#new_herbarium textarea, form#new_bestiary textarea, form.edit_herbarium, form.edit_bestiary textarea {
   height:140px;
   margin-bottom:20px;
 }
 form.edit_user input, form.edit_user textarea,
 form#new_herbarium input, form#new_herbarium textarea,
 form#new_bestiary input, form#new_bestiary textarea, 
-form.edit_herbarium, form.edit_bestiary input, form.edit_herbarium, form.edit_bestiary textarea{
+form.edit_herbarium, form.edit_bestiary input, form.edit_herbarium, form.edit_bestiary textarea, 
+form#new_user input{
   background-color: var(--body);
   border:none;
 }
 form.edit_user input:focus, form.edit_user textarea:focus, 
 form#new_herbarium input:focus, form#new_herbarium textarea:focus, form#new_herbarium select:focus,
 form#new_bestiary input:focus, form#new_bestiary textarea:focus, form#new_bestiary select:focus, 
-form.edit_herbarium, form.edit_bestiary input:focus, form.edit_herbarium, form.edit_bestiary textarea:focus{
+form.edit_herbarium, form.edit_bestiary input:focus, form.edit_herbarium, form.edit_bestiary textarea:focus, 
+form#new_user input:focus{
   background: linear-gradient(-90deg, transparent, var(--light-color));
   border:none;
 }
@@ -236,7 +240,8 @@ form.edit_herbarium, form.edit_bestiary input:focus, form.edit_herbarium, form.e
 form.edit_user button,
 form#new_herbarium input[type="submit"], 
 form#new_bestiary input[type="submit"], 
-form.edit_herbarium, form.edit_bestiary button{
+form.edit_herbarium, form.edit_bestiary button, 
+form#new_user input[type="submit"]{
   background-color: var(--color);
   text-transform: uppercase;
   color: var(--text);
@@ -246,10 +251,15 @@ form.edit_herbarium, form.edit_bestiary button{
   padding:10px;
   border-radius: 2px;
 }
+form#new_user input[type="submit"]{
+  width:60%;
+  margin:20px 20% 0px 20%;
+}
 form.edit_user button:hover,
 form#new_herbarium input[type="submit"]:hover,
 form#new_bestiary input[type="submit"]:hover,
-form.edit_herbarium, form.edit_bestiary button:hover{
+form.edit_herbarium, form.edit_bestiary button:hover, 
+form#new_user input[type="submit"]:hover{
   background-color: var(--light-color);
   color: var(--text);
 }
