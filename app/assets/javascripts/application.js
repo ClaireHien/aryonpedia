@@ -15,9 +15,27 @@
 //= require turbolinks
 //= require jquery
 
-$(document).ready(function(){
-    /* mon js */
+$(window).on("load scroll", function() {
+	barreDefilement();
+});
 
-    
-}); 
-  
+function calculPourcentageHauteur() {
+    var hauteurDocument = $(document).height(); 
+    var hauteurFenetre = $(window).height(); 
+    var position = $(window).scrollTop(); 
+    var positionDernierEcran = hauteurDocument - hauteurFenetre; 
+    var ratioHauteur = position / positionDernierEcran; 
+    var pourcentageHauteur = Math.floor(ratioHauteur * 100); 
+
+    console.log("Pourcentage de la hauteur parcourue : " + pourcentageHauteur + "%");
+
+    return pourcentageHauteur;
+}
+
+function barreDefilement() {
+	var cible = $("#barre-1 .progression");
+	cible.css({
+		"width": calculPourcentageHauteur()+"%"
+	});
+	$("#barre-1 .pourcentage").html(calculPourcentageHauteur()+"%");	
+}
