@@ -1,10 +1,11 @@
 #barre-1 {
   position:fixed;
-  bottom:0;
+  top:0;
+  z-index:1000;
   height:10px;
   width:100%;
   background:var(--dark-grey);
-  border-top:2px solid var(--grey);
+  border-bottom:2px solid var(--dark-grey);
 }
 #barre-1 .progression {
   background: linear-gradient(-90deg, var(--light-color), var(--color), var(--dark-color));
