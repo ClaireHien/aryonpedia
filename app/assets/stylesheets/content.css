@@ -240,7 +240,7 @@ form#new_user input:focus{
 form.edit_user button,
 form#new_herbarium input[type="submit"], 
 form#new_bestiary input[type="submit"], 
-form.edit_herbarium, form.edit_bestiary button, 
+form.edit_herbarium button, form.edit_bestiary button, 
 form#new_user input[type="submit"]{
   background-color: var(--color);
   text-transform: uppercase;

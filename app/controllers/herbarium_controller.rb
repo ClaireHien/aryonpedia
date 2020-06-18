@@ -11,11 +11,11 @@ class HerbariumController < ApplicationController
     end
 
     def validate
-      @herbarium = Herbarium.find(params[:herbarium_id])
-      @herbarium.check = "validate"
+      herbarium = Herbarium.find(params[:herbarium_id])
+      herbarium.check = "validate"
 
-      if @herbarium.save
-        redirect_to :action => "show", :id => @herbarium.id
+      if herbarium.save
+        redirect_to :action => "show", :id => herbarium.id
       else
         redirect_to root_path
       end
