@@ -215,15 +215,15 @@ form#new_herbarium select, form#new_bestiary select{
   border:none;
   -moz-appearance: none; text-indent: 0.01px; text-overflow: ''; 
 }
-form#new_herbarium div span, form#new_bestiary span, form.edit_herbarium, form.edit_bestiary span{margin-bottom:20px; display:block;}
-form#new_herbarium textarea, form#new_bestiary textarea, form.edit_herbarium, form.edit_bestiary textarea {
+form#new_herbarium div span, form#new_bestiary span, form.edit_herbarium span, form.edit_bestiary span{margin-bottom:20px; display:block;}
+form#new_herbarium textarea, form#new_bestiary textarea, form.edit_herbarium textarea, form.edit_bestiary textarea {
   height:140px;
   margin-bottom:20px;
 }
 form.edit_user input, form.edit_user textarea,
 form#new_herbarium input, form#new_herbarium textarea,
 form#new_bestiary input, form#new_bestiary textarea, 
-form.edit_herbarium, form.edit_bestiary input, form.edit_herbarium, form.edit_bestiary textarea, 
+form.edit_herbarium input, form.edit_bestiary input, form.edit_herbarium textarea, form.edit_bestiary textarea, 
 form#new_user input{
   background-color: var(--body);
   border:none;
@@ -231,7 +231,7 @@ form#new_user input{
 form.edit_user input:focus, form.edit_user textarea:focus, 
 form#new_herbarium input:focus, form#new_herbarium textarea:focus, form#new_herbarium select:focus,
 form#new_bestiary input:focus, form#new_bestiary textarea:focus, form#new_bestiary select:focus, 
-form.edit_herbarium, form.edit_bestiary input:focus, form.edit_herbarium, form.edit_bestiary textarea:focus, 
+form.edit_herbarium input:focus, form.edit_bestiary input:focus, form.edit_herbarium textarea:focus, form.edit_bestiary textarea:focus, 
 form#new_user input:focus{
   background: linear-gradient(-90deg, transparent, var(--light-color));
   border:none;
@@ -258,7 +258,7 @@ form#new_user input[type="submit"]{
 form.edit_user button:hover,
 form#new_herbarium input[type="submit"]:hover,
 form#new_bestiary input[type="submit"]:hover,
-form.edit_herbarium, form.edit_bestiary button:hover, 
+form.edit_herbarium button:hover, form.edit_bestiary button:hover, 
 form#new_user input[type="submit"]:hover{
   background-color: var(--light-color);
   color: var(--text);
