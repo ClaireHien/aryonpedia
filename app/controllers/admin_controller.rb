@@ -22,7 +22,11 @@ class AdminController < ApplicationController
   private 
 
   def check_user
-    if current_user.rank != "Ar-admin2020"
+    if current_user
+      if current_user.rank != "Ar-admin2020"
+        redirect_to "/check"
+      end
+    else 
       redirect_to "/check"
     end
   end
