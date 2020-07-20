@@ -76,6 +76,21 @@ class BestiaryController < ApplicationController
         redirect_to root_path
       end
     end
+
+    def check_event
+      @bestiary = Bestiary.find(params[:bestiary_id])
+      @bestiary.check = "event"
+
+      if @bestiary.pet_id == nil
+        @bestiary.pet_id = 1
+      end
+
+      if @bestiary.save
+        redirect_to :action => "show", :id => @bestiary.id
+      else
+        redirect_to root_path
+      end
+    end
   
     def new
       @all_bestiary = Bestiary.all

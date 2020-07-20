@@ -3,8 +3,10 @@
 
 <h1><%= bestiary.name %></h1>
 <span class="under-title">
-  <% if bestiary.check != "validate" %> 
+  <% if bestiary.check == "none" %> 
     En attente de validation | 
+  <% elsif bestiary.check == "event" %> 
+    Créature d'event | 
   <% end %>
     Créature proposée par
     <a href="/user/<%= bestiary.user.id %>"><%= bestiary.user.pseudo %></a>
@@ -17,9 +19,14 @@
     <% if current_user.rank == "Ar-admin2020"%>
       <%= link_to "Editer", edit_bestiary_path %> 
       <%= link_to "supprimer", bestiary_path, method: :delete, :data => {:confirm => 'Êtes vous sur de vouloir supprimer cette créature ? Cette action est irréversible'} %> 
-      <% if bestiary.check != "validate" %>
+      
+      <% if bestiary.check == "none" %>
+        <%= button_to 'Valider la créature', validate_path(:bestiary_id => bestiary.id), method: :put%> 
+        <%= button_to 'Créature event', check_event_path(:bestiary_id => bestiary.id), method: :put%>
+      <% elsif bestiary.check == "event" %>
         <%= button_to 'Valider la créature', validate_path(:bestiary_id => bestiary.id), method: :put%>
       <%end%>
+
     <%end%>
   <%end%>
 

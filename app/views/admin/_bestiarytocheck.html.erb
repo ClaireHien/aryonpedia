@@ -4,7 +4,7 @@
 
 <% @all_bestiary.each do |b| %>
 
-  <%if b.check != "validate" %>
+  <%if b.check == "none" %>
 
   <div>
     <img src="<%= b.image %>">  

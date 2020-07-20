@@ -1,0 +1,57 @@
+
+<h1>Les ajouts de l'event</h1>
+<span class="under-title">Créatures et plantes pour l'event de septembre 2020</span>
+
+<div class="wrapper">
+  <span class="mini up ls2">Le bestiaire</span>
+  
+  <div class="list-admin">
+    <% @all_bestiary.each do |b| %>
+      <%= link_to bestiary_path(b.id) do %>
+        <div style="text-shadow:none;">
+          <img src="<%= b.image %>">  
+          <%= b.id %> - <strong><%= b.name %></strong>
+          <small>
+            <span style="color: <%= b.level.color %>;"><i class="fas fa-skull-crossbones"></i></span>
+            <%= b.level.name %> - 
+            <span style="color: <%= b.rarity_bestiary.color %>;"><i class="fas fa-star"></i></span> 
+            <%= b.rarity_bestiary.name %> - 
+            <span style="color: <%= b.habitat_bestiary.color %>;"><i class="fas fa-home"></i></span>
+            <%= b.habitat_bestiary.name %>
+            <%if b.pet %>
+                <% if b.pet.id != 1 %> - 
+                <span style="color: <%= b.pet.color %>;"><i class="fas fa-heart"></i></span>
+                <%= b.pet.name %>
+                <%end%>
+            <%end%>
+          </small>
+        </div>
+      <%end%>
+    <%end%>
+  </div>
+  
+  <span class="mini up ls2">L'herbier</span>
+  
+  <div class="list-admin">
+    <% @all_herbarium.each do |h| %>
+      <%= link_to herbarium_path(h.id) do %>
+        <div style="text-shadow:none;">
+          <img src="<%= h.image %>">  
+          <%= h.id %> - <strong><%= h.name %></strong>
+          <small>
+            <span style="color: <%= h.category.color %>;"><i class="fab fa-canadian-maple-leaf"></i></span>
+            <%= h.category.name %> - 
+            <span style="color: <%= h.rarity_herbarium.color %>;"><i class="fas fa-star"></i></span> 
+            <%= h.rarity_herbarium.name %> - 
+            <span style="color: <%= h.habitat_herbarium.color %>;"><i class="fas fa-home"></i></span>
+            <%= h.habitat_herbarium.name %> - 
+            <span style="color: <%= h.season.color %>;"><i class="fas fa-snowflake"></i></span>
+            <%= h.season.name %>
+          </small>
+        </div>
+      <%end%>
+    <%end%>
+  </div>
+
+</div>
+

@@ -3,7 +3,7 @@
 
 <% @all_herbarium.each do |h| %>
 
-  <%if h.check != "validate" %>
+  <%if h.check == "none" %>
 
   <div>
     <img src="<%= h.image %>">  

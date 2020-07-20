@@ -21,6 +21,17 @@ class HerbariumController < ApplicationController
       end
     end
 
+    def check_event
+      herbarium = Herbarium.find(params[:herbarium_id])
+      herbarium.check = "event"
+
+      if herbarium.save
+        redirect_to :action => "show", :id => herbarium.id
+      else
+        redirect_to root_path
+      end
+    end
+
   
     def create
       @herbarium = Herbarium.new(name: params["h_name"],

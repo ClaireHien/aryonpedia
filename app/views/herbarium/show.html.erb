@@ -4,8 +4,10 @@
 
 <h1><%= herbarium.name %></h1>
 <span class="under-title">
-  <% if herbarium.check != "validate" %> 
+  <% if herbarium.check == "none" %> 
     En attente de validation | 
+  <% elsif herbarium.check == "event" %> 
+    Créature d'event | 
   <% end %>
     Plante proposée par
     <a href="/user/<%= herbarium.user.id %>"><%= herbarium.user.pseudo %></a>
@@ -18,8 +20,11 @@
     <% if current_user.rank == "Ar-admin2020"%>
       <%= link_to "Editer", edit_herbarium_path %> 
       <%= link_to "supprimer", herbarium_path, method: :delete, :data => {:confirm => 'Êtes vous sur de vouloir supprimer cette plante ? Cette action est irréversible'} %> 
-      <% if herbarium.check != "validate" %>
-        <%= button_to 'Valider la plante', validate_herbarium_path(:herbarium_id => herbarium.id), method: :put%>
+      <% if herbarium.check == "none" %>
+        <%= button_to 'Valider la plante', validate_path(:herbarium_id => herbarium.id), method: :put%>
+        <%= button_to 'Plante event', check_event_herbarium_path(:herbarium_id => herbarium.id), method: :put%>
+      <% elsif herbarium.check == "event" %>
+        <%= button_to 'Valider la plante', validate_path(:herbarium_id => herbarium.id), method: :put%>
       <%end%>
     <%end%>
   <%end%>
