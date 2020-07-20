@@ -6,8 +6,8 @@ class UserController < ApplicationController
   end
 
   def show
-    @all_bestiary = Bestiary.where(user_id: params[:id])
-    @all_herbarium = Herbarium.where(user_id: params[:id])
+    @all_bestiary = Bestiary.where(user_id: params[:id], check: "validate")
+    @all_herbarium = Herbarium.where(user_id: params[:id], check: "validate")
 
   end
 
